@@ -1,38 +1,109 @@
-\documentclass[DM,lsstdraft,toc]{lsstdoc}
+% generated from JIRA project LVV
+% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.7/site-packages/docsteady/templates/tpr.latex.jinja2.
+% using docsteady version 2.4
+% Please do not edit -- update information in Jira instead
+\documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
 \usepackage{geometry}
 \usepackage{longtable,booktabs}
 \usepackage{enumitem}
 \usepackage{arydshln}
+\usepackage{attachfile}
+\usepackage{array}
+\usepackage{dashrule}
+\usepackage{pdfpages}
 
-\input{meta.tex}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
+\input meta.tex
+
+\newcommand{\attachmentsUrl}{https://github.com/\gitorg/\lsstDocType-\lsstDocNum/blob/\gitref/attachments}
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setcounter{tocdepth}{4}
 
 \begin{document}
 
 \def\milestoneName{Data Management Acceptance Test Campaign, Fall 2023}
-\def\milestoneId{LVV-P106}
-\def\product{Data Management}
+\def\milestoneId{}
+\def\product{Acceptance}
 
 \setDocCompact{true}
 
-\title{LVV-P106 Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
+\title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{\vcsDate}
-\author{Jeffrey Carlin}
+\date{ 2023-07-07 }
+\author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
 
+
 \setDocAbstract{
-This is the test plan and report for the \textbf{ Data Management Acceptance Test Campaign, Fall 2023},
-a test campaign to verify Data Management Subsystem requirements. This document is primarily based on content automatically extracted from the Jira test database on \docDate. The most recent change to the document repository was on \docDate.
+This is the test plan and report for
+\textbf{ Data Management Acceptance Test Campaign, Fall 2023},
+an LSST milestone pertaining to the Data Management Subsystem.\\
+This document is based on content automatically extracted from the Jira test database on \docDate.
+The most recent change to the document repository was on \vcsDate.
 }
+
 
 \maketitle
 
 \section{Introduction}
-Use the GitHub Actions workflow ``docgen from Jira'' to generate this document's content from Jira.
+\label{sect:intro}
+
+
+\subsection{Objectives}
+\label{sect:objectives}
+
+ The primary goal of this DM acceptance test campaign will be to verify
+priority 1a DMSR (\citeds{LSE-61}) requirements that have not been verified as
+part of prior testing and milestones. Any priority 1b, 2, or 3
+requirements that have been completed will also be verified.
+
+
+
+\subsection{System Overview}
+\label{sect:systemoverview}
+
+ This test campaign is intended to verify that the DM system satisfies at
+least half of the priority 1a requirements outlined in the Data
+Management System Requirements (DMSR;
+\href{https://lse-61.lsst.io/}{LSE-61} ), ensuring that we are
+progressing toward readiness for the installation and operation of
+LSSTCam. Additional DMSR requirements will be verified in later
+Acceptance Test Campaigns.\\[2\baselineskip]\textbf{Applicable
+Documents:}\\
+\citeds{LSE-61}: Data Management System (DMS) Requirements\\
+\citeds{LDM-503} Data Management Test Plan\\
+\citeds{LDM-639}: Data Management Acceptance Test
+Specification\\[2\baselineskip]Tests in this campaign will use data
+products and artifacts from Data Preview 0.2, which consists of DESC
+Data Challenge 2 (DC2) simulated data reprocessed using the LSST Science
+Pipelines. Additional on-sky data from auxTel imaging campaigns, and
+camera test-stand data, will be used when appropriate.
+
+
+\subsection{Document Overview}
+\label{sect:docoverview}
+
+This document was generated from Jira, obtaining the relevant information from the
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P106}{LVV-P106}
+~Jira Test Plan and related Test Cycles (
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260}
+).
+
+Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}),
+the applicable documentation, and explains how this document is organized.
+Section \ref{sect:testplan} provides additional information about the test plan, like for example the configuration
+used for this test or related documentation.
+Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
+
+Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary},
+an overall assessment statement and suggestions for possible improvements.
+Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
+
+The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P106}{LVV-P106} in Jira is \textbf{ Draft }.
 
 \subsection{References}
 \label{sect:references}
@@ -40,5 +111,1899 @@ Use the GitHub Actions workflow ``docgen from Jira'' to generate this document's
 \bibliography{lsst,refs,books,refs_ads,local}
 
 
-\input{appendix}
+\newpage
+\section{Test Plan Details}
+\label{sect:testplan}
+
+
+\subsection{Data Collection}
+
+  Observing is not required for this test campaign.
+
+\subsection{Verification Environment}
+\label{sect:hwconf}
+  Most testing will be performed using the Rubin Science Platform (RSP)
+and the development cluster at the USDF. In particular, we will use
+version 26 of the Pipelines for most tests; some tests will use more
+recent weekly builds of the Pipelines.
+
+
+
+
+\subsection{Related Documentation}
+
+
+No additional documentation provided.
+
+
+\subsection{PMCS Activity}
+
+Primavera milestones related to the test campaign:
+\begin{itemize}
+\item None
+\end{itemize}
+
+
+\newpage
+\section{Personnel}
+\label{sect:personnel}
+
+The personnel involved in the test campaign is shown in the following table.
+
+{\small
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{6cm}}
+\hline
+\multicolumn{2}{r}{T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P106}{LVV-P106} owner:} &
+\multicolumn{2}{l}{\textbf{ Jeffrey Carlin } }\\\hline
+\multicolumn{2}{r}{T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260} owner:} &
+\multicolumn{2}{l}{\textbf{
+Jeffrey Carlin }
+} \\\hline
+\textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{LVV-T142}
+& {\small Leanne Guy } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1748}{LVV-T1748}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1759}{LVV-T1759}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1758}{LVV-T1758}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T149}{LVV-T149}
+& {\small Leanne Guy } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T40}{LVV-T40}
+& {\small Jim Bosch } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T129}{LVV-T129}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T115}{LVV-T115}
+& {\small Kian-Tat Lim } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1862}{LVV-T1862}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T89}{LVV-T89}
+& {\small Robert Lupton } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T88}{LVV-T88}
+& {\small Robert Lupton } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T85}{LVV-T85}
+& {\small Robert Lupton } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T83}{LVV-T83}
+& {\small Robert Lupton } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\end{longtable}
+}
+
+\newpage
+
+\section{Test Campaign Overview}
+\label{sect:overview}
+
+\subsection{Summary}
+\label{sect:summarytable}
+
+{\small
+\begin{longtable}{p{2cm}cp{2.3cm}p{8.6cm}p{2.3cm}}
+\toprule
+\multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P106}{LVV-P106}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Draft \\\hline
+\multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Not Executed \\\hline
+\textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{LVV-T142}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1748}{LVV-T1748}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1759}{LVV-T1759}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1758}{LVV-T1758}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T149}{LVV-T149}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T40}{LVV-T40}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T129}{LVV-T129}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T115}{LVV-T115}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1862}{LVV-T1862}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T89}{LVV-T89}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T88}{LVV-T88}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T85}{LVV-T85}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T83}{LVV-T83}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\caption{Test Campaign Summary}
+\label{table:summary}
+\end{longtable}
+}
+
+\subsection{Overall Assessment}
+\label{sect:overallassessment}
+
+Not yet available.
+
+\subsection{Recommended Improvements}
+\label{sect:recommendations}
+
+Not yet available.
+
+\newpage
+\section{Detailed Test Results}
+\label{sect:detailedtestresults}
+
+\subsection{Test Cycle LVV-C260 }
+
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C260}{Data Management Acceptance Test Campaign, Fall 2023}} in Jira.
+
+Test Cycle name: Data Management Acceptance Test Campaign, Fall 2023\\
+Status: Not Executed
+
+This test cycle verifies a subset of
+\href{https://lse-61.lsst.io/}{DMSR} (\citeds{LSE-61}) requirements in order to
+verify their completion and readiness for LSST Operations (i.e., that
+the requirements laid out in \citeds{LSE-61} have been met by the DM Systems).
+Testing will use data products and artifacts from Data Preview 0.2
+reprocessing of DESC DC2 data, Auxtel data, and other data products
+housed at the U.S. Data Facility (USDF).
+
+\subsubsection{Software Version/Baseline}
+Primarily using Science Pipelines version 26 at the USDF.~
+
+\subsubsection{Configuration}
+Not provided.
+
+\subsubsection{Test Cases in LVV-C260 Test Cycle}
+
+\paragraph{ LVV-T142 - Verify implementation of Production Fault Tolerance }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Draft}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{\textit{ LVV-T142 } }
+test case in Jira.
+
+Demonstrate production systems report faults in pipeline executions and
+that system is able to recover. ~Where recovery can mean the ability to
+provide production artifacts for examination, return production elements
+ready for subsequent use, and/or reset and repeat production attempts.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute AP and DRP, simulate failures, observe correct processing
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T1748 - Verify calculation of median error in absolute position for RA, Dec axes }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Approved}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1748}{\textit{ LVV-T1748 } }
+test case in Jira.
+
+Verify that the DM system has provided the code to calculate the median
+error in absolute position for each axis, RA and DEC, and assess whether
+it meets the requirement that it shall be less than \textbf{AA1 = 50
+milliarcseconds}.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset that has been ingested into a Butler repository.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute `faro` on a repository containing processed data. Identify the
+path to the data, which we will call `DATA/path', then execute something
+similar to the following (with paths, datasets, and flags replaced or
+additionally specified as needed):
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+pipetask --long-log run -j 2 -b DATA/path/butler.yaml
+--register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
+-d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
+AND instrument='HSC''' --output u/username/faro\_metrics -i
+HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
+w06\_2021\_tract9813\_faro.txt
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The output collection (in this case, ``u/username/faro\_metrics'')
+containing metric measurements and any associated extras and metadata is
+available via the butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the metric AA1 has been calculated, and that its values are
+reasonable.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that AA1 has been calculated.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T1759 - Verify that the repeatability outlier limit for isolated bright
+non-saturated point sources in the g, r, and i filters (PA2gri) can be
+applied. }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Approved}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1759}{\textit{ LVV-T1759 } }
+test case in Jira.
+
+Verify that the DM system has provided the code to apply the
+repeatability outlier limit for isolated bright non-saturated point
+sources in the g, r, and i filters(PA2gri) to to computed values of the
+PF1 metric.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset containing at least one field in each of the g, r,
+and i filters with multiple overlapping visits.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset that has been ingested into a Butler repository.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute `faro` on a repository containing processed data. Identify the
+path to the data, which we will call `DATA/path', then execute something
+similar to the following (with paths, datasets, and flags replaced or
+additionally specified as needed):
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+pipetask --long-log run -j 2 -b DATA/path/butler.yaml
+--register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
+-d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
+AND instrument='HSC''' --output u/username/faro\_metrics -i
+HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
+w06\_2021\_tract9813\_faro.txt
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The output collection (in this case, ``u/username/faro\_metrics'')
+containing metric measurements and any associated extras and metadata is
+available via the butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the PA2gri threshold has been applied to the assessment of
+the computed values of PF1 for filters g,r,i.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PA2gri has been calculated (and that it used PF1).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T1758 - Verify that the repeatability outlier limit for isolated bright
+non-saturated point sources in the u, z, and y filters (PA2uzy) can be
+applied. }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Approved}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1758}{\textit{ LVV-T1758 } }
+test case in Jira.
+
+Verify that the DM system has provided the code to apply the
+repeatability outlier limit for isolated bright non-saturated point
+sources in the u, z, and y filters(PA2uzy) to to computed values of the
+PF1 metric.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset containing at least one field in each of the u, z,
+and y filters with multiple overlapping visits.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset that has been ingested into a Butler repository.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute `faro` on a repository containing processed data. Identify the
+path to the data, which we will call `DATA/path', then execute something
+similar to the following (with paths, datasets, and flags replaced or
+additionally specified as needed):
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+pipetask --long-log run -j 2 -b DATA/path/butler.yaml
+--register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
+-d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
+AND instrument='HSC''' --output u/username/faro\_metrics -i
+HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
+w06\_2021\_tract9813\_faro.txt
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The output collection (in this case, ``u/username/faro\_metrics'')
+containing metric measurements and any associated extras and metadata is
+available via the butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the PA2uzy threshold has been applied to the assessment of
+the computed values of PF1 for filters u,z,y.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PA2uzy has been calculated (and that it used PF1).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T149 - Verify implementation of Catalog Queries }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Approved}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T149}{\textit{ LVV-T149 } }
+test case in Jira.
+
+Verify that SQL, or a similar structured language, can be used to query
+catalogs.
+
+\textbf{ Preconditions}:\\
+An operational QSERV database that has been verified via
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1085}{LVV-T1085}
+and
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1086}{LVV-T1086}
+and
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1087}{LVV-T1087}.
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute a simple query (for example, the one below) and confirm that it
+returns the expected result.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+SELECT * FROM Object WHERE qserv\_areaspec\_box(316.582327, −6.839078,
+316.653938, −6.781822)
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A catalog of objects satisfying the specified constraints.~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the query from all available access routes (e.g., an external VO
+client, internal DM tools on the development cluster, the Science
+Platform query tool, and from within the Notebook Aspect), confirming in
+each case that the results are as expected.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T40 - Verify implementation of Generate WCS for Visit Images }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Approved}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T40}{\textit{ LVV-T40 } }
+test case in Jira.
+
+Verify that Processed Visit Images produced by the AP and DRP pipelines
+include FITS WCS accurate to specified \textbf{astrometricAccuracy} over
+the bounds of the image.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify an appropriate processed dataset for this test.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset with Processed Visit Images available.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Select a single visit from the dataset, and extract its WCS object and
+the source list.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A table containing detected sources, and a WCS object associated with
+that catalog.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that each CCD within the visit image contains at
+least~\textbf{astrometricMinStandards~}astrometric standards that were
+used in deriving the astrometric solution.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
+used in determining the WCS solution.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Starting from the XY pixel coordinates of the sources, apply the WCS to
+obtain RA, Dec coordinates.\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A list of RA, Dec coordinates for all sources in the catalog.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+We will assume that Gaia provides a source of ``truth.'' Match the
+source list to Gaia DR2, and calculate the positional offset between the
+test data and the Gaia catalog.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A matched catalog of sources in common between the test source list and
+Gaia DR2.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 7 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Apply appropriate cuts to extract the optimal dataset for comparison,
+then calculate statistics (median, 1-sigma range, etc.; also plot a
+histogram) of the offsets in milliarcseconds. Confirm that the offset is
+less than \textbf{astrometricAccuracy}.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Histogram and relevant statistics needed to confirm that the WCS
+transformation is accurate.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 8 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat Step 5, but for subregions of the image, to confirm that the
+accuracy criterion is met at all positions.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+\textbf{astrometricAccuracy~}requirement is met over the entire image.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T129 - Verify implementation of Provide Calibrated Photometry }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Approved}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T129}{\textit{ LVV-T129 } }
+test case in Jira.
+
+Verify that the DMS provides photometry calibrated in AB mags and fluxes
+(in nJy) for all measured objects and sources. Must be tested for both
+DRP and AP products.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Ingest the data products from an appropriate DRP-processed dataset.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that AB-calibrated magnitudes and fluxes are available for all
+measured Sources and Objects. {[}An enhanced verification could include
+matching the sources to an external source catalog and comparing the
+magnitudes to show that they are well-calibrated.{]}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Calibrated fluxes and magnitudes are available for all sources, as well
+as tools to convert measured fluxes to magnitudes (and vice-versa).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Ingest the data products from an appropriate AP processing dataset.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that AB-calibrated magnitudes and fluxes are available for all
+measured Sources, DIASources, and Objects. {[}An enhanced verification
+could include matching the sources to an external source catalog and
+comparing the magnitudes to show that they are well-calibrated.{]}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Calibrated fluxes and magnitudes are available for all Sources,
+DIASources, and Objects, as well as tools to convert measured fluxes to
+magnitudes (and vice-versa).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T115 - Verify implementation of Calibration Production Processing }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Approved}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T115}{\textit{ LVV-T115 } }
+test case in Jira.
+
+Execute CPP on a variety of representative cadences, and verify that the
+calibration pipeline correctly produces necessary calibration products.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a suitable set of calibration frames, including biases, dark
+frames, and flat-field frames.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the expected data products are created, and that they have
+the expected properties.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Repos containing valid calibration products that are well-formed and
+ready to be applied to processed datasets.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T1862 - Verify determining effectiveness of dark current frame }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Draft}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1862}{\textit{ LVV-T1862 } }
+test case in Jira.
+
+Verify that the DMS can determine the effectiveness of a dark correction
+and determine how often it should be updated.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to a dataset containing dark frames (i.e., exposures
+taken with the shutter closed).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Determining whether the dark correction is being done properly will
+require on-sky science data. The dark correction can be applied to these
+frames and the results inspected to ensure that the correction was
+correctly measured and applied.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Applying the dark correction to a dataset produces noticeable
+differences between the original frame(s) and the corrected outputs.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T89 - Verify implementation of Calibration Image Provenance }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Defined}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T89}{\textit{ LVV-T89 } }
+test case in Jira.
+
+Verify that the DMS records the required provenance information for the
+Calibration Data Products.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Ingest an appropriate precursor calibration dataset into a Butler repo.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Load the relevant database/Butler data product, and observe that all
+provenance information has been retained.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset consisting of calibration images, with provenance information
+recorded and properly associated with the calibration images.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T88 - Verify implementation of Calibration Data Products }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Defined}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T88}{\textit{ LVV-T88 } }
+test case in Jira.
+
+Verify that the DMS can produce and archive the required Calibration
+Data Products: cross talk correction, bias, dark, monochromatic dome
+flats, broad-band flats, fringe correction, and illumination
+corrections.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a suitable set of calibration frames, including biases, dark
+frames, and flat-field frames.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the expected data products are created, and that they have
+the expected properties.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A full set of calibration data products has been created, and they are
+well-formed.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Test that the calibration products are archived, and can readily be
+applied to science data to produce the desired corrections.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation that application of the calibration products to processed
+data has the desired effects.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T85 - Verify implementation of Crosstalk Correction Matrix }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Defined}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T85}{\textit{ LVV-T85 } }
+test case in Jira.
+
+Verify that the DMS can generate a cross-talk correction matrix from
+appropriate calibration data.\\
+Verify that the DMS can measure the effectiveness of the cross-talk
+correction matrix.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify an appropriate calibration dataset that can be used to derive
+the crosstalk correction matrix.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the crosstalk correction matrix is produced and persisted.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A correction matrix quantifying what fraction of the signal detected in
+any given amplifier on each sensor in the focal plane appears in any
+other amplifier.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Apply the crosstalk correction to simulated images, and confirm that the
+correction is performing as expected.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A noticeable difference between images before and after applying the
+correction.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T83 - Verify implementation of Bad Pixel Map }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Defined}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T83}{\textit{ LVV-T83 } }
+test case in Jira.
+
+Verify that the DMS can produce a map of detector pixels that suffer
+from pathologies, and that these pathologies are encoded in at least
+32-bit values.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Interrogate the calibRegistry for the metadata associated with a bad
+pixel map, where the validity range contains the date of interest.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A bad pixel map for the requested date has been returned.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check that the bad pixel pathologies are encoded as at least 32-bit
+values, and that the various pathologies are represented by different
+encoding.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Bad pixel values can be decoded to determine their pathologies using
+their 32-bit values.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+
+
+\input{appendix.tex}
 \end{document}
