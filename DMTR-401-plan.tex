@@ -31,7 +31,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan }
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2023-07-07 }
+\date{ 2023-07-08 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -157,6 +157,78 @@ The personnel involved in the test campaign is shown in the following table.
 Jeffrey Carlin }
 } \\\hline
 \textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2177}{LVV-T2177}
+& {\small Leanne Guy } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1755}{LVV-T1755}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2176}{LVV-T2176}
+& {\small Leanne Guy } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1754}{LVV-T1754}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T376}{LVV-T376}
+& {\small Leanne Guy } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{LVV-T1946}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{LVV-T1947}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T28}{LVV-T28}
+& {\small Colin Slater } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T124}{LVV-T124}
+& {\small Jeffrey Carlin } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{LVV-T142}
 & {\small Leanne Guy } & {\small  } &
 \begin{minipage}[]{6cm}
@@ -280,6 +352,33 @@ Jeffrey Carlin }
 \multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260}:} &
 \multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Not Executed \\\hline
 \textbf{Test Cases} &  \textbf{Ver.}  \\\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2177}{LVV-T2177}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1755}{LVV-T1755}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2176}{LVV-T2176}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1754}{LVV-T1754}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T376}{LVV-T376}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{LVV-T1946}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{LVV-T1947}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T28}{LVV-T28}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T124}{LVV-T124}
+&  1
+\\
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{LVV-T142}
 &  1
 \\
@@ -359,6 +458,873 @@ Primarily using Science Pipelines version 26 at the USDF.~
 Not provided.
 
 \subsubsection{Test Cases in LVV-C260 Test Cycle}
+
+\paragraph{ LVV-T2177 - Per-image limit on the median residual ellipticity correlations at
+scales less than to 5 arcmin. }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2177}{\textit{ LVV-T2177 } }
+test case in Jira.
+
+Verify that the per-image limit on the median residual ellipticity
+correlations at scales less than 5 arcmin (TE3) can be configured in the
+DMS and applied to the appropriate metrics.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check that the correct value for the TE3 threshold has been encoded in
+the faro package.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T1755 - Verify calculation of residual PSF ellipticity correlations for
+separations less than 1 arcmin }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1755}{\textit{ LVV-T1755 } }
+test case in Jira.
+
+Verify that the DM system has provided the code to calculate the median
+residual PSF ellipticity correlations averaged over an arbitrary field
+of view for separations less than 1 arcmin, and assess whether it meets
+the requirement that it shall be no greater than \textbf{TE1 =
+2.0e-5{[}arcminuteSeparationCorrelation{]}.}
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset that has been ingested into a Butler repository.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute `faro` on a repository containing processed data. Identify the
+path to the data, which we will call `DATA/path', then execute something
+similar to the following (with paths, datasets, and flags replaced or
+additionally specified as needed):
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+pipetask --long-log run -j 2 -b DATA/path/butler.yaml
+--register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
+-d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
+AND instrument='HSC''' --output u/username/faro\_metrics -i
+HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
+w06\_2021\_tract9813\_faro.txt
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The output collection (in this case, ``u/username/faro\_metrics'')
+containing metric measurements and any associated extras and metadata is
+available via the butler.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the metric TE1 has been calculated, and that its values are
+reasonable.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that TE1 has been calculated.
+
+}
+
+\paragraph{ LVV-T2176 - Per-image limit on the median residual ellipticity correlations at
+scales greater than or equal to 5 arcmin. }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2176}{\textit{ LVV-T2176 } }
+test case in Jira.
+
+Verify that the per-image limit on the median residual ellipticity
+correlations at scales greater than or equal to 5 arcmin (TE4) can be
+configured in the DMS and applied to the appropriate metrics
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check that the correct value for the TE4 threshold has been encoded in
+the faro package.\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T1754 - Verify calculation of residual PSF ellipticity correlations for
+separations greater than or equal to 5 arcmin }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1754}{\textit{ LVV-T1754 } }
+test case in Jira.
+
+Verify that the DM system has provided the code to calculate the median
+residual PSF ellipticity correlations averaged over an arbitrary field
+of view for separations greater than or equal to 5 arcmin, and assess
+whether it meets the requirement that it shall be no greater than
+\textbf{TE2 = 1.0e-7{[}arcminuteSeparationCorrelation{]}.}
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset that has been ingested into a Butler repository.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute `faro` on a repository containing processed data. Identify the
+path to the data, which we will call `DATA/path', then execute something
+similar to the following (with paths, datasets, and flags replaced or
+additionally specified as needed):
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+pipetask --long-log run -j 2 -b DATA/path/butler.yaml
+--register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
+-d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
+AND instrument='HSC''' --output u/username/faro\_metrics -i
+HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
+w06\_2021\_tract9813\_faro.txt
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The output collection (in this case, ``u/username/faro\_metrics'')
+containing metric measurements and any associated extras and metadata is
+available via the butler.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the metric TE2 has been calculated, and that its values are
+reasonable.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that TE2 has been calculated.
+
+}
+
+\paragraph{ LVV-T376 - Verify the Calculation of Ellipticity Residuals and Correlations }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T376}{\textit{ LVV-T376 } }
+test case in Jira.
+
+Verify that the DMS includes software to enable the calculation of the
+ellipticity residuals and correlation metrics defined in the OSS.~
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Point the butler to an appropriate (precursor or simulated) dataset
+containing data in all filters, that is sufficient for the purposes of
+measuring astrometric performance metrics.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute the LSST Stack package `validate\_drp` (or an alternate package
+that is relevant) on this dataset to perform the measurements of the
+metrics.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Measurements of validation metrics and the presence of QA plots
+resulting from the validation pipeline.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Compare measured ellipticity correlations to known (for simulated data)
+or measured (if using precursor data) values from input (precursor or
+simulated) data, and confirm that the output values for all of the
+ellipticity performance metrics are as expected.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Measured ellipticity metrics that are within reasonable values given the
+(known) input dataset.
+
+}
+
+\paragraph{ LVV-T1946 - Verify implementation of measurements in catalogs from coadds }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{\textit{ LVV-T1946 } }
+test case in Jira.
+
+Verify that source measurements in catalogs containing measurements from
+coadd images are in flux units.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate processed precursor dataset containing
+coadds with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the coadd catalog provides measurements in flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+
+\paragraph{ LVV-T1947 - Verify implementation of measurements in catalogs from difference images }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{\textit{ LVV-T1947 } }
+test case in Jira.
+
+Verify that source measurements in catalogs containing measurements from
+difference images are in flux units.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate processed precursor dataset containing
+difference images with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the difference image source catalog provides measurements in
+flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+
+\paragraph{ LVV-T28 - Verify implementation of measurements in catalogs from PVIs }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T28}{\textit{ LVV-T28 } }
+test case in Jira.
+
+Verify that source measurements in catalogs containing measurements from
+processed visit images are in flux units.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate processed precursor dataset containing
+coadds with the Butler.~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the single-visit catalog provides measurements in flux
+units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+
+\paragraph{ LVV-T124 - Verify implementation of Software Architecture to Enable Community
+Re-Use }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T124}{\textit{ LVV-T124 } }
+test case in Jira.
+
+Show that the LSST software is capable of being executed in multiple
+contexts: single user instance, batch processing, continuous
+integration.\\
+Also show that the algorithms can be reconfigured and, if desired,
+completely replaced at run time.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Using curated test datasets for multiple precursor instruments, verify
+and log that the prototype DRP pipelines execute successfully in three
+contexts:\\
+1. The CI system\\
+2. On a single user system: laptop, desktop, or notebook running in the
+Notebook aspect of the LSP.\\
+3. Project workflow system.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Using a template testing notebook in the Notebook aspect of the LSP,
+verify and log the following:\\
+1. Individual pipeline steps (tasks) are importable and executable on
+their own. ~this is not comprehensive, but demonstrative.\\
+2. Individual pipeline steps may be overridden by configuration.\\
+3. Users can implement a custom pipeline step and insert i into the
+processing flow via configuration.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Read the resulting dataset using the Bulter, and confirm that it
+produced the desired data products.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 6  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Run subset of full DRP from previous step on an individual node. ~Was
+this organizationally easy? ~Did the performance scale appropriately?
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 7  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Re-run aperture correction on subset. ~Verify that same results as DRP
+run are achieved.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 8  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Re-run photometric redshift estimation algorithm on subset coadd
+catalogs. ~Verify that same results are achieved as from full DRP.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
 
 \paragraph{ LVV-T142 - Verify implementation of Production Fault Tolerance }\mbox{}\\
 
