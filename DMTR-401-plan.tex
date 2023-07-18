@@ -31,7 +31,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan }
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2023-07-10 }
+\date{ 2023-07-18 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -157,8 +157,16 @@ The personnel involved in the test campaign is shown in the following table.
 Jeffrey Carlin }
 } \\\hline
 \textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T191}{LVV-T191}
-& {\small Robert Gruendl [X] } & {\small  } &
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{LVV-T97}
+& {\small Kian-Tat Lim } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T183}{LVV-T183}
+& {\small Gregory Dubois-Felsmann } & {\small  } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -360,7 +368,10 @@ Jeffrey Carlin }
 \multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260}:} &
 \multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Not Executed \\\hline
 \textbf{Test Cases} &  \textbf{Ver.}  \\\toprule
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T191}{LVV-T191}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{LVV-T97}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T183}{LVV-T183}
 &  1
 \\
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2177}{LVV-T2177}
@@ -470,14 +481,14 @@ Not provided.
 
 \subsubsection{Test Cases in LVV-C260 Test Cycle}
 
-\paragraph{ LVV-T191 - Verify implementation of Commissioning Cluster }\mbox{}\\
+\paragraph{ LVV-T97 - Verify implementation of Uniqueness of IDs Across Data Releases }\mbox{}\\
 
 Version \textbf{1}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T191}{\textit{ LVV-T191 } }
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{\textit{ LVV-T97 } }
 test case in Jira.
 
-Verify that the Commissioning Cluster has sufficient Compute/Storage/LAN
-at the Base Facility to support Commissioning.
+Verify that the IDs of Objects, Sources, DIAObjects, and DIASources from
+different Data Releases are unique.
 
 \textbf{ Preconditions}:\\
 
@@ -493,12 +504,160 @@ Step 1  \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Analyze design and budget
+Identify an appropriate precursor dataset to be processed through Data
+Release Production.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Process data with the Data Release Production payload, starting from raw
+science images and generating science data products, placing them in the
+Data Backbone.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+After running the DRP payload multiple times, load the resulting data
+products (both data release and prompt products) using the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Multiple datasets resulting from processing of the same input data.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Inspect the IDs in the multiple data products and confirm that all IDs
+are unique.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+No IDs are repeated between multiple processings of the identical input
+dataset.
+
+}
+
+\paragraph{ LVV-T183 - Verify implementation of DMS Communication with OCS }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T183}{\textit{ LVV-T183 } }
+test case in Jira.
+
+Verify that the DMS at the Base Facility can receive commands from the
+OCS and send command responses, events, and telemetry back. ~Verified by
+Early Integration activities and during AuxTel commissioning.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+From the Base Site, connect to the (simulated) OCS telemetry stream.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Send a command to the OCS, and observe that the command has been
+executed.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation that the OCS command successfully executed.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Extract information from the telemetry being broadcast by the OCS, and
+ensure that these data are readable.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A readable extract from the OCS telemetry stream.
 
 }
 
