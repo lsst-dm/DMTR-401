@@ -157,6 +157,22 @@ The personnel involved in the test campaign is shown in the following table.
 Jeffrey Carlin }
 } \\\hline
 \textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T132}{LVV-T132}
+& {\small Robert Gruendl [X] } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T62}{LVV-T62}
+& {\small Jim Bosch } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T168}{LVV-T168}
 & {\small Robert Gruendl [X] } & {\small  } &
 \begin{minipage}[]{6cm}
@@ -384,6 +400,12 @@ Jeffrey Carlin }
 \multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260}:} &
 \multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Not Executed \\\hline
 \textbf{Test Cases} &  \textbf{Ver.}  \\\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T132}{LVV-T132}
+&  1
+\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T62}{LVV-T62}
+&  2
+\\
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T168}{LVV-T168}
 &  1
 \\
@@ -502,6 +524,142 @@ Primarily using Science Pipelines version 26 at the USDF.~
 Not provided.
 
 \subsubsection{Test Cases in LVV-C260 Test Cycle}
+
+\paragraph{ LVV-T132 - Verify implementation of Pre-cursor and Real Data }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T132}{\textit{ LVV-T132 } }
+test case in Jira.
+
+Demonstrate that pixel-oriented data from astronomical imaging cameras
+(precursor or otherwise) can be processed using LSST Science Algorithms
+and organized for access through the Data Butler Access Client. ~
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the CI jobs used to test DRP processing successfully run.
+These jobs use precursor datasets from cameras other than LSST.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+For the precursor dataset, instantiate the Butler, load the data
+products, and confirm that they exist as expected.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Processed images, catalogs, calibration information, and other related
+data products are present and accessible via the Butler.
+
+}
+
+\paragraph{ LVV-T62 - Verify implementation of Provide PSF for Coadded Images }\mbox{}\\
+
+Version \textbf{2}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T62}{\textit{ LVV-T62 } }
+test case in Jira.
+
+Verify that all coadd images produced by the DRP pipelines include a
+model from which an image of the PSF at any point on the coadd can be
+obtained.
+
+\textbf{ Preconditions}:\\
+Fully covered by preconditions for
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T16}{LVV-T16}.
+
+Final comment:\\
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset with coadded images in multiple filters.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Multi-band data that has been processed through the coaddition stage.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Load the exposures, then select Objects classified as point sources on
+at least 10 different coadd images (including all bands). Evaluate the
+PSF model at the positions of these Objects, and verify that subtracting
+a scaled version of the PSF model from the processed visit image yields
+residuals consistent with pure noise.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Images with the PSF model subtracted, leaving only residuals that are
+consistent with being noise.
+
+}
 
 \paragraph{ LVV-T168 - Verify design of Data Access Services allows Evolution of the LSST Data
 Model }\mbox{}\\
