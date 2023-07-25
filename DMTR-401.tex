@@ -1,6 +1,6 @@
 % generated from JIRA project LVV
 % using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.7/site-packages/docsteady/templates/tpr.latex.jinja2.
-% using docsteady version 2.4
+% using docsteady version 2.4.1
 % Please do not edit -- update information in Jira instead
 \documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
 \usepackage{geometry}
@@ -32,7 +32,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2023-07-18 }
+\date{ 2023-07-25 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -160,6 +160,22 @@ The personnel involved in the test campaign is shown in the following table.
 Jeffrey Carlin }
 } \\\hline
 \textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T168}{LVV-T168}
+& {\small Robert Gruendl [X] } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T41}{LVV-T41}
+& {\small Jim Bosch } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{LVV-T97}
 & {\small Kian-Tat Lim } & {\small  } &
 \begin{minipage}[]{6cm}
@@ -371,6 +387,24 @@ Jeffrey Carlin }
 \multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260}:} &
 \multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Not Executed \\\hline
 \textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T168}{LVV-T168}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T41}{LVV-T41}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{LVV-T97}
 &  1
 & Not Executed &
@@ -628,6 +662,146 @@ Primarily using Science Pipelines version 26 at the USDF.~
 Not provided.
 
 \subsubsection{Test Cases in LVV-C260 Test Cycle}
+
+\paragraph{ LVV-T168 - Verify design of Data Access Services allows Evolution of the LSST Data
+Model }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Draft}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T168}{\textit{ LVV-T168 } }
+test case in Jira.
+
+Verify that the design of the Data Access Services are able to
+accommodate changes/evolution of the LSST data model from one release to
+another.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Delegate to LSP
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+
+\paragraph{ LVV-T41 - Verify implementation of Generate PSF for Visit Images }\mbox{}\\
+
+Version \textbf{1}.
+Status \textbf{Approved}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T41}{\textit{ LVV-T41 } }
+test case in Jira.
+
+Verify that Processed Visit Images produced by the DRP and AP pipelines
+are associated with a model from which one can obtain an image of the
+PSF given a point on the image.
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset with processed visit images in multiple filters.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Select Objects classified as point sources on at least 10 different
+processed visit images (including all bands). ~Evaluate the PSF model at
+the positions of these Objects, and verify that subtracting a scaled
+version of the PSF model from the processed visit image yields residuals
+consistent with pure noise.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Images with the PSF model subtracted, leaving only residuals that are
+consistent with being noise.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
 
 \paragraph{ LVV-T97 - Verify implementation of Uniqueness of IDs Across Data Releases }\mbox{}\\
 
