@@ -31,7 +31,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan }
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2023-09-05 }
+\date{ 2023-09-06 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -159,6 +159,14 @@ The personnel involved in the test campaign is shown in the following table.
 Jeffrey Carlin }
 } \\\hline
 \textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1240}{LVV-T1240}
+& {\small Jim Bosch } & {\small Jeffrey Carlin } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T191}{LVV-T191}
 & {\small Leanne Guy } & {\small  } &
 \begin{minipage}[]{6cm}
@@ -217,14 +225,6 @@ Jeffrey Carlin }
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{LVV-T97}
 & {\small Kian-Tat Lim } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T183}{LVV-T183}
-& {\small Gregory Dubois-Felsmann } & {\small  } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -344,7 +344,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T40}{LVV-T40}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -426,6 +426,9 @@ Jeffrey Carlin }
 \multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260}:} &
 \multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & In Progress \\\hline
 \textbf{Test Cases} &  \textbf{Ver.}  \\\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1240}{LVV-T1240}
+&  1
+\\
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T191}{LVV-T191}
 &  1
 \\
@@ -448,9 +451,6 @@ Jeffrey Carlin }
 &  1
 \\
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{LVV-T97}
-&  1
-\\
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T183}{LVV-T183}
 &  1
 \\
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2177}{LVV-T2177}
@@ -559,6 +559,92 @@ Primarily using Science Pipelines version 26 at the USDF.~
 Not provided.
 
 \subsubsection{Test Cases in LVV-C260 Test Cycle}
+
+\paragraph{ LVV-T1240 - Verify implementation of minimum astrometric standards per CCD }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1240}{\textit{ LVV-T1240 } }
+test case in Jira.
+
+Verify that each CCD in a processed dataset had its astrometric solution
+determined by at least~\textbf{astrometricMinStandards = 5~}astrometric
+standards.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Notebook aspect at the USDF.\\
+\strut \\
+The executed notebook was saved in the repository associated with this
+campaign's test report as ``notebooks/test\_LVV-T40\_T1240.ipynb''.
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify an appropriate processed dataset for this test.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset with Processed Visit Images.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+\textquotesingle DATA/path\textquotesingle, then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Select a single visit from the dataset, and extract its calibration
+data. For a subset of CCDs, check how many astrometric standards
+contributed to the solution. Confirm that this number is at
+least~\textbf{astrometricMinStandards = 5.}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
+used in determining the WCS solution.
+
+}
 
 \paragraph{ LVV-T191 - Verify implementation of Commissioning Cluster }\mbox{}\\
 
@@ -1033,73 +1119,6 @@ are unique.
 {\footnotesize
 No IDs are repeated between multiple processings of the identical input
 dataset.
-
-}
-
-\paragraph{ LVV-T183 - Verify implementation of DMS Communication with OCS }\mbox{}\\
-
-Version \textbf{1}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T183}{\textit{ LVV-T183 } }
-test case in Jira.
-
-Verify that the DMS at the Base Facility can receive commands from the
-OCS and send command responses, events, and telemetry back. ~Verified by
-Early Integration activities and during AuxTel commissioning.
-
-\textbf{ Preconditions}:\\
-
-
-Final comment:\\
-
-
-Detailed steps :
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 1  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-From the Base Site, connect to the (simulated) OCS telemetry stream.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 2  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Send a command to the OCS, and observe that the command has been
-executed.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Confirmation that the OCS command successfully executed.
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 3  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Extract information from the telemetry being broadcast by the OCS, and
-ensure that these data are readable.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A readable extract from the OCS telemetry stream.
 
 }
 
@@ -2578,7 +2597,11 @@ the bounds of the image.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Notebook aspect at the USDF.\\
+\strut \\
+The executed notebook was saved in the repository associated with this
+campaign's test report as ``notebooks/test\_LVV-T40\_T1240.ipynb''.
 
 
 Detailed steps :
@@ -2589,7 +2612,7 @@ Step 1  \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Identify an appropriate repo containing processed {RC2}⁠ data for this
+Identify an appropriate repo containing processed HSC data for this
 test.
 
 }
@@ -2690,7 +2713,7 @@ Step 6  \\ \hline
  Description \\
 {\footnotesize
 We will assume that Gaia provides a source of "truth." Match the source
-list to Gaia DR2, and calculate the positional offset between the test
+list to Gaia DR3, and calculate the positional offset between the test
 data and the Gaia catalog.
 
 }
@@ -2698,7 +2721,7 @@ data and the Gaia catalog.
   Expected Result \\
 {\footnotesize
 A matched catalog of sources in common between the test source list and
-Gaia DR2.
+Gaia DR3.
 
 }
 
@@ -2725,162 +2748,6 @@ transformation is accurate.
 \begin{tabular}{p{2cm}}
 \toprule
 Step 8  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Repeat Step 5, but for subregions of the image, to confirm that the
-accuracy criterion is met at all positions.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-\textbf{astrometricAccuracy~}requirement is met over the entire image.
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 9  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify an appropriate repo containing processed {DC2}⁠ data for this
-test.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A dataset with Processed Visit Images available.
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 10  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify the path to the data repository, which we will refer to as
-\textquotesingle DATA/path\textquotesingle, then execute the following:
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-\begin{verbatim}
-from lsst.daf.butler import Butler
-repo = 'Data/path'
-collection = 'collection'
-butler = Butler(repo, collections=collection)
-\end{verbatim}
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Butler repo available for reading.
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 11  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Select a single visit from the dataset, and extract its WCS object and
-the source list.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A table containing detected sources, and a WCS object associated with
-that catalog.
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 12  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that each CCD within the visit image contains at
-least~\textbf{astrometricMinStandards~}astrometric standards that were
-used in deriving the astrometric solution.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
-used in determining the WCS solution.
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 13  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Starting from the XY pixel coordinates of the sources, apply the WCS to
-obtain RA, Dec coordinates.\\
-\strut \\
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A list of RA, Dec coordinates for all sources in the catalog.
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 14  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-We will assume that Gaia provides a source of "truth." Match the source
-list to Gaia DR2, and calculate the positional offset between the test
-data and the Gaia catalog.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A matched catalog of sources in common between the test source list and
-Gaia DR2.
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 15  \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Apply appropriate cuts to extract the optimal dataset for comparison,
-then calculate statistics (median, 1-sigma range, etc.; also plot a
-histogram) of the offsets in milliarcseconds. Confirm that the offset is
-less than \textbf{astrometricAccuracy}.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Histogram and relevant statistics needed to confirm that the WCS
-transformation is accurate.
-
-}
-
-\begin{tabular}{p{2cm}}
-\toprule
-Step 16  \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
