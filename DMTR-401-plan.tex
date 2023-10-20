@@ -1,5 +1,5 @@
 % generated from JIRA project LVV
-% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.11/site-packages/docsteady/templates/tpnoresult.latex.jinja2.
+% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.12/site-packages/docsteady/templates/tpnoresult.latex.jinja2.
 % using docsteady version 0.0.0
 % Please do not edit -- update information in Jira instead
 \documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
@@ -31,7 +31,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan }
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2023-09-06 }
+\date{ 2023-10-20 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -304,7 +304,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{LVV-T142}
-& {\small Leanne Guy } & {\small  } &
+& {\small Colin Slater } & {\small  } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -320,7 +320,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1759}{LVV-T1759}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -328,7 +328,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1758}{LVV-T1758}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -573,7 +573,7 @@ standards.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\
 \strut \\
 The executed notebook was saved in the repository associated with this
@@ -935,7 +935,7 @@ PSF given a point on the image.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\
 \strut \\
 The executed notebook was saved in the repository associated with this
@@ -2093,7 +2093,122 @@ Step 1  \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute AP and DRP, simulate failures, observe correct processing
+Create a HTCondor Pool at USDF
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+allocateNodes.py -c 8 -m 4-00:00:00 -q roma,milano -g 900 s3df
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Submit a RC2-subset run using bps
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps submit -\/-output u/username/collectionname
+\$\{DRP\_PIPE\_DIR\}/drp\_pipe/pipelines/HSC/DRP-RC2\_subset.yaml
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Cancel the job while it is in progress
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps cancel {[}job id{]}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check that some output products are missing
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+butler query-datasets /repo/main -\/-collections
+u/username/collectionname
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Submit a new job to finish the tasks that were not completed
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps submit -\/-output u/username/collectionname \$\{DRP\_PIPE\_DIR\}
+drp\_pipe/pipelines/HSC/DRP-RC2\_subset.yaml
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 6  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that all expected files are now present
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+butler query-datasets /repo/main -\/-collections
+u/username/collectionname
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2255,7 +2370,8 @@ PF1 metric.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\This test used a modified version of the analysis\_tools pipeline
+"matchedVisitQualityCore.yaml."
 
 
 Detailed steps :
@@ -2330,8 +2446,8 @@ Step 3  \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute `faro` on a repository containing processed data. Identify the
-path to the data, which we will call
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call
 \textquotesingle DATA/path\textquotesingle, then execute something
 similar to the following (with paths, datasets, and flags replaced or
 additionally specified as needed):
@@ -2342,19 +2458,21 @@ additionally specified as needed):
 {\footnotesize
 pipetask -\/-long-log run -j 2 -b DATA/path/butler.yaml
 -\/-register-dataset-types -p
-\$FARO\_DIR/pipelines/metrics\_pipeline.yaml -d "band in
-(\textquotesingle g\textquotesingle, \textquotesingle r\textquotesingle,
-\textquotesingle i\textquotesingle) AND tract=9813 AND
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d "band
+in (\textquotesingle g\textquotesingle,
+\textquotesingle r\textquotesingle, \textquotesingle i\textquotesingle)
+AND tract=9813 AND
 skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
 instrument=\textquotesingle HSC\textquotesingle" -\/-output
-u/username/faro\_metrics -i HSC/runs/RC2/w\_2021\_06 2\textgreater\&1
-\textbar{} tee w06\_2021\_tract9813\_faro.txt
+u/username/atools\_metrics -i HSC/runs/RC2/w\_2023\_36 -\/-instrument
+lsst.obs.subaru.HyperSuprimeCam 2\textgreater\&1 \textbar{} tee
+w36\_2023\_tract9813\_atools.txt
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
-The output collection (in this case, "u/username/faro\_metrics")
+The output collection (in this case, "u/username/atools\_metrics")
 containing metric measurements and any associated extras and metadata is
 available via the butler.
 
@@ -2374,7 +2492,42 @@ the computed values of PF1 for filters g,r,i.
   Expected Result \\
 {\footnotesize
 A JSON file (and/or a report generated from that JSON file)
-demonstrating that PA2gri has been calculated (and that it used PF1).
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the value of the PA2 threshold in the pipeline yaml for
+analysis\_tools, then rerun analysis\_tools
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 6  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the new PA2 threshold has been applied when computing PF1.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
 
 }
 
@@ -2388,13 +2541,15 @@ test case in Jira.
 
 Verify that the DM system has provided the code to apply the
 repeatability outlier limit for isolated bright non-saturated point
-sources in the u, z, and y filters(PA2uzy) to to computed values of the
-PF1 metric.
+sources in the u, z, and y filters(PA2uzy) to computed values of the PF1
+metric.
 
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\Note that because we do not have access to u-band data, this test was
+performed for only y- and z-band. The steps would be unchanged for
+u-band data.
 
 
 Detailed steps :
@@ -2469,8 +2624,8 @@ Step 3  \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute `faro` on a repository containing processed data. Identify the
-path to the data, which we will call
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call
 \textquotesingle DATA/path\textquotesingle, then execute something
 similar to the following (with paths, datasets, and flags replaced or
 additionally specified as needed):
@@ -2481,19 +2636,21 @@ additionally specified as needed):
 {\footnotesize
 pipetask -\/-long-log run -j 2 -b DATA/path/butler.yaml
 -\/-register-dataset-types -p
-\$FARO\_DIR/pipelines/metrics\_pipeline.yaml -d "band in
-(\textquotesingle g\textquotesingle, \textquotesingle r\textquotesingle,
-\textquotesingle i\textquotesingle) AND tract=9813 AND
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d "band
+in (\textquotesingle g\textquotesingle,
+\textquotesingle r\textquotesingle, \textquotesingle i\textquotesingle)
+AND tract=9813 AND
 skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
 instrument=\textquotesingle HSC\textquotesingle" -\/-output
-u/username/faro\_metrics -i HSC/runs/RC2/w\_2021\_06 2\textgreater\&1
-\textbar{} tee w06\_2021\_tract9813\_faro.txt
+u/username/atools\_metrics -i HSC/runs/RC2/w\_2023\_36 -\/-instrument
+lsst.obs.subaru.HyperSuprimeCam 2\textgreater\&1 \textbar{} tee
+w36\_2023\_tract9813\_atools.txt
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
-The output collection (in this case, "u/username/faro\_metrics")
+The output collection (in this case, "u/username/atools\_metrics")
 containing metric measurements and any associated extras and metadata is
 available via the butler.
 
@@ -2513,7 +2670,42 @@ the computed values of PF1 for filters u,z,y.
   Expected Result \\
 {\footnotesize
 A JSON file (and/or a report generated from that JSON file)
-demonstrating that PA2uzy has been calculated (and that it used PF1).
+demonstrating that PF1 has been calculated (and that it used the
+requested PA2uzy threshold).
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the value of the PA2 threshold in the pipeline yaml for
+analysis\_tools, then rerun analysis\_tools
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 6  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the new PA2 threshold has been applied when computing PF1.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
 
 }
 
@@ -2597,7 +2789,7 @@ the bounds of the image.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\
 \strut \\
 The executed notebook was saved in the repository associated with this

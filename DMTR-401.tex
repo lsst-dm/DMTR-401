@@ -1,5 +1,5 @@
 % generated from JIRA project LVV
-% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.11/site-packages/docsteady/templates/tpr.latex.jinja2.
+% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.12/site-packages/docsteady/templates/tpr.latex.jinja2.
 % using docsteady version 0.0.0
 % Please do not edit -- update information in Jira instead
 \documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
@@ -34,7 +34,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2023-09-06 }
+\date{ 2023-10-20 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -309,7 +309,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{LVV-T142}
-& {\small Leanne Guy } & {\small  } &
+& {\small Colin Slater } & {\small  } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -325,7 +325,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1759}{LVV-T1759}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -333,7 +333,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1758}{LVV-T1758}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -436,7 +436,7 @@ Jeffrey Carlin }
 & Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-Test executed with science pipelines version w\_2023\_34 in the RSP
+Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\
 \strut \\
 The executed notebook was saved in the repository associated with this
@@ -507,7 +507,7 @@ campaign's test report as ``notebooks/test\_LVV-T62.ipynb''.
 & Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-Test executed with science pipelines version w\_2023\_34 in the RSP
+Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\
 \strut \\
 The executed notebook was saved in the repository associated with this
@@ -625,19 +625,22 @@ campaign's test report as ``notebooks/test\_LVV-T41.ipynb''.
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1759}{LVV-T1759}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+This test used a modified version of the analysis\_tools pipeline
+"matchedVisitQualityCore.yaml."
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1758}{LVV-T1758}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Note that because we do not have access to u-band data, this test was
+performed for only y- and z-band. The steps would be unchanged for
+u-band data.
 \medskip
 \end{minipage}
 &   \\\hline
@@ -656,7 +659,7 @@ notebook execution, we used science pipelines version w\_2023\_34.
 & Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-Test executed with science pipelines version w\_2023\_34 in the RSP
+Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\
 \strut \\
 The executed notebook was saved in the repository associated with this
@@ -785,7 +788,7 @@ standards.
 
 Execution status: {\bf Pass }
 
-Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\
 \strut \\
 The executed notebook was saved in the repository associated with this
@@ -875,7 +878,7 @@ used in determining the WCS solution.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
-This was done 1000 times, extracting the source list and WCS for 1000
+This was done 500 times, extracting the source list and WCS for 500
 randomly-selected CCD/visit combinations from the repository.\\
 \strut \\
 It was confirmed that all CCDs selected had more than
@@ -889,8 +892,8 @@ num\_calib\_astrom.append(np.size(astrom\_selection))\\
 \strut \\
 In the end, we calculate the fraction of fields that met this
 requirement, using:\\
-wcsFlagsPercent =
-(np.size(np.where(haswcs\_flags))/np.size(haswcs\_flags))*100.0*u.percent\\
+wcsFlagsPercent = (np.size(np.where(num\_calib\_astrom \textgreater{}
+5))/np.size(num\_calib\_astrom))*100.0*u.percent\\
 \strut \\
 The result (from the notebook) is:\\
 Percentage of fields with \textgreater{} astrometricMinStandards=5:
@@ -1287,7 +1290,7 @@ PSF given a point on the image.
 
 Execution status: {\bf Pass }
 
-Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\
 \strut \\
 The executed notebook was saved in the repository associated with this
@@ -1382,8 +1385,9 @@ CCD visit/detector combinations were selected at random and the
 corresponding dataIds (datarefs) created.\\
 \strut \\
 To extract the PSF, the following line was executed for each dataId:\\
-psf = c.getPsf()\\
-...where "c" is a calexp that has been retrieved from the butler.\\
+fvs.getPsf()\\
+...where "fvs" is the "finalVisitSummary" that has been retrieved from
+the butler.\\
 \strut \\
 A number of these were displayed at random X, Y positions on the images
 to confirm that they are well-formed and retrievable at any arbitrary
@@ -2693,7 +2697,142 @@ Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute AP and DRP, simulate failures, observe correct processing
+Create a HTCondor Pool at USDF
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+allocateNodes.py -c 8 -m 4-00:00:00 -q roma,milano -g 900 s3df
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Submit a RC2-subset run using bps
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps submit -\/-output u/username/collectionname
+\$\{DRP\_PIPE\_DIR\}/drp\_pipe/pipelines/HSC/DRP-RC2\_subset.yaml
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Cancel the job while it is in progress
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps cancel {[}job id{]}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check that some output products are missing
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+butler query-datasets /repo/main -\/-collections
+u/username/collectionname
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Submit a new job to finish the tasks that were not completed
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps submit -\/-output u/username/collectionname \$\{DRP\_PIPE\_DIR\}
+drp\_pipe/pipelines/HSC/DRP-RC2\_subset.yaml
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that all expected files are now present
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+butler query-datasets /repo/main -\/-collections
+u/username/collectionname
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2881,16 +3020,17 @@ PF1 metric.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\This test used a modified version of the analysis\_tools pipeline
+"matchedVisitQualityCore.yaml."
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2907,11 +3047,13 @@ A dataset that has been ingested into a Butler repository.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+For this test we use the most recent reprocessing of the Subaru+HSC RC2
+dataset. The data were processed with the w\_2023\_35 pipelines.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2958,16 +3100,19 @@ eups list -s
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Current weekly stack initialized:\\
+\textbf{lsst\_distrib} g4213664e8e+7835acb1bb w\_latest current
+w\_2023\_40 setup
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute `faro` on a repository containing processed data. Identify the
-path to the data, which we will call
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call
 \textquotesingle DATA/path\textquotesingle, then execute something
 similar to the following (with paths, datasets, and flags replaced or
 additionally specified as needed):
@@ -2978,19 +3123,21 @@ additionally specified as needed):
 {\footnotesize
 pipetask -\/-long-log run -j 2 -b DATA/path/butler.yaml
 -\/-register-dataset-types -p
-\$FARO\_DIR/pipelines/metrics\_pipeline.yaml -d "band in
-(\textquotesingle g\textquotesingle, \textquotesingle r\textquotesingle,
-\textquotesingle i\textquotesingle) AND tract=9813 AND
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d "band
+in (\textquotesingle g\textquotesingle,
+\textquotesingle r\textquotesingle, \textquotesingle i\textquotesingle)
+AND tract=9813 AND
 skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
 instrument=\textquotesingle HSC\textquotesingle" -\/-output
-u/username/faro\_metrics -i HSC/runs/RC2/w\_2021\_06 2\textgreater\&1
-\textbar{} tee w06\_2021\_tract9813\_faro.txt
+u/username/atools\_metrics -i HSC/runs/RC2/w\_2023\_36 -\/-instrument
+lsst.obs.subaru.HyperSuprimeCam 2\textgreater\&1 \textbar{} tee
+w36\_2023\_tract9813\_atools.txt
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
-The output collection (in this case, "u/username/faro\_metrics")
+The output collection (in this case, "u/username/atools\_metrics")
 containing metric measurements and any associated extras and metadata is
 available via the butler.
 
@@ -2998,11 +3145,25 @@ available via the butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Changed the value of PA2 in matchedVisitQualityCore\_changePA2.yaml to
+15.0:\\
+atools.stellarPhotometricRepeatability.PA2Value: 15.0\\
+\strut \\
+Then, executed the pipeline as follows:\\
+pipetask -\/-long-log run -j 2 -b /repo/main -\/-register-dataset-types
+-p matchedVisitQualityCore\_changePA2.yaml -d "band in
+(\textquotesingle g\textquotesingle, \textquotesingle r\textquotesingle,
+\textquotesingle i\textquotesingle) AND tract=9813 AND
+skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
+instrument=\textquotesingle HSC\textquotesingle" -\/-output
+u/jcarlin/pa2\_15 -i HSC/runs/RC2/w\_2023\_35/DM-40588\\
+\hspace*{0.333em}-\/-instrument lsst.obs.subaru.HyperSuprimeCam
+2\textgreater\&1 \textbar{} tee w35\_2023\_tract9813\_pa2\_15.txt
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3014,12 +3175,175 @@ the computed values of PF1 for filters g,r,i.
   Expected Result \\
 {\footnotesize
 A JSON file (and/or a report generated from that JSON file)
-demonstrating that PA2gri has been calculated (and that it used PF1).
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Examine the results in a python terminal:\\
+\strut \\
+\textgreater\textgreater\textgreater{} from lsst.daf.butler import
+Butler\\
+\textgreater\textgreater\textgreater{}
+repo=\textquotesingle/repo/main\textquotesingle{}\\
+\textgreater\textgreater\textgreater{}
+collection=\textquotesingle u/jcarlin/pa2\_15\textquotesingle{}\\
+\textgreater\textgreater\textgreater{} butler = Butler(repo,
+collections=collection)\\
+\textgreater\textgreater\textgreater{} dataId =
+\{\textquotesingle tract\textquotesingle:9813,
+\textquotesingle instrument\textquotesingle:\textquotesingle HSC\textquotesingle,
+\textquotesingle skymap\textquotesingle:\textquotesingle hsc\_rings\_v1\textquotesingle\}\\
+\textgreater\textgreater\textgreater{} metrics =
+butler.get(\textquotesingle matchedVisitCore\_metrics\textquotesingle,
+dataId=dataId)\\
+\textgreater\textgreater\textgreater{} for m in
+metrics{[}\textquotesingle stellarPhotometricRepeatability\textquotesingle{]}:\\
+... print(m)\\
+...\\
+g\_stellarPhotRepeatStdev: 6.979476571776661 mmag\\
+g\_stellarPhotRepeatOutlierFraction: 3.890690134321445 \%\\
+g\_ct: 2159.0 ct\\
+r\_stellarPhotRepeatStdev: 8.902557135179485 mmag\\
+r\_stellarPhotRepeatOutlierFraction: 4.64067886502254 \%\\
+r\_ct: 3771.0 ct\\
+i\_stellarPhotRepeatStdev: 7.9884004909489015 mmag\\
+i\_stellarPhotRepeatOutlierFraction: 2.779480891068874 \%\\
+i\_ct: 4893.0 ct\\
+\strut \\
+\textgreater\textgreater\textgreater{} metrics\_config =
+butler.get(\textquotesingle analyzeMatchedVisitCore\_config\textquotesingle,
+dataId=dataId)\\
+\textgreater\textgreater\textgreater{} config\_dict =
+metrics\_config.toDict()\\
+\textgreater\textgreater\textgreater{}
+config\_dict{[}\textquotesingle atools\textquotesingle{]}{[}\textquotesingle stellarPhotometricRepeatability\textquotesingle{]}{[}\textquotesingle process\textquotesingle{]}{[}\textquotesingle calculateActions\textquotesingle{]}{[}\textquotesingle photRepeatOutlier\textquotesingle{]}\\
+\{\textquotesingle op\textquotesingle:
+\textquotesingle ge\textquotesingle,
+\textquotesingle threshold\textquotesingle: 15.0,
+\textquotesingle vectorKey\textquotesingle:
+\textquotesingle perGroupStdevFiltered\textquotesingle,
+\textquotesingle percent\textquotesingle: True,
+\textquotesingle relative\_to\_median\textquotesingle: True\}\\
+\strut \\
+The following figure is output by the pipeline. The threshold (vertical
+black line) is set at 15 mmag above the measured PA1 value, as
+expected.\\
+\includegraphics[width=4.66667in, ]{jira_imgs/4828.png}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the value of the PA2 threshold in the pipeline yaml for
+analysis\_tools, then rerun analysis\_tools
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Changed the following line in matchedVisitQualityCore\_changePA2.yaml:\\
+atools.stellarPhotometricRepeatability.PA2Value: 25.0\\
+\strut \\
+then executed:\\
+pipetask -\/-long-log run -j 2 -b /repo/main -\/-register-dataset-types
+-p matchedVisitQualityCore\_changePA2.yaml -d "band in
+(\textquotesingle g\textquotesingle, \textquotesingle r\textquotesingle,
+\textquotesingle i\textquotesingle) AND tract=9813 AND
+skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
+instrument=\textquotesingle HSC\textquotesingle" -\/-output
+u/jcarlin/pa2\_25 -i HSC/runs/RC2/w\_2023\_35/DM-40588 -\/-instrument
+lsst.obs.subaru.HyperSuprimeCam 2\textgreater\&1 \textbar{} tee
+w35\_2023\_tract9813\_pa2\_25.txt
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the new PA2 threshold has been applied when computing PF1.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Open a python terminal to check the results:\\
+\strut \\
+\textgreater\textgreater\textgreater{} from lsst.daf.butler import
+Butler\\
+\textgreater\textgreater\textgreater{}
+repo=\textquotesingle/repo/main\textquotesingle{}\\
+\textgreater\textgreater\textgreater{}
+collection=\textquotesingle u/jcarlin/pa2\_25\textquotesingle{}\\
+\textgreater\textgreater\textgreater{} butler = Butler(repo,
+collections=collection)\\
+\textgreater\textgreater\textgreater{} dataId =
+\{\textquotesingle tract\textquotesingle:9813,
+\textquotesingle instrument\textquotesingle:\textquotesingle HSC\textquotesingle,
+\textquotesingle skymap\textquotesingle:\textquotesingle hsc\_rings\_v1\textquotesingle\}\\
+\textgreater\textgreater\textgreater{} metrics =
+butler.get(\textquotesingle matchedVisitCore\_metrics\textquotesingle,
+dataId=dataId)\\
+\textgreater\textgreater\textgreater{} for m in
+metrics{[}\textquotesingle stellarPhotometricRepeatability\textquotesingle{]}:\\
+... ~ ~~print(m)\\
+...~\\
+g\_stellarPhotRepeatStdev: 6.979476571776661 mmag\\
+g\_stellarPhotRepeatOutlierFraction: 3.1032885595182953 \%\\
+g\_ct: 2159.0 ct\\
+r\_stellarPhotRepeatStdev: 8.902557135179485 mmag\\
+r\_stellarPhotRepeatOutlierFraction: 3.07610713338637 \%\\
+r\_ct: 3771.0 ct\\
+i\_stellarPhotRepeatStdev: 7.9884004909489015 mmag\\
+i\_stellarPhotRepeatOutlierFraction: 1.859799713876967 \%\\
+i\_ct: 4893.0 ct\\
+z\_stellarPhotRepeatStdev: nan mmag\\
+z\_stellarPhotRepeatOutlierFraction: nan \%\\
+z\_ct: 0.0 ct\\
+y\_stellarPhotRepeatStdev: nan mmag\\
+y\_stellarPhotRepeatOutlierFraction: nan \%\\
+y\_ct: 0.0 ct\\
+\textgreater\textgreater\textgreater{} metrics\_config =
+butler.get(\textquotesingle analyzeMatchedVisitCore\_config\textquotesingle,
+dataId=dataId)\\
+\textgreater\textgreater\textgreater{} config\_dict =
+metrics\_config.toDict()\\
+\textgreater\textgreater\textgreater{}
+config\_dict{[}\textquotesingle atools\textquotesingle{]}{[}\textquotesingle stellarPhotometricRepeatability\textquotesingle{]}{[}\textquotesingle process\textquotesingle{]}{[}\textquotesingle calculateActions\textquotesingle{]}{[}\textquotesingle photRepeatOutlier\textquotesingle{]}\\
+\{\textquotesingle op\textquotesingle:
+\textquotesingle ge\textquotesingle,
+\textquotesingle threshold\textquotesingle: 25.0,
+\textquotesingle vectorKey\textquotesingle:
+\textquotesingle perGroupStdevFiltered\textquotesingle,
+\textquotesingle percent\textquotesingle: True,
+\textquotesingle relative\_to\_median\textquotesingle: True\}\\
+\strut \\
+We can see from both the butler artifacts seen above, and the figure
+below, that the threshold PA2 has been set to 25.0 mmag from the
+measured PA1 value, as requested.\\
+\includegraphics[width=4.26042in, ]{jira_imgs/4829.png}We
+have thus demonstrated that the repeatability outlier limit PA2 can be
+applied for the gri bands.
 
 }
 
@@ -3034,22 +3358,24 @@ test case in Jira.
 
 Verify that the DM system has provided the code to apply the
 repeatability outlier limit for isolated bright non-saturated point
-sources in the u, z, and y filters(PA2uzy) to to computed values of the
-PF1 metric.
+sources in the u, z, and y filters(PA2uzy) to computed values of the PF1
+metric.
 
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\Note that because we do not have access to u-band data, this test was
+performed for only y- and z-band. The steps would be unchanged for
+u-band data.
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3066,11 +3392,13 @@ A dataset that has been ingested into a Butler repository.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+For this test we use the most recent reprocessing of the Subaru+HSC RC2
+dataset. The data were processed with the w\_2023\_35 pipelines.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3117,16 +3445,19 @@ eups list -s
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Current weekly stack initialized:\\
+\textbf{lsst\_distrib} g4213664e8e+7835acb1bb w\_latest current
+w\_2023\_40 setup
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute `faro` on a repository containing processed data. Identify the
-path to the data, which we will call
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call
 \textquotesingle DATA/path\textquotesingle, then execute something
 similar to the following (with paths, datasets, and flags replaced or
 additionally specified as needed):
@@ -3137,19 +3468,21 @@ additionally specified as needed):
 {\footnotesize
 pipetask -\/-long-log run -j 2 -b DATA/path/butler.yaml
 -\/-register-dataset-types -p
-\$FARO\_DIR/pipelines/metrics\_pipeline.yaml -d "band in
-(\textquotesingle g\textquotesingle, \textquotesingle r\textquotesingle,
-\textquotesingle i\textquotesingle) AND tract=9813 AND
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d "band
+in (\textquotesingle g\textquotesingle,
+\textquotesingle r\textquotesingle, \textquotesingle i\textquotesingle)
+AND tract=9813 AND
 skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
 instrument=\textquotesingle HSC\textquotesingle" -\/-output
-u/username/faro\_metrics -i HSC/runs/RC2/w\_2021\_06 2\textgreater\&1
-\textbar{} tee w06\_2021\_tract9813\_faro.txt
+u/username/atools\_metrics -i HSC/runs/RC2/w\_2023\_36 -\/-instrument
+lsst.obs.subaru.HyperSuprimeCam 2\textgreater\&1 \textbar{} tee
+w36\_2023\_tract9813\_atools.txt
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
-The output collection (in this case, "u/username/faro\_metrics")
+The output collection (in this case, "u/username/atools\_metrics")
 containing metric measurements and any associated extras and metadata is
 available via the butler.
 
@@ -3157,11 +3490,26 @@ available via the butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Changed the value of PA2 in matchedVisitQualityCore\_changePA2.yaml to
+15.0:\\
+atools.stellarPhotometricRepeatability.PA2Value: 15.0\\
+\strut \\
+Then, executed the pipeline as follows:\\
+pipetask -\/-long-log run -j 2 -b /repo/main -\/-register-dataset-types
+-p matchedVisitQualityCore\_changePA2.yaml -d "band in
+(\textquotesingle z\textquotesingle, \textquotesingle y\textquotesingle)
+AND tract=9813 AND
+skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
+instrument=\textquotesingle HSC\textquotesingle" -\/-output
+u/jcarlin/pa2\_15\_zy -i HSC/runs/RC2/w\_2023\_35/DM-40588
+-\/-instrument lsst.obs.subaru.HyperSuprimeCam 2\textgreater\&1
+\textbar{} tee w35\_2023\_tract9813\_zy\_pa2\_15.txt\\
+\strut \\
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3173,12 +3521,161 @@ the computed values of PF1 for filters u,z,y.
   Expected Result \\
 {\footnotesize
 A JSON file (and/or a report generated from that JSON file)
-demonstrating that PA2uzy has been calculated (and that it used PF1).
+demonstrating that PF1 has been calculated (and that it used the
+requested PA2uzy threshold).
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Examine the results in a python terminal:\\
+\strut \\
+\textgreater\textgreater\textgreater{} from lsst.daf.butler import
+Butler\\
+\textgreater\textgreater\textgreater{}
+repo=\textquotesingle/repo/main\textquotesingle{}\\
+\textgreater\textgreater\textgreater{}
+collection=\textquotesingle u/jcarlin/pa2\_15\_zy\textquotesingle{}\\
+\textgreater\textgreater\textgreater{} butler = Butler(repo,
+collections=collection)\\
+\textgreater\textgreater\textgreater{} dataId =
+\{\textquotesingle tract\textquotesingle:9813,
+\textquotesingle instrument\textquotesingle:\textquotesingle HSC\textquotesingle,
+\textquotesingle skymap\textquotesingle:\textquotesingle hsc\_rings\_v1\textquotesingle\}\\
+\textgreater\textgreater\textgreater{} metrics =
+butler.get(\textquotesingle matchedVisitCore\_metrics\textquotesingle,
+dataId=dataId)\\
+\textgreater\textgreater\textgreater{} for m in
+metrics{[}\textquotesingle stellarPhotometricRepeatability\textquotesingle{]}:\\
+... print(m)\\
+...\\
+z\_stellarPhotRepeatStdev: 6.924991284071611 mmag\\
+z\_stellarPhotRepeatOutlierFraction: 1.9053231192300137 \%\\
+z\_ct: 5091.0 ct\\
+y\_stellarPhotRepeatStdev: 7.237368762721793 mmag\\
+y\_stellarPhotRepeatOutlierFraction: 0.964371818912403 \%\\
+y\_ct: 3733.0 ct\\
+\textgreater\textgreater\textgreater{} metrics\_config =
+butler.get(\textquotesingle analyzeMatchedVisitCore\_config\textquotesingle,
+dataId=dataId)\\
+\textgreater\textgreater\textgreater{} config\_dict =
+metrics\_config.toDict()\\
+\textgreater\textgreater\textgreater{}
+config\_dict{[}\textquotesingle atools\textquotesingle{]}{[}\textquotesingle stellarPhotometricRepeatability\textquotesingle{]}{[}\textquotesingle process\textquotesingle{]}{[}\textquotesingle calculateActions\textquotesingle{]}{[}\textquotesingle photRepeatOutlier\textquotesingle{]}\\
+\{\textquotesingle op\textquotesingle:
+\textquotesingle ge\textquotesingle,
+\textquotesingle threshold\textquotesingle: 15.0,
+\textquotesingle vectorKey\textquotesingle:
+\textquotesingle perGroupStdevFiltered\textquotesingle,
+\textquotesingle percent\textquotesingle: True,
+\textquotesingle relative\_to\_median\textquotesingle: True\}\\
+\strut \\
+The following figure is output by the pipeline. The threshold (vertical
+black line) is set at 15 mmag above the measured PA1 value, as
+expected.\\
+\includegraphics[width=4.33333in, ]{jira_imgs/4830.png}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the value of the PA2 threshold in the pipeline yaml for
+analysis\_tools, then rerun analysis\_tools
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Changed the following line in matchedVisitQualityCore\_changePA2.yaml:\\
+atools.stellarPhotometricRepeatability.PA2Value: 25.0\\
+\strut \\
+then executed:\\
+pipetask -\/-long-log run -j 2 -b /repo/main -\/-register-dataset-types
+-p matchedVisitQualityCore\_changePA2.yaml -d "band in
+(\textquotesingle z\textquotesingle, \textquotesingle y\textquotesingle)
+AND tract=9813 AND
+skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
+instrument=\textquotesingle HSC\textquotesingle" -\/-output
+u/jcarlin/pa2\_25\_zy -i HSC/runs/RC2/w\_2023\_35/DM-40588
+-\/-instrument lsst.obs.subaru.HyperSuprimeCam 2\textgreater\&1
+\textbar{} tee w35\_2023\_tract9813\_zy\_pa2\_25.txt\\
+\strut \\
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the new PA2 threshold has been applied when computing PF1.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+\textgreater\textgreater\textgreater{} from lsst.daf.butler import
+Butler\\
+\textgreater\textgreater\textgreater{}
+repo=\textquotesingle/repo/main\textquotesingle{}\\
+\textgreater\textgreater\textgreater{}
+collection=\textquotesingle u/jcarlin/pa2\_15\_zy\textquotesingle{}\\
+\textgreater\textgreater\textgreater{} butler = Butler(repo,
+collections=collection)\\
+\textgreater\textgreater\textgreater{} dataId =
+\{\textquotesingle tract\textquotesingle:9813,
+\textquotesingle instrument\textquotesingle:\textquotesingle HSC\textquotesingle,
+\textquotesingle skymap\textquotesingle:\textquotesingle hsc\_rings\_v1\textquotesingle\}\\
+\textgreater\textgreater\textgreater{} metrics =
+butler.get(\textquotesingle matchedVisitCore\_metrics\textquotesingle,
+dataId=dataId)\\
+\textgreater\textgreater\textgreater{} for m in
+metrics{[}\textquotesingle stellarPhotometricRepeatability\textquotesingle{]}:\\
+... print(m)\\
+...\\
+z\_stellarPhotRepeatStdev: 6.924991284071611 mmag\\
+z\_stellarPhotRepeatOutlierFraction: 1.9053231192300137 \%\\
+z\_ct: 5091.0 ct\\
+y\_stellarPhotRepeatStdev: 7.237368762721793 mmag\\
+y\_stellarPhotRepeatOutlierFraction: 0.964371818912403 \%\\
+y\_ct: 3733.0 ct\\
+\textgreater\textgreater\textgreater{} metrics\_config =
+butler.get(\textquotesingle analyzeMatchedVisitCore\_config\textquotesingle,
+dataId=dataId)\\
+\textgreater\textgreater\textgreater{} config\_dict =
+metrics\_config.toDict()\\
+\textgreater\textgreater\textgreater{}
+config\_dict{[}\textquotesingle atools\textquotesingle{]}{[}\textquotesingle stellarPhotometricRepeatability\textquotesingle{]}{[}\textquotesingle process\textquotesingle{]}{[}\textquotesingle calculateActions\textquotesingle{]}{[}\textquotesingle photRepeatOutlier\textquotesingle{]}\\
+\{\textquotesingle op\textquotesingle:
+\textquotesingle ge\textquotesingle,
+\textquotesingle threshold\textquotesingle: 25.0,
+\textquotesingle vectorKey\textquotesingle:
+\textquotesingle perGroupStdevFiltered\textquotesingle,
+\textquotesingle percent\textquotesingle: True,
+\textquotesingle relative\_to\_median\textquotesingle: True\}\\
+\strut \\
+We can see from both the butler artifacts seen above, and the figure
+below, that the threshold PA2 has been set to 25.0 mmag from the
+measured PA1 value, as requested.\\
+\includegraphics[width=4.48958in, ]{jira_imgs/4831.png}\\
+We have thus demonstrated that the repeatability outlier limit PA2 can
+be applied for the z and y bands.
 
 }
 
@@ -3299,7 +3796,7 @@ the bounds of the image.
 
 Execution status: {\bf Pass }
 
-Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\
 \strut \\
 The executed notebook was saved in the repository associated with this
@@ -3388,7 +3885,7 @@ that catalog.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
-This was done 1000 times, extracting the source list and WCS for 1000
+This was done 500 times, extracting the source list and WCS for 500
 randomly-selected CCD/visit combinations from the repository.
 
 }
@@ -3425,8 +3922,8 @@ num\_calib\_astrom.append(np.size(astrom\_selection))\\
 \strut \\
 In the end, we calculate the fraction of fields that met this
 requirement, using:\\
-wcsFlagsPercent =
-(np.size(np.where(haswcs\_flags))/np.size(haswcs\_flags))*100.0*u.percent\\
+wcsFlagsPercent = (np.size(np.where(num\_calib\_astrom \textgreater{}
+5))/np.size(num\_calib\_astrom))*100.0*u.percent\\
 \strut \\
 The result (from the notebook) is:\\
 Percentage of fields with \textgreater{} astrometricMinStandards=5:
@@ -3546,8 +4043,12 @@ satisfied the requirement on astrometricAccuracy. This was less than
 having few Gaia matches. The results printed in the notebook are as
 follows:\\
 \strut \\
-Percentage of fields meeting the threshold: 94.0 \% -\/- False\\
-\strut \\
+
+\begin{verbatim}
+Percentage of fields meeting the threshold:  95.99198396793587 %  --  False
+\end{verbatim}
+
+\hfill\break
 Some brief exploration into reasons for a few images having large
 astrometric residuals is included in the notebook
 (`test\_LVV-T40\_T1240.ipynb`). These explorations suggest that the
@@ -3575,8 +4076,8 @@ accuracy criterion is met at all positions.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
-Upon examination, we find that many images have only \textasciitilde50
-Gaia matches over the entire frame. This is too few stars to get
+Upon examination, we find that many images have only \textless50 Gaia
+matches over the entire frame. This is too few stars to get
 statistically meaningful results from subregions, so we did not perform
 this portion of the test.\\
 \strut \\
