@@ -34,7 +34,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2023-12-11 }
+\date{ 2024-01-31 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -277,7 +277,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{LVV-T1946}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -285,7 +285,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{LVV-T1947}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -293,7 +293,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T28}{LVV-T28}
-& {\small Colin Slater } & {\small  } &
+& {\small Colin Slater } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -1632,6 +1632,546 @@ Final comment:\\
 
 Detailed steps results LVV-C260-LVV-T1946 LVV-E2982-3377:\\
 {\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2982-1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+\textquotesingle DATA/path\textquotesingle, then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Tests were performed using "test\_LVV-T1946.py," which contains the
+following:\\
+\strut \\
+\# For RC2 data on the USDF:\\
+config~=~\textquotesingle/repo/main\textquotesingle{}\\
+collection~=~\textquotesingle HSC/runs/RC2/w\_2023\_39/DM-40985\textquotesingle{}\\
+butler = Butler(config, collections=collection)
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2982-2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate processed precursor dataset containing
+coadds with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+By default, the test script selects the following
+instrument/detector/visit combination. This can be changed if desired.\\
+\hspace*{0.333em} ~~\# Select an arbitrary source catalog from a
+deepCoadd:\\
+\hspace*{0.333em}
+~~instrument~=~\textquotesingle HSC\textquotesingle{}\\
+\hspace*{0.333em} ~~band~=~\textquotesingle i\textquotesingle{}\\
+\hspace*{0.333em} ~~tract~=~9615\\
+\hspace*{0.333em} ~~patch~=~13\\
+\hspace*{0.333em}
+~~skymap~=~\textquotesingle hsc\_rings\_v1\textquotesingle{}\\
+\strut \\
+\hspace*{0.333em} ~~\# Run the test\\
+\hspace*{0.333em} ~ LVVT1946(instrument, tract, patch, band, skymap)
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2982-3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the coadd catalog provides measurements in flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+The script outputs the following, confirming that all "instFlux" values
+in the "deepCoadd\_forced\_source" table are in units of "counts", and
+all calibrated fluxes from the "objectTable" are in units of nJy within
+a reasonable range of flux values:\\
+\strut \\
+lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b~ ~~w\_latest w\_2024\_04
+current setup\\
+Input dataId:~~\{\textquotesingle instrument\textquotesingle:
+\textquotesingle HSC\textquotesingle,
+\textquotesingle tract\textquotesingle: 9615,
+\textquotesingle band\textquotesingle:
+\textquotesingle i\textquotesingle,
+\textquotesingle patch\textquotesingle: 13,
+\textquotesingle skymap\textquotesingle:
+\textquotesingle hsc\_rings\_v1\textquotesingle\}\\
+base\_SdssShape\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_SdssShape\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_3\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_3\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_4\_5\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_4\_5\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_6\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_6\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_9\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_9\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_12\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_12\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_17\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_17\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_25\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_25\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_35\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_35\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_50\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_50\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_70\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_70\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_GaussianFlux\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_GaussianFlux\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_LocalBackground\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_LocalBackground\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_PsfFlux\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_PsfFlux\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_0\_5\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_0\_5\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_gaap\_GaapFlux\_1\_15x\_0\_7\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_0\_7\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_gaap\_GaapFlux\_1\_15x\_1\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_1\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_gaap\_GaapFlux\_1\_15x\_1\_5\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_1\_5\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_gaap\_GaapFlux\_1\_15x\_2\_5\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_2\_5\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_gaap\_GaapFlux\_1\_15x\_3\_0\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_3\_0\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_gaap\_GaapFlux\_1\_15x\_PsfFlux\_instFlux ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_gaap\_GaapFlux\_1\_15x\_PsfFlux\_instFluxErr ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_Optimal\_instFlux ..... count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_gaap\_GaapFlux\_1\_15x\_Optimal\_instFluxErr ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_photometryKron\_KronFlux\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_photometryKron\_KronFlux\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_3\_3\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_3\_3\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_4\_5\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_4\_5\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_6\_0\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_6\_0\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_kron\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_kron\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_3\_3\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_3\_3\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_4\_5\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_4\_5\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_6\_0\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_6\_0\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_kron\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_kron\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_3\_3\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_3\_3\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_4\_5\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_4\_5\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_6\_0\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_6\_0\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_kron\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_kron\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_3\_3\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_3\_3\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_4\_5\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_4\_5\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_6\_0\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_6\_0\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_kron\_instFlux ..... count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_kron\_instFluxErr ..... count~ ~ ~ ~ ~
+~ ~ ~\\
+modelfit\_CModel\_initial\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_initial\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_initial\_instFlux\_inner ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_exp\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_exp\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_exp\_instFlux\_inner ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_dev\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_dev\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_dev\_instFlux\_inner ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_instFlux\_inner ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_3\_0\_instFlux ..... count~ ~ ~
+~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_3\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_4\_5\_instFlux ..... count~ ~ ~
+~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_4\_5\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_6\_0\_instFlux ..... count~ ~ ~
+~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_6\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_9\_0\_instFlux ..... count~ ~ ~
+~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_9\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_12\_0\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_12\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_17\_0\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_17\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_25\_0\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_25\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_35\_0\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_35\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_50\_0\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_50\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_70\_0\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_70\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_PsfFlux\_instFlux ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_PsfFlux\_instFluxErr ..... count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_0\_5\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_0\_5\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_0\_7\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_0\_7\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_1\_0\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_1\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_1\_5\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_1\_5\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_2\_5\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_2\_5\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_3\_0\_instFlux ..... count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_3\_0\_instFluxErr ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_PsfFlux\_instFlux ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_PsfFlux\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_Optimal\_instFlux ..... count~
+~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_Optimal\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_photometryKron\_KronFlux\_instFlux ..... count~ ~ ~ ~
+~ ~ ~ ~\\
+undeblended\_ext\_photometryKron\_KronFlux\_instFluxErr ..... count~ ~ ~
+~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_3\_3\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_3\_3\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_4\_5\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_4\_5\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_6\_0\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_6\_0\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_kron\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_kron\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_3\_3\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_3\_3\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_4\_5\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_4\_5\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_6\_0\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_6\_0\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_kron\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_kron\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_3\_3\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_3\_3\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_4\_5\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_4\_5\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_6\_0\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_6\_0\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_kron\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_kron\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_3\_3\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_3\_3\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_4\_5\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_4\_5\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_6\_0\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_6\_0\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_kron\_instFlux .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_kron\_instFluxErr .....
+count~ ~ ~ ~ ~ ~ ~ ~\\
+\strut \\
+\hspace*{0.333em}All forced\_src instFlux entries have units of
+counts:~~True\\
+\strut \\
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\\
+\strut \\
+Checking flux values for visit 9615\\
+\strut \\
+flux column~ ~ ~ ~ ~~\% of bad flux values\\
+\strut \\
+g\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+g\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+g\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+g\_free\_cModelFlux\_inner ~ ~~0.0 \%\\
+\strut \\
+flux column~ ~ ~ ~ ~~\% of bad flux values\\
+\strut \\
+r\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+r\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+r\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+r\_free\_cModelFlux\_inner ~ ~~0.0 \%\\
+\strut \\
+flux column~ ~ ~ ~ ~~\% of bad flux values\\
+\strut \\
+i\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+i\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+i\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+i\_free\_cModelFlux\_inner ~ ~~0.0 \%\\
+\strut \\
+flux column~ ~ ~ ~ ~~\% of bad flux values\\
+\strut \\
+z\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+z\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+z\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+z\_free\_cModelFlux\_inner ~ ~~0.0 \%\\
+\strut \\
+flux column~ ~ ~ ~ ~~\% of bad flux values\\
+\strut \\
+y\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+y\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+y\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+y\_free\_cModelFlux\_inner ~ ~~0.0 \%\\
+\strut \\
+
+}
 
 \paragraph{ LVV-T1947 - Verify implementation of measurements in catalogs from difference images }\mbox{}\\
 
@@ -1654,6 +2194,284 @@ Final comment:\\
 
 Detailed steps results LVV-C260-LVV-T1947 LVV-E2983-3378:\\
 {\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2983-1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+\textquotesingle DATA/path\textquotesingle, then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+The test scripts contain the following:\\
+\strut \\
+\# For RC2 data on the USDF:\\
+config~=~\textquotesingle/repo/main\textquotesingle{}\\
+collection~=~\textquotesingle HSC/runs/RC2/w\_2023\_39/DM-40985\textquotesingle{}\\
+butler = Butler(config, collections=collection)
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2983-2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate processed precursor dataset containing
+difference images with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Relevant lines from "test\_LVV-T1947\_DiaSource.py":\\
+\# Select an arbitrary source catalog from a difference image:\\
+instrument = \textquotesingle HSC\textquotesingle{}\\
+detector = 40\\
+visit = 36180\\
+\strut \\
+\# Run the test\\
+LVVT1947(instrument, visit, detector)\\
+\strut \\
+Relevant lines from "test\_LVV-T1947\_DiaObject.py":\\
+\# Select an arbitrary source catalog from a diaObject table:\\
+instrument = \textquotesingle HSC\textquotesingle{}\\
+band = \textquotesingle i\textquotesingle{}\\
+tract = 9697\\
+\# patch = 13\\
+skymap = \textquotesingle hsc\_rings\_v1\textquotesingle{}\\
+detector = 40\\
+visit = 36180\\
+\strut \\
+\# Run the test\\
+LVVT1947(instrument, tract, detector, visit, band, skymap)
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2983-3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the difference image source catalog provides measurements in
+flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+The script outputs the following, confirming that all "instFlux" values
+in the "goodSeeingDiff\_diaSrc" table are in units of "counts", and all
+calibrated fluxes from the ~"forced\_src\_diaObject" table and
+"diaSourceTable" are in units of nJy within a reasonable range of flux
+values:\\
+\strut \\
+Output from script "test\_LVV-T1947\_DiaSource.py":\\
+\strut \\
+lsst\_distrib g4213664e8e+b08e1c1b0b w\_latest w\_2024\_04 current
+setup\\
+Input dataId: \{\textquotesingle instrument\textquotesingle:
+\textquotesingle HSC\textquotesingle,
+\textquotesingle visit\textquotesingle: 36180,
+\textquotesingle detector\textquotesingle: 40\}\\
+Checking goodSeeingDiff\_diaSrc...\\
+\strut \\
+base\_SdssShape\_instFlux..... count\\
+base\_SdssShape\_instFluxErr..... count\\
+base\_CircularApertureFlux\_3\_0\_instFlux..... count\\
+base\_CircularApertureFlux\_3\_0\_instFluxErr..... count\\
+base\_CircularApertureFlux\_4\_5\_instFlux..... count\\
+base\_CircularApertureFlux\_4\_5\_instFluxErr..... count\\
+base\_CircularApertureFlux\_6\_0\_instFlux..... count\\
+base\_CircularApertureFlux\_6\_0\_instFluxErr..... count\\
+base\_CircularApertureFlux\_9\_0\_instFlux..... count\\
+base\_CircularApertureFlux\_9\_0\_instFluxErr..... count\\
+base\_CircularApertureFlux\_12\_0\_instFlux..... count\\
+base\_CircularApertureFlux\_12\_0\_instFluxErr..... count\\
+base\_CircularApertureFlux\_17\_0\_instFlux..... count\\
+base\_CircularApertureFlux\_17\_0\_instFluxErr..... count\\
+base\_CircularApertureFlux\_25\_0\_instFlux..... count\\
+base\_CircularApertureFlux\_25\_0\_instFluxErr..... count\\
+base\_CircularApertureFlux\_35\_0\_instFlux..... count\\
+base\_CircularApertureFlux\_35\_0\_instFluxErr..... count\\
+base\_CircularApertureFlux\_50\_0\_instFlux..... count\\
+base\_CircularApertureFlux\_50\_0\_instFluxErr..... count\\
+base\_CircularApertureFlux\_70\_0\_instFlux..... count\\
+base\_CircularApertureFlux\_70\_0\_instFluxErr..... count\\
+base\_GaussianFlux\_instFlux..... count\\
+base\_GaussianFlux\_instFluxErr..... count\\
+base\_PeakLikelihoodFlux\_instFlux..... count\\
+base\_PeakLikelihoodFlux\_instFluxErr..... count\\
+base\_PsfFlux\_instFlux..... count\\
+base\_PsfFlux\_instFluxErr..... count\\
+ip\_diffim\_NaiveDipoleFlux\_pos\_instFlux..... count\\
+ip\_diffim\_NaiveDipoleFlux\_pos\_instFluxErr..... count\\
+ip\_diffim\_NaiveDipoleFlux\_neg\_instFlux..... count\\
+ip\_diffim\_NaiveDipoleFlux\_neg\_instFluxErr..... count\\
+ip\_diffim\_PsfDipoleFlux\_pos\_instFlux..... count\\
+ip\_diffim\_PsfDipoleFlux\_pos\_instFluxErr..... count\\
+ip\_diffim\_PsfDipoleFlux\_neg\_instFlux..... count\\
+ip\_diffim\_PsfDipoleFlux\_neg\_instFluxErr..... count\\
+ip\_diffim\_DipoleFit\_pos\_instFlux..... count\\
+ip\_diffim\_DipoleFit\_pos\_instFluxErr..... count\\
+ip\_diffim\_DipoleFit\_neg\_instFlux..... count\\
+ip\_diffim\_DipoleFit\_neg\_instFluxErr..... count\\
+ip\_diffim\_DipoleFit\_instFlux..... count\\
+ip\_diffim\_forced\_PsfFlux\_instFlux..... count\\
+ip\_diffim\_forced\_PsfFlux\_instFluxErr..... count\\
+\strut \\
+All src table instFlux entries have units of counts: True\\
+\strut \\
+Checking forced\_src\_diaObject...\\
+\strut \\
+base\_LocalBackground\_instFlux..... count\\
+base\_LocalBackground\_instFluxErr..... count\\
+base\_PsfFlux\_instFlux..... count\\
+base\_PsfFlux\_instFluxErr..... count\\
+\strut \\
+All src table instFlux entries have units of counts: True\\
+\strut \\
+Checking flux values for visit 36180\\
+\strut \\
+flux column \% of bad flux values\\
+\strut \\
+apFlux 0.0 \%\\
+psfFlux 0.0 \%\\
+scienceFlux 0.0 \%\\
+dipoleMeanFlux 0.0 \%\\
+\strut \\
+===========================================================\\
+The second script outputs the following, confirming that all calibrated
+fluxes from the "diaObjectTable\_tract" are in units of nJy within a
+reasonable range of flux values:\\
+\strut \\
+Output from script "test\_LVV-T1947\_DiaObject.py":\\
+\strut \\
+lsst\_distrib g4213664e8e+b08e1c1b0b w\_latest w\_2024\_04 current
+setup\\
+Input dataId: \{\textquotesingle instrument\textquotesingle:
+\textquotesingle HSC\textquotesingle,
+\textquotesingle tract\textquotesingle: 9697,
+\textquotesingle band\textquotesingle:
+\textquotesingle i\textquotesingle,
+\textquotesingle detector\textquotesingle: 40,
+\textquotesingle visit\textquotesingle: 36180,
+\textquotesingle skymap\textquotesingle:
+\textquotesingle hsc\_rings\_v1\textquotesingle\}\\
+\strut \\
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\\
+\strut \\
+Checking flux values for tract 9697, diaObjectTable\_tract\\
+\strut \\
+flux column \% of bad flux values\\
+\strut \\
+g\_psfFluxMAD 0.0 \%\\
+g\_psfFluxMean 0.0 \%\\
+g\_scienceFluxMean 0.0 \%\\
+g\_psfFluxMin 0.0 \%\\
+g\_psfFluxMax 0.0 \%\\
+g\_psfFluxPercentile05 0.0 \%\\
+g\_psfFluxPercentile25 0.0 \%\\
+g\_psfFluxPercentile50 0.0 \%\\
+g\_psfFluxPercentile75 0.0 \%\\
+g\_psfFluxPercentile95 0.0 \%\\
+g\_psfFluxSigma 0.0 \%\\
+g\_scienceFluxSigma 0.0 \%\\
+\strut \\
+flux column \% of bad flux values\\
+\strut \\
+r\_psfFluxMAD 0.0 \%\\
+r\_psfFluxMean 0.0 \%\\
+r\_scienceFluxMean 0.0 \%\\
+r\_psfFluxMin 0.0 \%\\
+r\_psfFluxMax 0.0 \%\\
+r\_psfFluxPercentile05 0.0 \%\\
+r\_psfFluxPercentile25 0.0 \%\\
+r\_psfFluxPercentile50 0.0 \%\\
+r\_psfFluxPercentile75 0.0 \%\\
+r\_psfFluxPercentile95 0.0 \%\\
+r\_psfFluxSigma 0.0 \%\\
+r\_scienceFluxSigma 0.0 \%\\
+\strut \\
+flux column \% of bad flux values\\
+\strut \\
+i\_psfFluxMAD 0.0 \%\\
+i\_psfFluxMean 0.0 \%\\
+i\_scienceFluxMean 0.0 \%\\
+i\_psfFluxMin 0.0 \%\\
+i\_psfFluxMax 0.0 \%\\
+i\_psfFluxPercentile05 0.0 \%\\
+i\_psfFluxPercentile25 0.0 \%\\
+i\_psfFluxPercentile50 0.0 \%\\
+i\_psfFluxPercentile75 0.0 \%\\
+i\_psfFluxPercentile95 0.0 \%\\
+i\_psfFluxSigma 0.0 \%\\
+i\_scienceFluxSigma 0.0 \%\\
+\strut \\
+flux column \% of bad flux values\\
+\strut \\
+z\_psfFluxMAD 0.0 \%\\
+z\_psfFluxMean 0.0 \%\\
+z\_scienceFluxMean 0.0 \%\\
+z\_psfFluxMin 0.0 \%\\
+z\_psfFluxMax 0.0 \%\\
+z\_psfFluxPercentile05 0.0 \%\\
+z\_psfFluxPercentile25 0.0 \%\\
+z\_psfFluxPercentile50 0.0 \%\\
+z\_psfFluxPercentile75 0.0 \%\\
+z\_psfFluxPercentile95 0.0 \%\\
+z\_psfFluxSigma 0.0 \%\\
+z\_scienceFluxSigma 0.0 \%\\
+\strut \\
+flux column \% of bad flux values\\
+\strut \\
+y\_psfFluxMAD 0.0 \%\\
+y\_psfFluxMean 0.0 \%\\
+y\_scienceFluxMean 0.0 \%\\
+y\_psfFluxMin 0.0 \%\\
+y\_psfFluxMax 0.0 \%\\
+y\_psfFluxPercentile05 0.0 \%\\
+y\_psfFluxPercentile25 0.0 \%\\
+y\_psfFluxPercentile50 0.0 \%\\
+y\_psfFluxPercentile75 0.0 \%\\
+y\_psfFluxPercentile95 0.0 \%\\
+y\_psfFluxSigma 0.0 \%\\
+y\_scienceFluxSigma 0.0 \%\\
+\strut \\
+
+}
 
 \paragraph{ LVV-T28 - Verify implementation of measurements in catalogs from PVIs }\mbox{}\\
 
@@ -1676,6 +2494,333 @@ Final comment:\\
 
 Detailed steps results LVV-C260-LVV-T28 LVV-E2984-3379:\\
 {\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2984-1.1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+\textquotesingle DATA/path\textquotesingle, then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Tests were performed using "test\_LVV-T28.py," which contains the
+following:\\
+\strut \\
+\# For RC2 data on the USDF:\\
+config~=~\textquotesingle/repo/main\textquotesingle{}\\
+collection~=~\textquotesingle HSC/runs/RC2/w\_2023\_39/DM-40985\textquotesingle{}\\
+butler = Butler(config, collections=collection)
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2984-2.1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+\textquotesingle DATA/path\textquotesingle, then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Tests were performed using "test\_LVV-T28\_DC2.py," which contains the
+following:\\
+\strut \\
+\# For DC2 data on the USDF:\\
+config~=~\textquotesingle/repo/dc2\textquotesingle{}\\
+collection~=~\textquotesingle2.2i/runs/test-med-1/w\_2023\_37/DM-40870\textquotesingle{}\\
+butler~= Butler(config,~collections=collection)\\
+\strut \\
+\strut \\
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2984-1.2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate repo with processed {RC2}⁠ ~precursor
+data containing coadds with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+By default, the test script selects the following
+instrument/detector/visit combination. This can be changed if desired.\\
+\strut \\
+\# Select an arbitrary source catalog from a calexp (PVI):\\
+\hspace*{0.333em}
+~~instrument~=~\textquotesingle HSC\textquotesingle{}\\
+\hspace*{0.333em} ~~detector~=~5\\
+\hspace*{0.333em} ~~visit~=~36180\\
+\strut \\
+\hspace*{0.333em} ~~\# Run the test\\
+\hspace*{0.333em} ~ LVVT28(instrument, visit, detector)\\
+\strut \\
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2984-2.2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate repo with processed {DC2}⁠ ~precursor
+data containing coadds with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+By default, the test script selects the following
+instrument/detector/visit combination. This can be changed if desired.\\
+\strut \\
+\# Select an arbitrary source catalog from a calexp (PVI):\\
+\hspace*{0.333em}
+~~instrument~=~\textquotesingle LSSTCam-imSim\textquotesingle{}\\
+\hspace*{0.333em}
+~~detector~=~\textquotesingle R30\_S10\textquotesingle{}\\
+\hspace*{0.333em} ~~visit~=~169765\\
+\strut \\
+\hspace*{0.333em} ~~\# Run the test\\
+\hspace*{0.333em} ~ LVVT28(instrument, visit, detector)
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2984-1.3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the single-visit catalog provides measurements in flux
+units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+(lsst-scipipe-8.0.0) {[}jcarlin@sdfrome001 fall2023\_ATC{]}\$ python
+test\_LVV-T28.py~\\
+lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b ~ ~ w\_latest w\_2024\_04
+current setup\\
+Input dataId:~~\{\textquotesingle instrument\textquotesingle:
+\textquotesingle HSC\textquotesingle,
+\textquotesingle visit\textquotesingle: 36180,
+\textquotesingle detector\textquotesingle: 5\}\\
+deblend\_psf\_instFlux ..... count\\
+base\_Blendedness\_raw\_child\_instFlux ..... count\\
+base\_Blendedness\_raw\_parent\_instFlux ..... count\\
+base\_Blendedness\_abs\_child\_instFlux ..... count\\
+base\_Blendedness\_abs\_parent\_instFlux ..... count\\
+base\_SdssShape\_instFlux ..... count\\
+base\_SdssShape\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_3\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_3\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_4\_5\_instFlux ..... count\\
+base\_CircularApertureFlux\_4\_5\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_6\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_6\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_9\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_9\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_12\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_12\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_17\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_17\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_25\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_25\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_35\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_35\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_50\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_50\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_70\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_70\_0\_instFluxErr ..... count\\
+base\_CompensatedGaussianFlux\_3\_instFlux ..... count\\
+base\_CompensatedGaussianFlux\_3\_instFluxErr ..... count\\
+base\_CompensatedGaussianFlux\_5\_instFlux ..... count\\
+base\_CompensatedGaussianFlux\_5\_instFluxErr ..... count\\
+base\_GaussianFlux\_instFlux ..... count\\
+base\_GaussianFlux\_instFluxErr ..... count\\
+base\_LocalBackground\_instFlux ..... count\\
+base\_LocalBackground\_instFluxErr ..... count\\
+base\_PsfFlux\_instFlux ..... count\\
+base\_PsfFlux\_instFluxErr ..... count\\
+ext\_photometryKron\_KronFlux\_instFlux ..... count\\
+ext\_photometryKron\_KronFlux\_instFluxErr ..... count\\
+\strut \\
+\hspace*{0.333em}All src table instFlux entries have units of
+counts:~~True\\
+\strut \\
+Checking flux values for visit 36180\\
+\strut \\
+flux column~ ~ ~ ~ ~~\% of bad flux values\\
+\strut \\
+calibFlux~ ~ ~ ~ ~ ~ ~ ~ ~ 0.0 \%\\
+ap03Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap06Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap09Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap12Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap17Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap25Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap35Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap50Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap70Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+psfFlux~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 0.0 \%\\
+gaussianFlux~ ~ ~ ~ ~ 0.0 \%\\
+\strut \\
+All "instFlux" entries have units of counts, and all fluxes are within a
+reasonable range of flux values, so this test has passed.
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2984-2.3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the single-visit catalog provides measurements in flux
+units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+(lsst-scipipe-8.0.0) {[}jcarlin@sdfrome001 fall2023\_ATC{]}\$ python
+test\_LVV-T28\_DC2.py~\\
+lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b ~ ~ w\_latest w\_2024\_04
+current setup\\
+Input dataId:~~\{\textquotesingle instrument\textquotesingle:
+\textquotesingle LSSTCam-imSim\textquotesingle,
+\textquotesingle visit\textquotesingle: 169765,
+\textquotesingle detector\textquotesingle:
+\textquotesingle R30\_S10\textquotesingle\}\\
+deblend\_psf\_instFlux ..... count\\
+base\_Blendedness\_raw\_child\_instFlux ..... count\\
+base\_Blendedness\_raw\_parent\_instFlux ..... count\\
+base\_Blendedness\_abs\_child\_instFlux ..... count\\
+base\_Blendedness\_abs\_parent\_instFlux ..... count\\
+base\_SdssShape\_instFlux ..... count\\
+base\_SdssShape\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_3\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_3\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_4\_5\_instFlux ..... count\\
+base\_CircularApertureFlux\_4\_5\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_6\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_6\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_9\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_9\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_12\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_12\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_17\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_17\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_25\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_25\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_35\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_35\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_50\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_50\_0\_instFluxErr ..... count\\
+base\_CircularApertureFlux\_70\_0\_instFlux ..... count\\
+base\_CircularApertureFlux\_70\_0\_instFluxErr ..... count\\
+base\_CompensatedGaussianFlux\_3\_instFlux ..... count\\
+base\_CompensatedGaussianFlux\_3\_instFluxErr ..... count\\
+base\_CompensatedGaussianFlux\_5\_instFlux ..... count\\
+base\_CompensatedGaussianFlux\_5\_instFluxErr ..... count\\
+base\_GaussianFlux\_instFlux ..... count\\
+base\_GaussianFlux\_instFluxErr ..... count\\
+base\_LocalBackground\_instFlux ..... count\\
+base\_LocalBackground\_instFluxErr ..... count\\
+base\_PsfFlux\_instFlux .... count\\
+base\_PsfFlux\_instFluxErr ..... count\\
+ext\_photometryKron\_KronFlux\_instFlux ..... count\\
+ext\_photometryKron\_KronFlux\_instFluxErr ..... count\\
+\strut \\
+\hspace*{0.333em}All src table instFlux entries have units of
+counts:~~True\\
+\strut \\
+Checking flux values for visit 169765\\
+\strut \\
+flux column~ ~ ~ ~ ~~\% of bad flux values\\
+\strut \\
+calibFlux~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap03Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap06Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap09Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap12Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap17Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap25Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap35Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap50Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap70Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+psfFlux~ ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+gaussianFlux~ ~ ~ ~ 0.0 \%\\
+\strut \\
+All "instFlux" entries have units of counts, and all fluxes are within a
+reasonable range of flux values, so this test has passed.
+
+}
 
 \paragraph{ LVV-T124 - Verify implementation of Software Architecture to Enable Community
 Re-Use }\mbox{}\\
