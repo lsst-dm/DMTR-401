@@ -34,7 +34,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2024-01-31 }
+\date{ 2024-02-01 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -197,7 +197,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T132}{LVV-T132}
-& {\small Leanne Guy } & {\small  } &
+& {\small Leanne Guy } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -317,7 +317,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1748}{LVV-T1748}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -971,6 +971,69 @@ Final comment:\\
 
 Detailed steps results LVV-C260-LVV-T132 LVV-E3057-3452:\\
 {\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E3057-1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the CI jobs used to test DRP processing successfully run.
+These jobs use precursor datasets from cameras other than LSST.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Because the outputs from CI jobs are not persisted, we instead use the
+regularly-reprocessed HSC RC2 data. Specifically, we used the output
+repo from HSC-RC2 data processing, as executed using a recent weekly
+pipelines release (w\_2023\_39). The output repo is tagged with the Jira
+ticket number DM-40985.\\
+\strut \\
+The butler collection within /repo/main at the USDF is
+``HSC/runs/RC2/w\_2023\_39/DM-40985\textquotesingle\textquotesingle.
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E3057-2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+For the precursor dataset, instantiate the Butler, load the data
+products, and confirm that they exist as expected.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Processed images, catalogs, calibration information, and other related
+data products are present and accessible via the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+The Test Cases that were executed on this dataset for this test campaign
+demonstrate that this requirement is satisfied. Specifically, the
+following data products from HSC RC2 were used (among others) in the
+Test Cases from this campaign:\\
+\strut \\
+LVV-T28: `src` and `sourceTable`\\
+LVV-T62: `deepCoadd\_calexp` and associated PSF\\
+LVV-T41: `calexp` (calibrated PVI) and associated PSF\\
+LVV-T40, LVV-T1240: `calexp,` `calexp\_photoCalib,` and associated WCS\\
+LVV-T43: `calexpBackground`\\
+LVV-T1946: `deepCoadd\_forced\_src` and `objectTable`\\
+LVV-T1947: `goodSeeingDiff\_diaSrc`, `forced\_src\_diaObject`,
+`diaSourceTable`, and `diaObjectTable\_tract`
+
+}
 
 \paragraph{ LVV-T62 - Verify implementation of Provide PSF for Coadded Images }\mbox{}\\
 
@@ -3130,6 +3193,247 @@ Final comment:\\
 
 Detailed steps results LVV-C260-LVV-T1748 LVV-E2973-3368:\\
 {\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2973-1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset containing processed data.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset that has been ingested into a Butler repository.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+For this test we use the regularly-reprocessed HSC RC2; in particular,
+the data reprocessed with weekly pipelines version `w\_2024\_02`, in
+Butler collection
+``HSC/runs/RC2/w\_2024\_02/DM-42454\textquotesingle\textquotesingle{} at
+the USDF.
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2973-2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\
+\strut \\
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster ("lsst-dev"): /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+\hfill\break
+From the command line, execute the commands below in the example code:\\
+\strut \\
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, \textquotesingle obs\textquotesingle{} packages
+such as `obs\_subaru`), then additional `setup` commands will be
+necessary.\\
+\strut \\
+To check versions in use, type:\\
+eups list -s
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+\$ eups list -s lsst\_distrib\\
+\hspace*{0.333em} ~g4213664e8e+b08e1c1b0b ~ ~ ~~w\_latest w\_2024\_04
+current setup\\
+\strut \\
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2973-3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call
+\textquotesingle DATA/path\textquotesingle, then execute something
+similar to the following (with paths, datasets, and flags replaced or
+additionally specified as needed):
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+pipetask -\/-long-log run -j 2 -b DATA/path/butler.yaml
+-\/-register-dataset-types -p
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d "band
+in (\textquotesingle g\textquotesingle,
+\textquotesingle r\textquotesingle, \textquotesingle i\textquotesingle)
+AND tract=9813 AND
+skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
+instrument=\textquotesingle HSC\textquotesingle" -\/-output
+u/username/atools\_metrics -i HSC/runs/RC2/w\_2023\_36 -\/-instrument
+lsst.obs.subaru.HyperSuprimeCam 2\textgreater\&1 \textbar{} tee
+w36\_2023\_tract9813\_atools.txt
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The output collection (in this case, "u/username/atools\_metrics")
+containing metric measurements and any associated extras and metadata is
+available via the butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+First we ran the "coaddQualityCore" pipeline from `analysis\_tools` on
+all three available tracts:\\
+\strut \\
+pipetask run -b /repo/main -i HSC/runs/RC2/w\_2024\_02/DM-42454 -p
+\$\{ANALYSIS\_TOOLS\_DIR\}/pipelines/coaddQualityCore.yaml -o
+u/jcarlin/test\_LVV-T1748 -\/-instrument lsst.obs.subaru.HyperSuprimeCam
+-\/-register-dataset-types -d "tract in (9813, 9615, 9697) AND
+skymap=\textquotesingle hsc\_rings\_v1\textquotesingle" 2\textgreater\&1
+\textbar{} tee atools\_LVV-T1748\_test.log\\
+\strut \\
+Next we ran the "visitQualityCore" pipeline on a single RC2 visit:\\
+\strut \\
+pipetask run -b /repo/main -i HSC/runs/RC2/w\_2024\_02/DM-42454 -p
+\$\{ANALYSIS\_TOOLS\_DIR\}/pipelines/visitQualityCore.yaml -o
+u/jcarlin/test\_LVV-T1748\_visit -\/-instrument
+lsst.obs.subaru.HyperSuprimeCam -\/-register-dataset-types -d "visit in
+(36180) AND skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
+instrument=\textquotesingle HSC\textquotesingle" 2\textgreater\&1
+\textbar{} tee atools\_LVV-T1748\_test\_visit.log\\
+\strut \\
+Both of these pipelines contain tasks that will calculate metrics based
+on matching to the Gaia DR3 reference catalog.
+
+}
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E2973-4 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the metric AA1 has been calculated, and that its values are
+reasonable.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that AA1 has been calculated.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Open a python prompt, then instantiate the Butler and read the metric
+bundles that were created by the above runs of `analysis\_tools`:\\
+\strut \\
+from lsst.daf.butler import Butler\\
+repo = \textquotesingle/repo/main\textquotesingle{}\\
+collection =
+\textquotesingle u/jcarlin/test\_LVV-T1748\textquotesingle{}\\
+butler = Butler(repo, collections=collection)\\
+did\_tract =
+\{\textquotesingle instrument\textquotesingle:\textquotesingle HSC\textquotesingle,
+\textquotesingle tract\textquotesingle:9615,
+\textquotesingle skymap\textquotesingle:\textquotesingle hsc\_rings\_v1\textquotesingle\}\\
+metric\_extract =
+butler.get(\textquotesingle objectTable\_tract\_gaia\_dr3\_20230707\_match\_metrics\textquotesingle,
+collections=collection, dataId=did\_tract)\\
+\strut \\
+for met in
+metric\_extract{[}\textquotesingle astromDiffMetrics\textquotesingle{]}:\\
+\hspace*{0.333em} ~ print(met)\\
+\strut \\
+g\_AA1\_RA\_coadd: 2.1063837266410697 mas\\
+g\_AA1\_sigmaMad\_RA\_coadd: 3.9587443763583363 mas\\
+g\_AA1\_Dec\_coadd: 2.1491007237806055 mas\\
+g\_AA1\_sigmaMad\_Dec\_coadd: 4.334318369967101 mas\\
+g\_AA1\_tot\_coadd: 5.557193272612054 mas\\
+g\_AA1\_sigmaMad\_tot\_coadd: 3.8598538443562407 mas\\
+r\_AA1\_RA\_coadd: 2.7165050880739723 mas\\
+r\_AA1\_sigmaMad\_RA\_coadd: 4.520586827619122 mas\\
+r\_AA1\_Dec\_coadd: 2.4681338712806418 mas\\
+r\_AA1\_sigmaMad\_Dec\_coadd: 4.641432559314666 mas\\
+r\_AA1\_tot\_coadd: 6.305816679054206 mas\\
+r\_AA1\_sigmaMad\_tot\_coadd: 4.120642210353908 mas\\
+i\_AA1\_RA\_coadd: 3.519391958661799 mas\\
+i\_AA1\_sigmaMad\_RA\_coadd: 4.326955084103768 mas\\
+i\_AA1\_Dec\_coadd: 3.3291494215381685 mas\\
+i\_AA1\_sigmaMad\_Dec\_coadd: 4.404755426441496 mas\\
+i\_AA1\_tot\_coadd: 6.952576143474123 mas\\
+i\_AA1\_sigmaMad\_tot\_coadd: 4.036796559569423 mas\\
+z\_AA1\_RA\_coadd: 2.41553204318734 mas\\
+z\_AA1\_sigmaMad\_RA\_coadd: 4.428035048189116 mas\\
+z\_AA1\_Dec\_coadd: 2.1116089754497076 mas\\
+z\_AA1\_sigmaMad\_Dec\_coadd: 4.641887604460565 mas\\
+z\_AA1\_tot\_coadd: 6.039798859474133 mas\\
+z\_AA1\_sigmaMad\_tot\_coadd: 4.182977418904133 mas\\
+y\_AA1\_RA\_coadd: 2.408819972288256 mas\\
+y\_AA1\_sigmaMad\_RA\_coadd: 4.440931123927884 mas\\
+y\_AA1\_Dec\_coadd: 2.1116089754497076 mas\\
+y\_AA1\_sigmaMad\_Dec\_coadd: 4.626056674759659 mas\\
+y\_AA1\_tot\_coadd: 6.0289912626929 mas\\
+y\_AA1\_sigmaMad\_tot\_coadd: 4.1957238417228 mas\\
+\strut \\
+did\_visit =
+\{\textquotesingle instrument\textquotesingle:\textquotesingle HSC\textquotesingle,
+\textquotesingle visit\textquotesingle:36180,
+\textquotesingle skymap\textquotesingle:\textquotesingle hsc\_rings\_v1\textquotesingle\}\\
+collection\_vis =
+\textquotesingle u/jcarlin/test\_LVV-T1748\_visit\textquotesingle{}\\
+butler\_vis = Butler(repo, collections=collection\_vis)\\
+metric\_extract\_vis =
+butler.get(\textquotesingle sourceTable\_visit\_gaia\_dr3\_20230707\_match\_metrics\textquotesingle,
+collections=collection\_vis, dataId=did\_visit)\\
+for met in
+metric\_extract\_vis{[}\textquotesingle astromDiffMetrics\textquotesingle{]}:\\
+\hspace*{0.333em} ~ print(met)\\
+\strut \\
+AA1\_RA: 0.2177698661398608 mas\\
+AA1\_sigmaMad\_RA: 2.6860945686629476 mas\\
+AA1\_Dec: 0.1395363322886922 mas\\
+AA1\_sigmaMad\_Dec: 2.801517008917446 mas\\
+AA1\_tot: 3.243461716402636 mas\\
+AA1\_sigmaMad\_tot: 1.9738141749210063 mas\\
+\strut \\
+We see that the calculated values of AA1 are well below the required 50
+mas threshold in both the coadds and the single-visit metrics. We thus
+deem this test to have passed.
+
+}
 
 \paragraph{ LVV-T1759 - Verify that the repeatability outlier limit for isolated bright
 non-saturated point sources in the g, r, and i filters (PA2gri) can be
