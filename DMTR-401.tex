@@ -34,7 +34,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2024-02-01 }
+\date{ 2024-03-25 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -165,7 +165,7 @@ Jeffrey Carlin }
 } \\\hline
 \textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T146}{LVV-T146}
-& {\small Leanne Guy } & {\small  } &
+& {\small Leanne Guy } & {\small Leanne Guy } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -301,11 +301,13 @@ Jeffrey Carlin }
 \multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P106}{LVV-P106}:} &
 \multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Approved \\\hline
 \multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260}:} &
-\multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & In Progress \\\hline
+\multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Done \\\hline
 \textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T146}{LVV-T146}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E3318
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
 
@@ -314,16 +316,24 @@ Jeffrey Carlin }
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1240}{LVV-T1240}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E3193
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\
+\strut \\
+The executed notebook was saved in the repository associated with this
+campaign's test report as ``notebooks/test\_LVV-T40\_T1240.ipynb''.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T132}{LVV-T132}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E3057
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
 
@@ -332,70 +342,163 @@ Jeffrey Carlin }
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T62}{LVV-T62}
 &  2
-&  &
+\\
+ \hfill Execution & LVV-E3058
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Test executed with science pipelines version w\_2023\_34 in the RSP
+Notebook aspect at the USDF.\\
+\strut \\
+The executed notebook was saved in the repository associated with this
+campaign's test report as ``notebooks/test\_LVV-T62.ipynb''.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T41}{LVV-T41}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E3056
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\
+\strut \\
+The executed notebook was saved in the repository associated with this
+campaign's test report as ``notebooks/test\_LVV-T41.ipynb''.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{LVV-T97}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E3002
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
+Executed at the USDF using the w\_2023\_43 version of the Science
+Pipelines.\\
+\strut \\
+In addition to demonstrating that changing the "RELEASE\_ID" results in
+unique IDs, we further examine the code itself to demonstrate that the
+uniqueness of IDs is ensured by the way the code is implemented.\\
+\strut \\
+The implementation of how the 64 bits of the Source/Object IDs are
+apportioned is in the
+\texttt{\_IdGeneratorBits}\href{https://github.com/lsst/meas_base/blob/1bfaca56951770c88f4308da41de16d72ce40db9/python/lsst/meas/base/_id_generator.py\#L507-L537}{~class},
+and especially its \texttt{\_\_post\_init\_\_}:\\
 
+\begin{itemize}
+\tightlist
+\item
+  it gets the maximum number of bits needed to pack the data ID (based
+  on \texttt{\{visit,\ detector\}} for Source, and
+  \texttt{\{tract,\ patch\}} for Object) and turns that into the number
+  of distinct data IDs it could hold \texttt{(n\_data\_ids)};
+\item
+  it multiplies that with the \texttt{n\_releases} option to identify
+  how many "upper" bits need to be reserved for
+  \texttt{n\_data\_ids*n\_releases} "catalog\_ids", and sets
+  \texttt{n\_counters} to be the number of values remaining in the
+  Source or Object 64-bit ID to count sources or objects within one
+  image.
+\end{itemize}
+
+\hfill\break
+Because some interfaces historically wanted to count bits rather than
+just multiply integers, there is a mix of direct multiplication and log2
+addition. But you can see the result most clearly in
+\texttt{FullIdGenerator.arange} and
+\texttt{FullIdGenerator.catalog\_id}; a full Source or Object ID is:\\
+
+\begin{verbatim}
+id = counter + n_counters * catalog_id
+\end{verbatim}
+
+or\\
+
+\begin{verbatim}
+id = counter + n_counters * (packed_data_id + n_data_ids * release_id)
+\end{verbatim}
+
+\hfill\break
+and hence the releases will get distinct IDs as long as counter values
+are less than \texttt{n\_counters} and the packed data IDs are less than
+\texttt{n\_data\_ids}. (And there are several checks throughout the file
+for those criteria).
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{LVV-T1946}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E2982
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+This test case can be executed by running the script test\_LVV-T1946.py,
+which is available in the test report github
+repository\textquotesingle s "scripts/" directory.\\
+\strut \\
+The tests that confirm fluxes have "reasonable" values are checking that
+the fluxes, if converted to magnitudes, would result in a magnitude
+fainter than -5.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{LVV-T1947}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E2983
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+This test case can be executed by running the scripts
+test\_LVV-T1947\_DiaSource.py and test\_LVV-T1947\_DiaObject.py, which
+are available in the test report github repository\textquotesingle s
+"scripts/" directory.\\
+\strut \\
+The tests that confirm fluxes have "reasonable" values are checking that
+the fluxes, if converted to magnitudes, would result in a magnitude
+fainter than -5.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T28}{LVV-T28}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E2984
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+This test case can be executed by running the scripts test\_LVV-T28.py
+and test\_LVV-T28\_DC2.py, which are available in the test report github
+repository\textquotesingle s "scripts/" directory.\\
+\strut \\
+The tests that confirm fluxes have "reasonable" values are checking that
+the fluxes, if converted to magnitudes, would result in a magnitude
+fainter than -5.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{LVV-T142}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E2974
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Executed at the USDF using the w\_2023\_43 version of the Science
+Pipelines.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1748}{LVV-T1748}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E2973
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
 
@@ -404,37 +507,53 @@ Jeffrey Carlin }
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1759}{LVV-T1759}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E2970
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+This test used a modified version of the analysis\_tools pipeline
+"matchedVisitQualityCore.yaml."
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1758}{LVV-T1758}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E2971
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Note that because we do not have access to u-band data, this test was
+performed for only y- and z-band. The steps would be unchanged for
+u-band data.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T149}{LVV-T149}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E2972
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Executed using the IDF Notebook, Portal, and API aspects. For the
+notebook execution, we used science pipelines version w\_2023\_34.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T40}{LVV-T40}
 &  1
-&  &
+\\
+ \hfill Execution & LVV-E2962
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\
+\strut \\
+The executed notebook was saved in the repository associated with this
+campaign's test report as ``notebooks/test\_LVV-T40\_T1240.ipynb''.
 \medskip
 \end{minipage}
 &   \\\hline
@@ -462,7 +581,7 @@ Not yet available.
 Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C260}{Data Management Acceptance Test Campaign, Fall 2023}} in Jira.
 
 Test Cycle name: Data Management Acceptance Test Campaign, Fall 2023\\
-Status: In Progress
+Status: Done
 
 This test cycle verifies a subset of
 \href{https://lse-61.lsst.io/}{DMSR} (\citeds{LSE-61}) requirements in order to
@@ -487,8 +606,8 @@ Status \textbf{Approved}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T146}{\textit{ LVV-T146 } }
 test case in Jira.
 
-Demonstrate that the DMS can be initialized in a safe state that will
-not allow data corruption/loss.
+Demonstrate that all components of the DM system have a defined
+deployment configuration within the DM deployment strategy
 
 \textbf{ Preconditions}:\\
 
@@ -501,6 +620,184 @@ Final comment:\\
 
 Detailed steps results LVV-C260-LVV-T146 LVV-E3318-3713:\\
 {\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
+\begin{tabular}{p{4cm}p{12cm}}
+\toprule
+Step LVV-E3318-1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Inspect each service component to check if it has a deployment
+configuration defined
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+All systems have a defined deployment configuration as part of the DM
+deployment strategy\\
+\strut \\
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Service
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Location
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Deployment Strategy
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Archiving~ & Summit, USDF & \begin{minipage}[t]{\linewidth}\raggedright
+S3 on Kubernetes. Summit currently ssh/NFS to bare metal machine, which
+also comes up in a known/safe state.\\
+\strut
+\end{minipage} & Deployed \\
+Planned Observation Publication (a.k.a. ObsLocTAP) & USDF &
+Safir/Phalanx on Kubernetes &
+\begin{minipage}[t]{\linewidth}\raggedright
+Not Deployed\\
+\strut
+\end{minipage} \\
+Prompt Processing Ingest & USDF &
+\begin{minipage}[t]{\linewidth}\raggedright
+Kubernetes\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+Observatory Operations Data\\
+\strut
+\end{minipage} & Summit & \begin{minipage}[t]{\linewidth}\raggedright
+Kubernetes\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+Observatory Control System (OCS) Controlled Pipeline\\
+\strut
+\end{minipage} & Summit & \begin{minipage}[t]{\linewidth}\raggedright
+Kubernetes\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+Telemetry Gateway & Summit & Sasquatch/Phalanx/Kafka on Kubernetes &
+\begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+Prompt Processing & USDF & KNative on Kubernetes &
+\begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+Alert Distribution & USDF & \begin{minipage}[t]{\linewidth}\raggedright
+Kubernetes\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Tests deployed, operational system not quite\\
+\strut
+\end{minipage} \\
+Prompt Quality Control & USDF &
+\begin{minipage}[t]{\linewidth}\raggedright
+Part of Prompt Processing payload, with publication to
+Sasquatch/Phalanx/Kafka and InfluxDB on K8s\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+Batch Production & USDF & \begin{minipage}[t]{\linewidth}\raggedright
+The batch system is independent. It uses Slurm not on K8s and has its
+own power-up safe state. ~PanDA and its RCEs are either on K8s or are
+like Slurm.\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+Offline QC & USDF & \begin{minipage}[t]{\linewidth}\raggedright
+Part of Batch Production payloads, with publication to
+Sasquatch/Phalanx/Kafka and InfluxDB on K8s\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+Bulk Distribution & USDF & \begin{minipage}[t]{\linewidth}\raggedright
+Rucio/FTS3 on K8s\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+Data Backbone & USDF & \begin{minipage}[t]{\linewidth}\raggedright
+Rucio/FTS3 + ingested on K8s\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+RSP Portal\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Summit, USDF\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Phalanx on K8s\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+RSP Notebook\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Summit, USDF\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Phalanx on K8s\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+RSP Web API\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Summit, USDF\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Phalanx on K8s\\
+\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Deployed\\
+\strut
+\end{minipage} \\
+\end{longtable}
+
+}
 
 \paragraph{ LVV-T1240 - Verify implementation of minimum astrometric standards per CCD }\mbox{}\\
 
@@ -1287,18 +1584,15 @@ coadds with the Butler.
 {\footnotesize
 By default, the test script selects the following
 instrument/detector/visit combination. This can be changed if desired.\\
-\hspace*{0.333em} ~~\# Select an arbitrary source catalog from a
-deepCoadd:\\
-\hspace*{0.333em}
-~~instrument~=~\textquotesingle HSC\textquotesingle{}\\
-\hspace*{0.333em} ~~band~=~\textquotesingle i\textquotesingle{}\\
-\hspace*{0.333em} ~~tract~=~9615\\
-\hspace*{0.333em} ~~patch~=~13\\
-\hspace*{0.333em}
-~~skymap~=~\textquotesingle hsc\_rings\_v1\textquotesingle{}\\
+\strut ~ ~~\# Select an arbitrary source catalog from a deepCoadd:\\
+\strut ~ ~~instrument~=~\textquotesingle HSC\textquotesingle{}\\
+\strut ~ ~~band~=~\textquotesingle i\textquotesingle{}\\
+\strut ~ ~~tract~=~9615\\
+\strut ~ ~~patch~=~13\\
+\strut ~ ~~skymap~=~\textquotesingle hsc\_rings\_v1\textquotesingle{}\\
 \strut \\
-\hspace*{0.333em} ~~\# Run the test\\
-\hspace*{0.333em} ~ LVVT1946(instrument, tract, patch, band, skymap)
+\strut ~ ~~\# Run the test\\
+\strut ~ ~ LVVT1946(instrument, tract, patch, band, skymap)
 
 }
 \begin{tabular}{p{4cm}p{12cm}}
@@ -1619,8 +1913,7 @@ count~ ~ ~ ~ ~ ~ ~ ~\\
 undeblended\_ext\_convolved\_ConvolvedFlux\_3\_kron\_instFluxErr .....
 count~ ~ ~ ~ ~ ~ ~ ~\\
 \strut \\
-\hspace*{0.333em}All forced\_src instFlux entries have units of
-counts:~~True\\
+\strut ~All forced\_src instFlux entries have units of counts:~~True\\
 \strut \\
 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\\
 \strut \\
@@ -2192,13 +2485,12 @@ By default, the test script selects the following
 instrument/detector/visit combination. This can be changed if desired.\\
 \strut \\
 \# Select an arbitrary source catalog from a calexp (PVI):\\
-\hspace*{0.333em}
-~~instrument~=~\textquotesingle HSC\textquotesingle{}\\
-\hspace*{0.333em} ~~detector~=~5\\
-\hspace*{0.333em} ~~visit~=~36180\\
+\strut ~ ~~instrument~=~\textquotesingle HSC\textquotesingle{}\\
+\strut ~ ~~detector~=~5\\
+\strut ~ ~~visit~=~36180\\
 \strut \\
-\hspace*{0.333em} ~~\# Run the test\\
-\hspace*{0.333em} ~ LVVT28(instrument, visit, detector)\\
+\strut ~ ~~\# Run the test\\
+\strut ~ ~ LVVT28(instrument, visit, detector)\\
 \strut \\
 
 }
@@ -2224,14 +2516,13 @@ By default, the test script selects the following
 instrument/detector/visit combination. This can be changed if desired.\\
 \strut \\
 \# Select an arbitrary source catalog from a calexp (PVI):\\
-\hspace*{0.333em}
+\strut ~
 ~~instrument~=~\textquotesingle LSSTCam-imSim\textquotesingle{}\\
-\hspace*{0.333em}
-~~detector~=~\textquotesingle R30\_S10\textquotesingle{}\\
-\hspace*{0.333em} ~~visit~=~169765\\
+\strut ~ ~~detector~=~\textquotesingle R30\_S10\textquotesingle{}\\
+\strut ~ ~~visit~=~169765\\
 \strut \\
-\hspace*{0.333em} ~~\# Run the test\\
-\hspace*{0.333em} ~ LVVT28(instrument, visit, detector)
+\strut ~ ~~\# Run the test\\
+\strut ~ ~ LVVT28(instrument, visit, detector)
 
 }
 \begin{tabular}{p{4cm}p{12cm}}
@@ -2301,8 +2592,7 @@ base\_PsfFlux\_instFluxErr ..... count\\
 ext\_photometryKron\_KronFlux\_instFlux ..... count\\
 ext\_photometryKron\_KronFlux\_instFluxErr ..... count\\
 \strut \\
-\hspace*{0.333em}All src table instFlux entries have units of
-counts:~~True\\
+\strut ~All src table instFlux entries have units of counts:~~True\\
 \strut \\
 Checking flux values for visit 36180\\
 \strut \\
@@ -2393,8 +2683,7 @@ base\_PsfFlux\_instFluxErr ..... count\\
 ext\_photometryKron\_KronFlux\_instFlux ..... count\\
 ext\_photometryKron\_KronFlux\_instFluxErr ..... count\\
 \strut \\
-\hspace*{0.333em}All src table instFlux entries have units of
-counts:~~True\\
+\strut ~All src table instFlux entries have units of counts:~~True\\
 \strut \\
 Checking flux values for visit 169765\\
 \strut \\
@@ -2508,26 +2797,21 @@ project: dm\_atc\\
 campaign: LVV-T142\_test\\
 \strut \\
 includeConfigs:\\
-\hspace*{0.333em}\hspace*{0.333em}-
-\$\{DRP\_PIPE\_DIR\}/bps/clustering/DRP-recalibrated.yaml\\
-\hspace*{0.333em}\hspace*{0.333em}-
-\$\{DRP\_PIPE\_DIR\}/bps/resources/HSC/DRP-RC2.yaml\\
+\strut ~~- \$\{DRP\_PIPE\_DIR\}/bps/clustering/DRP-recalibrated.yaml\\
+\strut ~~- \$\{DRP\_PIPE\_DIR\}/bps/resources/HSC/DRP-RC2.yaml\\
 \strut \\
 payload:\\
-\hspace*{0.333em}\hspace*{0.333em}payloadName: u/jcarlin\\
-\hspace*{0.333em}\hspace*{0.333em}output:
-"\{payloadName\}/\{campaign\}"\\
-\hspace*{0.333em}\hspace*{0.333em}butlerConfig:
-/sdf/group/rubin/repo/main/butler.yaml\\
-\hspace*{0.333em}\hspace*{0.333em}inCollection:
-"HSC/RC2\_subset/defaults"\\
+\strut ~~payloadName: u/jcarlin\\
+\strut ~~output: "\{payloadName\}/\{campaign\}"\\
+\strut ~~butlerConfig: /sdf/group/rubin/repo/main/butler.yaml\\
+\strut ~~inCollection: "HSC/RC2\_subset/defaults"\\
 \strut \\
 \#computeSite:\\
 site:\\
-\hspace*{0.333em}\hspace*{0.333em}s3df:\\
-\hspace*{0.333em} ~~profile:\\
-\hspace*{0.333em} ~ ~~condor:\\
-\hspace*{0.333em} ~ ~ ~~+Walltime: 7200\\
+\strut ~~s3df:\\
+\strut ~ ~~profile:\\
+\strut ~ ~ ~~condor:\\
+\strut ~ ~ ~ ~~+Walltime: 7200\\
 \strut \\
 \# Condor backend stuff\\
 wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService\\
@@ -2598,7 +2882,7 @@ completed. Use a butler query to see how many exist:\\
 butler query-datasets /repo/main calexp -\/-collections
 u/jcarlin/LVV-T142\_test/20231102T233609Z \textbar{} grep
 \textquotesingle calexp\textquotesingle{} \textbar{} wc\\
-\hspace*{0.333em} ~ ~13 ~ ~~104~ ~~1716\\
+\strut ~ ~ ~13 ~ ~~104~ ~~1716\\
 \strut \\
 The first entry says that there are only 13 lines returned by that
 query. Thus some output products must be missing.
@@ -2668,7 +2952,7 @@ the results were saved into:\\
 butler query-datasets /repo/main calexp -\/-collections
 u/jcarlin/LVV-T142\_test/20231102T233609Z \textbar{} grep
 \textquotesingle calexp\textquotesingle{} \textbar{} wc\\
-\hspace*{0.333em} ~~240~ ~~1920 ~~31680\\
+\strut ~ ~~240~ ~~1920 ~~31680\\
 \strut \\
 We see that this execution brought the total to 240 calexps, as
 expected. We have thus demonstrated that the batch processing system
@@ -2775,8 +3059,8 @@ eups list -s
   Actual Result \\
 {\footnotesize
 \$ eups list -s lsst\_distrib\\
-\hspace*{0.333em} ~g4213664e8e+b08e1c1b0b ~ ~ ~~w\_latest w\_2024\_04
-current setup\\
+\strut ~ ~g4213664e8e+b08e1c1b0b ~ ~ ~~w\_latest w\_2024\_04 current
+setup\\
 \strut \\
 
 }
@@ -2882,7 +3166,7 @@ collections=collection, dataId=did\_tract)\\
 \strut \\
 for met in
 metric\_extract{[}\textquotesingle astromDiffMetrics\textquotesingle{]}:\\
-\hspace*{0.333em} ~ print(met)\\
+\strut ~ ~ print(met)\\
 \strut \\
 g\_AA1\_RA\_coadd: 2.1063837266410697 mas\\
 g\_AA1\_sigmaMad\_RA\_coadd: 3.9587443763583363 mas\\
@@ -2927,7 +3211,7 @@ butler.get(\textquotesingle sourceTable\_visit\_gaia\_dr3\_20230707\_match\_metr
 collections=collection\_vis, dataId=did\_visit)\\
 for met in
 metric\_extract\_vis{[}\textquotesingle astromDiffMetrics\textquotesingle{]}:\\
-\hspace*{0.333em} ~ print(met)\\
+\strut ~ ~ print(met)\\
 \strut \\
 AA1\_RA: 0.2177698661398608 mas\\
 AA1\_sigmaMad\_RA: 2.6860945686629476 mas\\
@@ -3096,8 +3380,8 @@ pipetask -\/-long-log run -j 2 -b /repo/main -\/-register-dataset-types
 skymap=\textquotesingle hsc\_rings\_v1\textquotesingle{} AND
 instrument=\textquotesingle HSC\textquotesingle" -\/-output
 u/jcarlin/pa2\_15 -i HSC/runs/RC2/w\_2023\_35/DM-40588\\
-\hspace*{0.333em}-\/-instrument lsst.obs.subaru.HyperSuprimeCam
-2\textgreater\&1 \textbar{} tee w35\_2023\_tract9813\_pa2\_15.txt
+\strut ~-\/-instrument lsst.obs.subaru.HyperSuprimeCam 2\textgreater\&1
+\textbar{} tee w35\_2023\_tract9813\_pa2\_15.txt
 
 }
 \begin{tabular}{p{4cm}p{12cm}}
