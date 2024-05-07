@@ -34,7 +34,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2024-03-25 }
+\date{ 2024-05-07 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -455,9 +455,10 @@ fainter than -5.
 \begin{minipage}[]{9cm}
 \smallskip
 This test case can be executed by running the scripts
-test\_LVV-T1947\_DiaSource.py and test\_LVV-T1947\_DiaObject.py, which
-are available in the test report github repository\textquotesingle s
-"scripts/" directory.\\
+test\_LVV-T1947\_DiaSource.py,
+~test\_LVV-T1947\_forcedSourceOnDiaObject.py, and
+test\_LVV-T1947\_DiaObject.py, which are available in the test report
+github repository\textquotesingle s "scripts/" directory.\\
 \strut \\
 The tests that confirm fluxes have "reasonable" values are checking that
 the fluxes, if converted to magnitudes, would result in a magnitude
@@ -472,9 +473,10 @@ fainter than -5.
 & Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-This test case can be executed by running the scripts test\_LVV-T28.py
-and test\_LVV-T28\_DC2.py, which are available in the test report github
-repository\textquotesingle s "scripts/" directory.\\
+This test case can be executed by running the scripts test\_LVV-T28.py,
+test\_LVV-T28\_forcedSource.py, and test\_LVV-T28\_DC2.py, which are
+available in the test report github repository\textquotesingle s
+"scripts/" directory.\\
 \strut \\
 The tests that confirm fluxes have "reasonable" values are checking that
 the fluxes, if converted to magnitudes, would result in a magnitude
@@ -2359,6 +2361,30 @@ y\_psfFluxPercentile95 0.0 \%\\
 y\_psfFluxSigma 0.0 \%\\
 y\_scienceFluxSigma 0.0 \%\\
 \strut \\
+The script outputs the following, confirming that all calibrated fluxes
+from the "forcedSourceOnDiaObject" table are in units of nJy within a
+reasonable range of flux values:\\
+\strut \\
+Output from script "test\_LVV-T1947\_forcedSourceOnDiaSource.py":\\
+\strut \\
+(lsst-scipipe-8.0.0) {[}jcarlin@sdfrome001 fall2023\_ATC{]}\$ python
+test\_LVV-T1947\_forcedSourceOnDiaObject.py~\\
+lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b~ ~~w\_2024\_04 setup\\
+Input dataId:~~\{\textquotesingle instrument\textquotesingle:
+\textquotesingle HSC\textquotesingle,
+\textquotesingle tract\textquotesingle: 9697,
+\textquotesingle patch\textquotesingle: 13,
+\textquotesingle skymap\textquotesingle:
+\textquotesingle hsc\_rings\_v1\textquotesingle\}\\
+\strut \\
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\\
+\strut \\
+Checking flux values for tract 9697, forcedSourceOnDiaObjectTable\\
+\strut \\
+flux column \% of bad flux values\\
+psfFlux 0.0 \%\\
+psfDiffFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+\strut \\
 
 }
 
@@ -2548,10 +2574,12 @@ Confirmation of measurements in catalogs encoded in flux units.
 test\_LVV-T28.py~\\
 lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b ~ ~ w\_latest w\_2024\_04
 current setup\\
-Input dataId:~~\{\textquotesingle instrument\textquotesingle:
+Input dataId: \{\textquotesingle instrument\textquotesingle:
 \textquotesingle HSC\textquotesingle,
 \textquotesingle visit\textquotesingle: 36180,
 \textquotesingle detector\textquotesingle: 5\}\\
+\strut \\
+Checking afw src table:\\
 deblend\_psf\_instFlux ..... count\\
 base\_Blendedness\_raw\_child\_instFlux ..... count\\
 base\_Blendedness\_raw\_parent\_instFlux ..... count\\
@@ -2592,7 +2620,9 @@ base\_PsfFlux\_instFluxErr ..... count\\
 ext\_photometryKron\_KronFlux\_instFlux ..... count\\
 ext\_photometryKron\_KronFlux\_instFluxErr ..... count\\
 \strut \\
-\strut ~All src table instFlux entries have units of counts:~~True\\
+All src table instFlux entries have units of counts: True\\
+\strut \\
+Checking parquet sourceTable:\\
 \strut \\
 Checking flux values for visit 36180\\
 \strut \\
