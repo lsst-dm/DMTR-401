@@ -36,6 +36,8 @@ def LVVT28(instrument, visit, detector):
     dataId = {'instrument':instrument, 'visit':visit, 'detector':detector}
     print('Input dataId: ', dataId)
 
+    print('\nChecking afw src table:')
+
     try:
         src = butler.get('src', dataId = dataId)
     except:
@@ -50,6 +52,7 @@ def LVVT28(instrument, visit, detector):
     # If all of the flux units are "count," print "TRUE."
     print('\n All src table instFlux entries have units of counts: ', np.all(src_flag))
 
+    print('\nChecking parquet sourceTable:')
     try:
         srctable = butler.get('sourceTable', dataId = dataId)
     except:

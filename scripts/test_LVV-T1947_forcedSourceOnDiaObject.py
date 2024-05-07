@@ -20,7 +20,7 @@ config = '/repo/main'
 collection = 'HSC/runs/RC2/w_2023_39/DM-40985'
 butler = Butler(config, collections=collection)
 
-def LVVT1947(instrument, tract, detector, visit, band, skymap):
+def LVVT1947(instrument, tract, patch, skymap):
     """ Execute test case LVV-T1947
 
     Parameters
@@ -33,18 +33,18 @@ def LVVT1947(instrument, tract, detector, visit, band, skymap):
         Band on which to test schema.
     """
 
-    dataId = {'instrument':instrument, 'tract':tract, 'band':band,
-              'detector':detector, 'visit':visit, 'skymap':skymap}
+    dataId = {'instrument':instrument, 'tract':tract, 'patch':patch,
+              'skymap':skymap}
     print('Input dataId: ', dataId)
 
     try:
-        obj_table = butler.get('diaObjectTable_tract', dataId = dataId)
+        obj_table = butler.get('forcedSourceOnDiaObjectTable', dataId = dataId)
     except:
         print('Invalid dataId. Please check and try again.')
 
     tractname = dataId['tract']
     print('\n-------------------------------------------------')
-    print(f'\nChecking flux values for tract {tractname}, diaObjectTable_tract')
+    print(f'\nChecking flux values for tract {tractname}, forcedSourceOnDiaObjectTable')
     check_flux_values(obj_table)
 
 
@@ -58,27 +58,19 @@ def check_flux_values(obj_table):
         src table to check
     """
 
-    bands = ['g', 'r', 'i', 'z', 'y']
-    fluxes = ['psfFluxMAD', 'psfFluxMean',
-              'scienceFluxMean',
-              'psfFluxMin', 'psfFluxMax', 'psfFluxPercentile05',
-              'psfFluxPercentile25', 'psfFluxPercentile50',
-              'psfFluxPercentile75', 'psfFluxPercentile95',
-              'psfFluxSigma', 'scienceFluxSigma']
+    fluxes = ['psfFlux', 'psfDiffFlux']
 
     bright_maglim = -5.0*u.ABmag
     bright_fluxlim = bright_maglim.to(u.nJy)
     faint_fluxlim = -1e12*u.nJy
 
-    for band in bands:
-        print('\nflux column          % of bad flux values\n')
-        for fluxcol_stub in fluxes:
-            fluxcol = band+'_'+fluxcol_stub
-            toofaint = (obj_table[fluxcol].values < faint_fluxlim.value)
-            toobright = (obj_table[fluxcol].values > bright_fluxlim.value)
-            fluxflag = (toofaint | toobright)
-            bad_percentage = (np.sum(fluxflag)/len(fluxflag))*100*u.percent
-            print(f'{fluxcol:20} {bad_percentage:7.2}')
+    print('\nflux column          % of bad flux values\n')
+    for fluxcol in fluxes:
+        toofaint = (obj_table[fluxcol].values < faint_fluxlim.value)
+        toobright = (obj_table[fluxcol].values > bright_fluxlim.value)
+        fluxflag = (toofaint | toobright)
+        bad_percentage = (np.sum(fluxflag)/len(fluxflag))*100*u.percent
+        print(f'{fluxcol:20} {bad_percentage:7.2}')
 
 
 if __name__ == "__main__":
@@ -87,9 +79,8 @@ if __name__ == "__main__":
     instrument = 'HSC'
     band = 'i'
     tract = 9697
+    patch = 13
     skymap = 'hsc_rings_v1'
-    detector = 40
-    visit = 36180
 
     # Run the test
-    LVVT1947(instrument, tract, detector, visit, band, skymap)
+    LVVT1947(instrument, tract, patch, skymap)
