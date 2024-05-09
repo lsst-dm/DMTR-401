@@ -1,8 +1,8 @@
 % generated from JIRA project LVV
-% using template at /Users/womullan/anaconda3/envs/docsteady-env2.4/lib/python3.7/site-packages/docsteady/templates/tpr.latex.jinja2.
+% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.7/site-packages/docsteady/templates/tpr.latex.jinja2.
 % using docsteady version 2.4.1
 % Please do not edit -- update information in Jira instead
-\documentclass[DM,STR,toc]{lsstdoc}
+\documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
 \usepackage{geometry}
 \usepackage{longtable,booktabs}
 \usepackage{enumitem}
@@ -32,7 +32,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2023-09-01 }
+\date{ 2024-05-09 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -103,7 +103,7 @@ Section \ref{sect:overview} provides a summary of the test results, including an
 an overall assessment statement and suggestions for possible improvements.
 Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
 
-The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P106}{LVV-P106} in Jira is \textbf{ Approved }.
+The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P106}{LVV-P106} in Jira is \textbf{ Completed }.
 
 \subsection{References}
 \label{sect:references}
@@ -160,24 +160,16 @@ The personnel involved in the test campaign is shown in the following table.
 Jeffrey Carlin }
 } \\\hline
 \textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T191}{LVV-T191}
-& {\small Leanne Guy } & {\small  } &
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T146}{LVV-T146}
+& {\small Leanne Guy } & {\small Leanne Guy } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
 \medskip
 \end{minipage}
 \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1986}{LVV-T1986}
-& {\small Leanne Guy } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T159}{LVV-T159}
-& {\small Leanne Guy } & {\small  } &
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1240}{LVV-T1240}
+& {\small Jim Bosch } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -185,7 +177,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T132}{LVV-T132}
-& {\small Leanne Guy } & {\small  } &
+& {\small Leanne Guy } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -194,14 +186,6 @@ Jeffrey Carlin }
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T62}{LVV-T62}
 & {\small Jim Bosch } & {\small Jeffrey Carlin } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T168}{LVV-T168}
-& {\small Leanne Guy } & {\small  } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -217,55 +201,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{LVV-T97}
-& {\small Kian-Tat Lim } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T183}{LVV-T183}
-& {\small Gregory Dubois-Felsmann } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2177}{LVV-T2177}
-& {\small Leanne Guy } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1755}{LVV-T1755}
-& {\small Jeffrey Carlin } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2176}{LVV-T2176}
-& {\small Leanne Guy } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1754}{LVV-T1754}
-& {\small Jeffrey Carlin } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T376}{LVV-T376}
-& {\small Leanne Guy } & {\small  } &
+& {\small Kian-Tat Lim } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -273,7 +209,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{LVV-T1946}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -281,7 +217,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{LVV-T1947}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -289,15 +225,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T28}{LVV-T28}
-& {\small Colin Slater } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T124}{LVV-T124}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Colin Slater } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -305,7 +233,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{LVV-T142}
-& {\small Leanne Guy } & {\small  } &
+& {\small Colin Slater } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -313,7 +241,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1748}{LVV-T1748}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -321,7 +249,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1759}{LVV-T1759}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -329,7 +257,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1758}{LVV-T1758}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -345,63 +273,7 @@ Jeffrey Carlin }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T40}{LVV-T40}
-& {\small Jeffrey Carlin } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T129}{LVV-T129}
-& {\small Jeffrey Carlin } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T115}{LVV-T115}
-& {\small Kian-Tat Lim } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1862}{LVV-T1862}
-& {\small Jeffrey Carlin } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T89}{LVV-T89}
-& {\small Eli Rykoff } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T88}{LVV-T88}
-& {\small Eli Rykoff } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T85}{LVV-T85}
-& {\small Jeffrey Carlin } & {\small  } &
-\begin{minipage}[]{6cm}
-\smallskip
-{\small  }
-\medskip
-\end{minipage}
-\\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T83}{LVV-T83}
-& {\small Jeffrey Carlin } & {\small  } &
+& {\small Jeffrey Carlin } & {\small Jeffrey Carlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -423,40 +295,34 @@ Jeffrey Carlin }
 \begin{longtable}{p{2cm}cp{2.3cm}p{8.6cm}p{2.3cm}}
 \toprule
 \multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P106}{LVV-P106}:} &
-\multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Approved \\\hline
+\multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Completed \\\hline
 \multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C260}{LVV-C260}:} &
-\multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & In Progress \\\hline
+\multicolumn{2}{p{10.9cm}}{\textbf{ Data Management Acceptance Test Campaign, Fall 2023 }} & Done \\\hline
 \textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T191}{LVV-T191}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T146}{LVV-T146}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
 
 \medskip
 \end{minipage}
 &   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1986}{LVV-T1986}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1240}{LVV-T1240}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T159}{LVV-T159}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
+Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
+saved in the repository associated with this campaign's test report as
+``notebooks/test\_LVV-T40\_T1240.ipynb''.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T132}{LVV-T132}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
 
@@ -475,21 +341,12 @@ saved in the repository associated with this campaign's test report as
 \medskip
 \end{minipage}
 &   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T168}{LVV-T168}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T41}{LVV-T41}
 &  1
 & Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-Test executed with science pipelines version w\_2023\_34 in the RSP
+Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
 saved in the repository associated with this campaign's test report as
 ``notebooks/test\_LVV-T41.ipynb''.
@@ -498,115 +355,113 @@ saved in the repository associated with this campaign's test report as
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{LVV-T97}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
+Executed at the USDF using the w\_2023\_43 version of the Science
+Pipelines.\\[2\baselineskip]In addition to demonstrating that changing
+the ``RELEASE\_ID'' results in unique IDs, we further examine the code
+itself to demonstrate that the uniqueness of IDs is ensured by the way
+the code is implemented.\\[2\baselineskip]The implementation of how the
+64 bits of the Source/Object IDs are apportioned is in the
+\texttt{\_IdGeneratorBits}\href{https://github.com/lsst/meas_base/blob/1bfaca56951770c88f4308da41de16d72ce40db9/python/lsst/meas/base/_id_generator.py\#L507-L537}{~class},
+and especially its \texttt{\_\_post\_init\_\_}:\\
 
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T183}{LVV-T183}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
+\begin{itemize}
+\tightlist
+\item
+  it gets the maximum number of bits needed to pack the data ID (based
+  on \texttt{\{visit,\ detector\}} for Source, and
+  \texttt{\{tract,\ patch\}} for Object) and turns that into the number
+  of distinct data IDs it could hold \texttt{(n\_data\_ids)};
+\item
+  it multiplies that with the \texttt{n\_releases} option to identify
+  how many ``upper'' bits need to be reserved for
+  \texttt{n\_data\_ids*n\_releases} ``catalog\_ids'', and sets
+  \texttt{n\_counters} to be the number of values remaining in the
+  Source or Object 64-bit ID to count sources or objects within one
+  image.
+\end{itemize}
 
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2177}{LVV-T2177}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
+Because some interfaces historically wanted to count bits rather than
+just multiply integers, there is a mix of direct multiplication and log2
+addition. But you can see the result most clearly in
+\texttt{FullIdGenerator.arange} and
+\texttt{FullIdGenerator.catalog\_id}; a full Source or Object ID is:\\
 
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1755}{LVV-T1755}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
+\begin{verbatim}
+id = counter + n_counters * catalog_id
+\end{verbatim}
 
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2176}{LVV-T2176}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
+or\\
 
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1754}{LVV-T1754}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
+\begin{verbatim}
+id = counter + n_counters * (packed_data_id + n_data_ids * release_id)
+\end{verbatim}
 
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T376}{LVV-T376}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
+and hence the releases will get distinct IDs as long as counter values
+are less than \texttt{n\_counters} and the packed data IDs are less than
+\texttt{n\_data\_ids}. (And there are several checks throughout the file
+for those criteria).
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{LVV-T1946}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+This test case can be executed by running the script test\_LVV-T1946.py,
+which is available in the test report github repository's ``scripts/''
+directory.\\[2\baselineskip]The tests that confirm fluxes have
+``reasonable'' values are checking that the fluxes, if converted to
+magnitudes, would result in a magnitude fainter than -5.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{LVV-T1947}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+This test case can be executed by running the scripts
+test\_LVV-T1947\_DiaSource.py,
+~test\_LVV-T1947\_forcedSourceOnDiaObject.py, and
+test\_LVV-T1947\_DiaObject.py, which are available in the test report
+github repository's ``scripts/'' directory.\\[2\baselineskip]The tests
+that confirm fluxes have ``reasonable'' values are checking that the
+fluxes, if converted to magnitudes, would result in a magnitude fainter
+than -5.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T28}{LVV-T28}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T124}{LVV-T124}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
+This test case can be executed by running the scripts test\_LVV-T28.py,
+test\_LVV-T28\_forcedSource.py, and test\_LVV-T28\_DC2.py, which are
+available in the test report github repository's ``scripts/''
+directory.\\[2\baselineskip]The tests that confirm fluxes have
+``reasonable'' values are checking that the fluxes, if converted to
+magnitudes, would result in a magnitude fainter than -5.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{LVV-T142}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Executed at the USDF using the w\_2023\_43 version of the Science
+Pipelines.
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1748}{LVV-T1748}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
 
@@ -615,19 +470,22 @@ saved in the repository associated with this campaign's test report as
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1759}{LVV-T1759}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+This test used a modified version of the analysis\_tools pipeline
+``matchedVisitQualityCore.yaml.''
 \medskip
 \end{minipage}
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1758}{LVV-T1758}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Note that because we do not have access to u-band data, this test was
+performed for only y- and z-band. The steps would be unchanged for
+u-band data.
 \medskip
 \end{minipage}
 &   \\\hline
@@ -643,73 +501,13 @@ notebook execution, we used science pipelines version w\_2023\_34.
 &   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T40}{LVV-T40}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T129}{LVV-T129}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T115}{LVV-T115}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1862}{LVV-T1862}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T89}{LVV-T89}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T88}{LVV-T88}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T85}{LVV-T85}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
-\medskip
-\end{minipage}
-&   \\\hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T83}{LVV-T83}
-&  1
-& Not Executed &
-\begin{minipage}[]{9cm}
-\smallskip
-
+Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
+saved in the repository associated with this campaign's test report as
+``notebooks/test\_LVV-T40\_T1240.ipynb''.
 \medskip
 \end{minipage}
 &   \\\hline
@@ -721,7 +519,13 @@ notebook execution, we used science pipelines version w\_2023\_34.
 \subsection{Overall Assessment}
 \label{sect:overallassessment}
 
-Not yet available.
+In this test campaign, we have successfully verified 9 unique
+requirements from \citeds{LSE-61} via the execution of 15 Test Cases (all of
+which passed). Of these requirements, 6 are of priority 1a, and 3 are
+priority 1b. The set of requirements tested in this campaign mostly
+cover aspects of the DM system related to the software pipelines and the
+facilities for data processing and handling. These tests were performed
+at the US Data Facility (USDF) using precursor HSC and Auxtel data.
 
 \subsection{Recommended Improvements}
 \label{sect:recommendations}
@@ -737,7 +541,7 @@ Not yet available.
 Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C260}{Data Management Acceptance Test Campaign, Fall 2023}} in Jira.
 
 Test Cycle name: Data Management Acceptance Test Campaign, Fall 2023\\
-Status: In Progress
+Status: Done
 
 This test cycle verifies a subset of
 \href{https://lse-61.lsst.io/}{DMSR} (\citeds{LSE-61}) requirements in order to
@@ -755,65 +559,20 @@ Not provided.
 
 \subsubsection{Test Cases in LVV-C260 Test Cycle}
 
-\paragraph{ LVV-T191 - Verify implementation of Commissioning Cluster }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Draft}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T191}{\textit{ LVV-T191 } }
-test case in Jira.
-
-Verify that the Commissioning Cluster has sufficient Compute/Storage/LAN
-at the Base Facility to support Commissioning.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Analyze design and budget
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T1986 - Mini DC2 processing capability }\mbox{}\\
+\paragraph{ LVV-T146 - Verify implementation of DMS Initialization Component }\mbox{}\\
 
 Version \textbf{1}.
 Status \textbf{Approved}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1986}{\textit{ LVV-T1986 } }
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T146}{\textit{ LVV-T146 } }
 test case in Jira.
 
-Demonstrate that a typical 3-tract DC2 data processing is possible using
-the Gen3 system and the nascent Batch Production Service (BPS). ~This
-test is meant to
-extend~\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1983}{LVV-T1983}
-(Mini RC2 processing capability) by demonstrating Gen3 + BPS systems are
-capable of supporting future Data Previews (which have been specified to
-use the DC2 image sim data rather than HSC data). ~
+Demonstrate that all components of the DM system have a defined
+deployment configuration within the DM deployment strategy
 
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
 Final comment:\\
 
@@ -822,61 +581,184 @@ Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
+Inspect each service component to check if it has a deployment
+configuration defined
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+All systems have a defined deployment configuration as part of the DM
+deployment strategy\\[2\baselineskip]
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+Service & Location & Deployment Strategy & Status\tabularnewline
+\midrule
+\endhead
+Archiving~ & Summit, USDF & S3 on Kubernetes. Summit currently ssh/NFS
+to bare metal machine, which also comes up in a known/safe state. &
+Deployed\tabularnewline
+Planned Observation Publication (a.k.a. ObsLocTAP) & USDF &
+Safir/Phalanx on Kubernetes & Not Deployed\tabularnewline
+Prompt Processing Ingest & USDF & Kubernetes & Deployed\tabularnewline
+Observatory Operations Data & Summit & Kubernetes &
+Deployed\tabularnewline
+Observatory Control System (OCS) Controlled Pipeline & Summit &
+Kubernetes & Deployed\tabularnewline
+Telemetry Gateway & Summit & Sasquatch/Phalanx/Kafka on Kubernetes &
+Deployed\tabularnewline
+Prompt Processing & USDF & KNative on Kubernetes &
+Deployed\tabularnewline
+Alert Distribution & USDF & Kubernetes & Tests deployed, operational
+system not quite\tabularnewline
+Prompt Quality Control & USDF & Part of Prompt Processing payload, with
+publication to Sasquatch/Phalanx/Kafka and InfluxDB on K8s &
+Deployed\tabularnewline
+Batch Production & USDF & The batch system is independent. It uses Slurm
+not on K8s and has its own power-up safe state. ~PanDA and its RCEs are
+either on K8s or are like Slurm. & Deployed\tabularnewline
+Offline QC & USDF & Part of Batch Production payloads, with publication
+to Sasquatch/Phalanx/Kafka and InfluxDB on K8s & Deployed\tabularnewline
+Bulk Distribution & USDF & Rucio/FTS3 on K8s & Deployed\tabularnewline
+Data Backbone & USDF & Rucio/FTS3 + ingested on K8s &
+Deployed\tabularnewline
+RSP Portal & Summit, USDF & Phalanx on K8s & Deployed\tabularnewline
+RSP Notebook & Summit, USDF & Phalanx on K8s & Deployed\tabularnewline
+RSP Web API & Summit, USDF & Phalanx on K8s & Deployed\tabularnewline
+\bottomrule
+\end{longtable}
 
 }
 
-\paragraph{ LVV-T159 - Verify implementation of Regenerating Data Products from Previous Data
-Releases }\mbox{}\\
+\paragraph{ LVV-T1240 - Verify implementation of minimum astrometric standards per CCD }\mbox{}\\
 
 Version \textbf{1}.
-Status \textbf{Draft}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T159}{\textit{ LVV-T159 } }
+Status \textbf{Approved}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1240}{\textit{ LVV-T1240 } }
 test case in Jira.
 
-Show that un-archived data products from previous data releases can be
-generated using through the LSST Science Platform.
+Verify that each CCD in a processed dataset had its astrometric solution
+determined by at least~\textbf{astrometricMinStandards = 5~}astrometric
+standards.
 
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
+saved in the repository associated with this campaign's test report as
+``notebooks/test\_LVV-T40\_T1240.ipynb''.
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Delegate to LSP
+Identify an appropriate processed dataset for this test.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+A dataset with Processed Visit Images.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+For this test we use the most recent reprocessing of the Subaru+HSC RC2
+dataset. The data were processed with the w\_2023\_32 pipelines.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Butler access is as follows:\\
+repo = `/repo/main'\\
+rc2\_collection = `HSC/runs/RC2/w\_2023\_32/DM-40356'\\
+butler = Butler(repo, collections=rc2\_collection)
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Select a single visit from the dataset, and extract its calibration
+data. For a subset of CCDs, check how many astrometric standards
+contributed to the solution. Confirm that this number is at
+least~\textbf{astrometricMinStandards = 5.}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
+used in determining the WCS solution.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This was done 500 times, extracting the source list and WCS for 500
+randomly-selected CCD/visit combinations from the
+repository.\\[2\baselineskip]It was confirmed that all CCDs selected had
+more than astrometricMinStandards=5 standards used in their WCS
+solutions. This was done using the following code to extract the number
+of astrometric standards for each
+image:\\[2\baselineskip]astrom\_selection =
+np.where(src{[}'calib\_astrometry\_used'{]} == True)\\
+num\_calib\_astrom.append(np.size(astrom\_selection))\\[2\baselineskip]In
+the end, we calculate the fraction of fields that met this requirement,
+using:\\
+wcsFlagsPercent = (np.size(np.where(num\_calib\_astrom \textgreater{}
+5))/np.size(num\_calib\_astrom))*100.0*u.percent\\[2\baselineskip]The
+result (from the notebook) is:\\
+Percentage of fields with \textgreater{} astrometricMinStandards=5:
+100.0 \% -- True
 
 }
 
@@ -894,7 +776,7 @@ and organized for access through the Data Butler Access Client. ~
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
 Final comment:\\
 
@@ -903,7 +785,7 @@ Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -919,11 +801,17 @@ These jobs use precursor datasets from cameras other than LSST.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Because the outputs from CI jobs are not persisted, we instead use the
+regularly-reprocessed HSC RC2 data. Specifically, we used the output
+repo from HSC-RC2 data processing, as executed using a recent weekly
+pipelines release (w\_2023\_39). The output repo is tagged with the Jira
+ticket number DM-40985.\\[2\baselineskip]The butler collection within
+/repo/main at the USDF is ``HSC/runs/RC2/w\_2023\_39/DM-40985''.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -941,6 +829,18 @@ data products are present and accessible via the Butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+The Test Cases that were executed on this dataset for this test campaign
+demonstrate that this requirement is satisfied. Specifically, the
+following data products from HSC RC2 were used (among others) in the
+Test Cases from this campaign:\\[2\baselineskip]LVV-T28: `src` and
+`sourceTable`\\
+LVV-T62: `deepCoadd\_calexp` and associated PSF\\
+LVV-T41: `calexp` (calibrated PVI) and associated PSF\\
+LVV-T40, LVV-T1240: `calexp,` `calexp\_photoCalib,` and associated WCS\\
+LVV-T43: `calexpBackground`\\
+LVV-T1946: `deepCoadd\_forced\_src` and `objectTable`\\
+LVV-T1947: `goodSeeingDiff\_diaSrc`, `forced\_src\_diaObject`,
+`diaSourceTable`, and `diaObjectTable\_tract`
 
 }
 
@@ -1079,48 +979,6 @@ associated with this campaign's test report as
 
 }
 
-\paragraph{ LVV-T168 - Verify design of Data Access Services allows Evolution of the LSST Data
-Model }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Approved}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T168}{\textit{ LVV-T168 } }
-test case in Jira.
-
-Verify that the design of the Data Access Services are able to
-accommodate changes/evolution of the LSST data model from one release to
-another.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Delegate to LSP
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
 \paragraph{ LVV-T41 - Verify implementation of Generate PSF for Visit Images }\mbox{}\\
 
 Version \textbf{1}.
@@ -1137,7 +995,7 @@ PSF given a point on the image.
 
 Execution status: {\bf Pass }
 
-Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
 Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
 saved in the repository associated with this campaign's test report as
 ``notebooks/test\_LVV-T41.ipynb''.
@@ -1229,17 +1087,18 @@ consistent with being noise.
 CCD visit/detector combinations were selected at random and the
 corresponding dataIds (datarefs) created.\\[2\baselineskip]To extract
 the PSF, the following line was executed for each dataId:\\
-psf = c.getPsf()\\
-\ldots{}where ``c'' is a calexp that has been retrieved from the
-butler.\\[2\baselineskip]A number of these were displayed at random X, Y
-positions on the images to confirm that they are well-formed and
-retrievable at any arbitrary position.\\[2\baselineskip]The PSF model
-was then formed into an image and subtracted from selected stars to
-confirm that the remaining image is consistent with noise (i.e., the PSF
-is a good match to the stars in the image).\\[2\baselineskip]Finally, a
-larger subset of dataIds was selected, from which we test whether all
-calexps have an associated PSF model. The result of this test, seen in
-the test notebook, is as follows:\\
+fvs.getPsf()\\
+\ldots{}where ``fvs'' is the ``finalVisitSummary'' that has been
+retrieved from the butler.\\[2\baselineskip]A number of these were
+displayed at random X, Y positions on the images to confirm that they
+are well-formed and retrievable at any arbitrary
+position.\\[2\baselineskip]The PSF model was then formed into an image
+and subtracted from selected stars to confirm that the remaining image
+is consistent with noise (i.e., the PSF is a good match to the stars in
+the image).\\[2\baselineskip]Finally, a larger subset of dataIds was
+selected, from which we test whether all calexps have an associated PSF
+model. The result of this test, seen in the test notebook, is as
+follows:\\
 
 \begin{verbatim}
 All CCDs have an associated PSF model:  True
@@ -1256,7 +1115,7 @@ associated with this campaign's test report as
 \paragraph{ LVV-T97 - Verify implementation of Uniqueness of IDs Across Data Releases }\mbox{}\\
 
 Version \textbf{1}.
-Status \textbf{Defined}.
+Status \textbf{Approved}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{\textit{ LVV-T97 } }
 test case in Jira.
 
@@ -1266,16 +1125,60 @@ different Data Releases are unique.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\Executed at the USDF using the w\_2023\_43 version of the Science
+Pipelines.\\[2\baselineskip]In addition to demonstrating that changing
+the ``RELEASE\_ID'' results in unique IDs, we further examine the code
+itself to demonstrate that the uniqueness of IDs is ensured by the way
+the code is implemented.\\[2\baselineskip]The implementation of how the
+64 bits of the Source/Object IDs are apportioned is in the
+\texttt{\_IdGeneratorBits}\href{https://github.com/lsst/meas_base/blob/1bfaca56951770c88f4308da41de16d72ce40db9/python/lsst/meas/base/_id_generator.py\#L507-L537}{~class},
+and especially its \texttt{\_\_post\_init\_\_}:\\
+
+\begin{itemize}
+\tightlist
+\item
+  it gets the maximum number of bits needed to pack the data ID (based
+  on \texttt{\{visit,\ detector\}} for Source, and
+  \texttt{\{tract,\ patch\}} for Object) and turns that into the number
+  of distinct data IDs it could hold \texttt{(n\_data\_ids)};
+\item
+  it multiplies that with the \texttt{n\_releases} option to identify
+  how many ``upper'' bits need to be reserved for
+  \texttt{n\_data\_ids*n\_releases} ``catalog\_ids'', and sets
+  \texttt{n\_counters} to be the number of values remaining in the
+  Source or Object 64-bit ID to count sources or objects within one
+  image.
+\end{itemize}
+
+Because some interfaces historically wanted to count bits rather than
+just multiply integers, there is a mix of direct multiplication and log2
+addition. But you can see the result most clearly in
+\texttt{FullIdGenerator.arange} and
+\texttt{FullIdGenerator.catalog\_id}; a full Source or Object ID is:\\
+
+\begin{verbatim}
+id = counter + n_counters * catalog_id
+\end{verbatim}
+
+or\\
+
+\begin{verbatim}
+id = counter + n_counters * (packed_data_id + n_data_ids * release_id)
+\end{verbatim}
+
+and hence the releases will get distinct IDs as long as counter values
+are less than \texttt{n\_counters} and the packed data IDs are less than
+\texttt{n\_data\_ids}. (And there are several checks throughout the file
+for those criteria).
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -1291,11 +1194,13 @@ Release Production.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+This test used the `rc2\_subset` data, which is a small set of
+Subaru+HSC data.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -1312,11 +1217,41 @@ Data Backbone.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+The means of ensuring unique IDs between runs is contained in the
+following code from the
+\href{https://github.com/lsst/meas_base/blob/1bfaca56951770c88f4308da41de16d72ce40db9/python/lsst/meas/base/_id_generator.py\#L44-L52}{meas\_base}
+package:\\[2\baselineskip]DEFAULT\_RELEASE\_ID = 0\\
+``''"Default release ID to embed in catalog IDs.\\[2\baselineskip]This
+can be changed globally to avoid having to override individual task\\
+configs to set the release ID.\\
+``''"\\[2\baselineskip]DEFAULT\_N\_RELEASES = 1 \# 1 means don't reserve
+space for releases.\\
+``''``Default number of releases to reserve space for in catalog
+IDs.''``''\\[2\baselineskip]For this test, we cloned meas\_base and
+manually altered DEFAULT\_RELEASE\_ID and DEFAULT\_N\_RELEASES before
+each of two processing runs of rc2\_subset.\\
+git checkout -b u/jcarlin/test\_id\_generator\\[2\baselineskip]Set the
+following in line 44 of python/lsst/meas/base/\_id\_generator.py:\\
+DEFAULT\_RELEASE\_ID = 8\\
+and\\
+DEFAULT\_N\_RELEASES = 10\\[2\baselineskip]Run scons, then `setup -k -r
+.` in meas\_base to set up the local version.\\[2\baselineskip]Working
+in directory ``/sdf/home/j/jcarlin/u/SVV/fall2023\_ATC/LVV-T97'' at the
+USDF.\\[2\baselineskip]Submit the shell script that runs the standard
+rc2\_subset procssing:\\
+bash submit\_rc2\_subset.sh 2\textgreater{}\&1 \textbar{} tee
+rc2\_subset\_v8.log\\
+(where the ``8'' denotes the run with
+DEFAULT\_RELEASE\_ID=8)\\[2\baselineskip]Edit meas\_base to read
+``DEFAULT\_RELEASE\_ID = 9'', then rerun it:\\
+bash submit\_rc2\_subset.sh 2\textgreater{}\&1 \textbar{} tee
+rc2\_subset\_v9.log\\[2\baselineskip]Both processing runs successfully
+executed.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -1344,11 +1279,20 @@ Butler repo available for reading.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+In the notebook (test\_LVV-T97.ipynb) that is attached to this
+document's repository, we executed the following to read in the two
+butler repositories:\\[2\baselineskip]repo = `/repo/main'\\
+rc2\_subset\_collection\_id8 = `u/jcarlin/lvv-t97\_8'\\
+rc2\_subset\_collection\_id9 =
+`u/jcarlin/lvv-t97\_9'\\[2\baselineskip]\# Initialize the butler
+repos:\\
+butler8 = Butler(repo, collections=rc2\_subset\_collection\_id8)\\
+butler9 = Butler(repo, collections=rc2\_subset\_collection\_id9)
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -1365,11 +1309,19 @@ Multiple datasets resulting from processing of the same input data.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+The two runs of rc2\_subset processing produced Source and Object
+tables, which were read into the attached
+notebook.\\[2\baselineskip]Note that we did not extend the test to
+DiaSource or DiaObject tables, as rc2\_subset is not suitable for
+difference imaging. Nonetheless, since difference image processing would
+use the same \_id\_generator.py code as is used here, we consider this
+demonstration sufficient to show that it would also for for DIA
+processing.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -1387,600 +1339,15 @@ dataset.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
-
-}
-
-\paragraph{ LVV-T183 - Verify implementation of DMS Communication with OCS }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Defined}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T183}{\textit{ LVV-T183 } }
-test case in Jira.
-
-Verify that the DMS at the Base Facility can receive commands from the
-OCS and send command responses, events, and telemetry back. ~Verified by
-Early Integration activities and during AuxTel commissioning.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-From the Base Site, connect to the (simulated) OCS telemetry stream.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Send a command to the OCS, and observe that the command has been
-executed.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Confirmation that the OCS command successfully executed.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Extract information from the telemetry being broadcast by the OCS, and
-ensure that these data are readable.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A readable extract from the OCS telemetry stream.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T2177 - Per-image limit on the median residual ellipticity correlations at
-scales less than to 5 arcmin. }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Draft}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2177}{\textit{ LVV-T2177 } }
-test case in Jira.
-
-Verify that the per-image limit on the median residual ellipticity
-correlations at scales less than 5 arcmin (TE3) can be configured in the
-DMS and applied to the appropriate metrics.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Check that the correct value for the TE3 threshold has been encoded in
-the faro package.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T1755 - Verify calculation of residual PSF ellipticity correlations for
-separations less than 1 arcmin }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Approved}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1755}{\textit{ LVV-T1755 } }
-test case in Jira.
-
-Verify that the DM system has provided the code to calculate the median
-residual PSF ellipticity correlations averaged over an arbitrary field
-of view for separations less than 1 arcmin, and assess whether it meets
-the requirement that it shall be no greater than \textbf{TE1 =
-2.0e-5{[}arcminuteSeparationCorrelation{]}.}
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify a dataset containing at least one field with multiple
-overlapping visits.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A dataset that has been ingested into a Butler repository.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-The `path` that you will use depends on where you are running the
-science pipelines. Options:\\[2\baselineskip]
-
-\begin{itemize}
-\tightlist
-\item
-  local (newinstall.sh - based
-  install):{[}path\_to\_installation{]}/loadLSST.bash
-\item
-  development cluster (``lsst-dev''):
-  /software/lsstsw/stack/loadLSST.bash
-\item
-  LSP Notebook aspect (from a terminal):
-  /opt/lsst/software/stack/loadLSST.bash
-\end{itemize}
-
-From the command line, execute the commands below in the example
-code:\\[2\baselineskip]
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-source `path`\\
-setup lsst\_distrib
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Science pipeline software is available for use. If additional packages
-are needed (for example, `obs' packages such as `obs\_subaru`), then
-additional `setup` commands will be necessary.\\[2\baselineskip]To check
-versions in use, type:\\
-eups list -s
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Execute `faro` on a repository containing processed data. Identify the
-path to the data, which we will call `DATA/path', then execute something
-similar to the following (with paths, datasets, and flags replaced or
-additionally specified as needed):
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-pipetask --long-log run -j 2 -b DATA/path/butler.yaml
---register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
--d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
-AND instrument='HSC''' --output u/username/faro\_metrics -i
-HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
-w06\_2021\_tract9813\_faro.txt
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-The output collection (in this case, ``u/username/faro\_metrics'')
-containing metric measurements and any associated extras and metadata is
-available via the butler.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the metric TE1 has been calculated, and that its values are
-reasonable.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A JSON file (and/or a report generated from that JSON file)
-demonstrating that TE1 has been calculated.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T2176 - Per-image limit on the median residual ellipticity correlations at
-scales greater than or equal to 5 arcmin. }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Draft}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2176}{\textit{ LVV-T2176 } }
-test case in Jira.
-
-Verify that the per-image limit on the median residual ellipticity
-correlations at scales greater than or equal to 5 arcmin (TE4) can be
-configured in the DMS and applied to the appropriate metrics
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Check that the correct value for the TE4 threshold has been encoded in
-the faro package.\\[2\baselineskip]
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T1754 - Verify calculation of residual PSF ellipticity correlations for
-separations greater than or equal to 5 arcmin }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Approved}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1754}{\textit{ LVV-T1754 } }
-test case in Jira.
-
-Verify that the DM system has provided the code to calculate the median
-residual PSF ellipticity correlations averaged over an arbitrary field
-of view for separations greater than or equal to 5 arcmin, and assess
-whether it meets the requirement that it shall be no greater than
-\textbf{TE2 = 1.0e-7{[}arcminuteSeparationCorrelation{]}.}
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify a dataset containing at least one field with multiple
-overlapping visits.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A dataset that has been ingested into a Butler repository.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-The `path` that you will use depends on where you are running the
-science pipelines. Options:\\[2\baselineskip]
-
-\begin{itemize}
-\tightlist
-\item
-  local (newinstall.sh - based
-  install):{[}path\_to\_installation{]}/loadLSST.bash
-\item
-  development cluster (``lsst-dev''):
-  /software/lsstsw/stack/loadLSST.bash
-\item
-  LSP Notebook aspect (from a terminal):
-  /opt/lsst/software/stack/loadLSST.bash
-\end{itemize}
-
-From the command line, execute the commands below in the example
-code:\\[2\baselineskip]
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-source `path`\\
-setup lsst\_distrib
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Science pipeline software is available for use. If additional packages
-are needed (for example, `obs' packages such as `obs\_subaru`), then
-additional `setup` commands will be necessary.\\[2\baselineskip]To check
-versions in use, type:\\
-eups list -s
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Execute `faro` on a repository containing processed data. Identify the
-path to the data, which we will call `DATA/path', then execute something
-similar to the following (with paths, datasets, and flags replaced or
-additionally specified as needed):
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-pipetask --long-log run -j 2 -b DATA/path/butler.yaml
---register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
--d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
-AND instrument='HSC''' --output u/username/faro\_metrics -i
-HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
-w06\_2021\_tract9813\_faro.txt
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-The output collection (in this case, ``u/username/faro\_metrics'')
-containing metric measurements and any associated extras and metadata is
-available via the butler.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the metric TE2 has been calculated, and that its values are
-reasonable.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A JSON file (and/or a report generated from that JSON file)
-demonstrating that TE2 has been calculated.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T376 - Verify the Calculation of Ellipticity Residuals and Correlations }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Approved}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T376}{\textit{ LVV-T376 } }
-test case in Jira.
-
-Verify that the DMS includes software to enable the calculation of the
-ellipticity residuals and correlation metrics defined in the OSS.~
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify the path to the data repository, which we will refer to as
-`DATA/path', then execute the following:
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-\begin{verbatim}
-from lsst.daf.butler import Butler
-repo = 'Data/path'
-collection = 'collection'
-butler = Butler(repo, collections=collection)
-\end{verbatim}
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Butler repo available for reading.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Point the butler to an appropriate (precursor or simulated) dataset
-containing data in all filters, that is sufficient for the purposes of
-measuring astrometric performance metrics.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Execute the LSST Stack package `validate\_drp` (or an alternate package
-that is relevant) on this dataset to perform the measurements of the
-metrics.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Measurements of validation metrics and the presence of QA plots
-resulting from the validation pipeline.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Compare measured ellipticity correlations to known (for simulated data)
-or measured (if using precursor data) values from input (precursor or
-simulated) data, and confirm that the output values for all of the
-ellipticity performance metrics are as expected.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Measured ellipticity metrics that are within reasonable values given the
-(known) input dataset.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
+In the attached notebook, we directly compared the sourceIds from
+sourceTable\_visit and the objectIds from objectTable\_tract
+tables.\\[2\baselineskip]ind\_src8 = src\_8.index\\
+ind\_src9 = src\_9.index\\
+np.sum(ind\_src8.isin(ind\_src9))\\[2\baselineskip](and a similar
+process for the object table)\\[2\baselineskip]The result printed ``0''
+to the screen, meaning that there are no IDs in common between the two
+runs. We have thus demonstrated that IDs are unique (or can be made to
+be unique) across data releases.
 
 }
 
@@ -1997,16 +1364,20 @@ coadd images are in flux units.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\This test case can be executed by running the script test\_LVV-T1946.py,
+which is available in the test report github repository's ``scripts/''
+directory.\\[2\baselineskip]The tests that confirm fluxes have
+``reasonable'' values are checking that the fluxes, if converted to
+magnitudes, would result in a magnitude fainter than -5.
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2034,11 +1405,16 @@ Butler repo available for reading.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Tests were performed using ``test\_LVV-T1946.py,'' which contains the
+following:\\[2\baselineskip]\# For RC2 data on the USDF:\\
+config~=~'/repo/main'\\
+collection~=~'HSC/runs/RC2/w\_2023\_39/DM-40985'\\
+butler = Butler(config, collections=collection)
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2054,11 +1430,23 @@ coadds with the Butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+By default, the test script selects the following
+instrument/detector/visit combination. This can be changed if desired.\\
+\hspace*{0.333em} ~~\# Select an arbitrary source catalog from a
+deepCoadd:\\
+\hspace*{0.333em} ~~instrument~=~'HSC'\\
+\hspace*{0.333em} ~~band~=~'i'\\
+\hspace*{0.333em} ~~tract~=~9615\\
+\hspace*{0.333em} ~~patch~=~13\\
+\hspace*{0.333em}
+~~skymap~=~'hsc\_rings\_v1'\\[2\baselineskip]\hspace*{0.333em} ~~\# Run
+the test\\
+\hspace*{0.333em} ~ LVVT1946(instrument, tract, patch, band, skymap)
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2074,6 +1462,450 @@ Confirmation of measurements in catalogs encoded in flux units.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+The script outputs the following, confirming that all ``instFlux''
+values in the ``deepCoadd\_forced\_source'' table are in units of
+``counts'', and all calibrated fluxes from the ``objectTable'' are in
+units of nJy within a reasonable range of flux
+values:\\[2\baselineskip]lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b~
+~~w\_latest w\_2024\_04 current setup\\
+Input dataId:~~\{'instrument': `HSC', `tract': 9615, `band': `i',
+`patch': 13, `skymap': `hsc\_rings\_v1'\}\\
+base\_SdssShape\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_SdssShape\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_CircularApertureFlux\_3\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_3\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_CircularApertureFlux\_4\_5\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_4\_5\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_CircularApertureFlux\_6\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_6\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_CircularApertureFlux\_9\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~
+~\\
+base\_CircularApertureFlux\_9\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_CircularApertureFlux\_12\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+base\_CircularApertureFlux\_12\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_CircularApertureFlux\_17\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+base\_CircularApertureFlux\_17\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_CircularApertureFlux\_25\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+base\_CircularApertureFlux\_25\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_CircularApertureFlux\_35\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+base\_CircularApertureFlux\_35\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_CircularApertureFlux\_50\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+base\_CircularApertureFlux\_50\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_CircularApertureFlux\_70\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+base\_CircularApertureFlux\_70\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+base\_GaussianFlux\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_GaussianFlux\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_LocalBackground\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_LocalBackground\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_PsfFlux\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+base\_PsfFlux\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_0\_5\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_0\_5\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_0\_7\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_0\_7\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_1\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_1\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_1\_5\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_1\_5\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_2\_5\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_2\_5\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_3\_0\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~
+~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_3\_0\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_PsfFlux\_instFlux \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_PsfFlux\_instFluxErr \ldots{}.. count~ ~ ~
+~ ~ ~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_Optimal\_instFlux \ldots{}.. count~ ~ ~ ~ ~
+~ ~ ~\\
+ext\_gaap\_GaapFlux\_1\_15x\_Optimal\_instFluxErr \ldots{}.. count~ ~ ~
+~ ~ ~ ~ ~\\
+ext\_photometryKron\_KronFlux\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_photometryKron\_KronFlux\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~
+~\\
+ext\_convolved\_ConvolvedFlux\_0\_3\_3\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_3\_3\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_4\_5\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_4\_5\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_6\_0\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_6\_0\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_kron\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_0\_kron\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_3\_3\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_3\_3\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_4\_5\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_4\_5\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_6\_0\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_6\_0\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_kron\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_1\_kron\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_3\_3\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_3\_3\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_4\_5\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_4\_5\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_6\_0\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_6\_0\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_kron\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_2\_kron\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_3\_3\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_3\_3\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_4\_5\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_4\_5\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_6\_0\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_6\_0\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_kron\_instFlux \ldots{}.. count~ ~ ~ ~
+~ ~ ~ ~\\
+ext\_convolved\_ConvolvedFlux\_3\_kron\_instFluxErr \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_initial\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_initial\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_initial\_instFlux\_inner \ldots{}.. count~ ~ ~ ~ ~ ~ ~
+~\\
+modelfit\_CModel\_exp\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_exp\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_exp\_instFlux\_inner \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_dev\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_dev\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_dev\_instFlux\_inner \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+modelfit\_CModel\_instFlux\_inner \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_3\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_3\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_4\_5\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_4\_5\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_6\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_6\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_9\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_9\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_12\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_12\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_17\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_17\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_25\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_25\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_35\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_35\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_50\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_50\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_70\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_CircularApertureFlux\_70\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_PsfFlux\_instFlux \ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_base\_PsfFlux\_instFluxErr \ldots{}.. count~ ~ ~ ~ ~ ~ ~
+~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_0\_5\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_0\_5\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_0\_7\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_0\_7\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_1\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_1\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_1\_5\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_1\_5\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_2\_5\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_2\_5\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_3\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_3\_0\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_PsfFlux\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_PsfFlux\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_Optimal\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_gaap\_GaapFlux\_1\_15x\_Optimal\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_photometryKron\_KronFlux\_instFlux \ldots{}.. count~ ~
+~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_photometryKron\_KronFlux\_instFluxErr \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_3\_3\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_3\_3\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_4\_5\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_4\_5\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_6\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_6\_0\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_kron\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_0\_kron\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_3\_3\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_3\_3\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_4\_5\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_4\_5\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_6\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_6\_0\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_kron\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_1\_kron\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_3\_3\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_3\_3\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_4\_5\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_4\_5\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_6\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_6\_0\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_kron\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_2\_kron\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_3\_3\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_3\_3\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_4\_5\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_4\_5\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_6\_0\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_6\_0\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_kron\_instFlux \ldots{}..
+count~ ~ ~ ~ ~ ~ ~ ~\\
+undeblended\_ext\_convolved\_ConvolvedFlux\_3\_kron\_instFluxErr
+\ldots{}.. count~ ~ ~ ~ ~ ~ ~ ~\\[2\baselineskip]\hspace*{0.333em}All
+forced\_src instFlux entries have units of
+counts:~~True\\[2\baselineskip]-------------------------------------------------\\[2\baselineskip]Checking
+flux values for visit 9615\\[2\baselineskip]flux column~ ~ ~ ~ ~~\% of
+bad flux values\\[2\baselineskip]g\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+g\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+g\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+g\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+g\_free\_cModelFlux\_inner ~ ~~0.0 \%\\[2\baselineskip]flux column~ ~ ~
+~ ~~\% of bad flux values\\[2\baselineskip]r\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0
+\%\\
+r\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+r\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+r\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+r\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+r\_free\_cModelFlux\_inner ~ ~~0.0 \%\\[2\baselineskip]flux column~ ~ ~
+~ ~~\% of bad flux values\\[2\baselineskip]i\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0
+\%\\
+i\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+i\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+i\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+i\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+i\_free\_cModelFlux\_inner ~ ~~0.0 \%\\[2\baselineskip]flux column~ ~ ~
+~ ~~\% of bad flux values\\[2\baselineskip]z\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0
+\%\\
+z\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+z\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+z\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+z\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+z\_free\_cModelFlux\_inner ~ ~~0.0 \%\\[2\baselineskip]flux column~ ~ ~
+~ ~~\% of bad flux values\\[2\baselineskip]y\_psfFlux~ ~ ~ ~ ~ ~ ~ ~~0.0
+\%\\
+y\_free\_psfFlux ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaapPsfFlux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap0p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap0p7Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap1p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap1p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap2p5Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaap3p0Flux~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_gaapOptimalFlux~ ~ ~ ~~0.0 \%\\
+y\_kronFlux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_calibFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap03Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap06Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap09Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap12Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap17Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap25Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap35Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap50Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_ap70Flux ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_cModelFlux ~ ~ ~ ~ ~ ~~0.0 \%\\
+y\_cModelFlux\_inner ~ ~ ~~0.0 \%\\
+y\_free\_cModelFlux~ ~ ~ ~~0.0 \%\\
+y\_free\_cModelFlux\_inner ~ ~~0.0 \%\\[2\baselineskip]
 
 }
 
@@ -2090,16 +1922,23 @@ difference images are in flux units.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\This test case can be executed by running the scripts
+test\_LVV-T1947\_DiaSource.py,
+~test\_LVV-T1947\_forcedSourceOnDiaObject.py, and
+test\_LVV-T1947\_DiaObject.py, which are available in the test report
+github repository's ``scripts/'' directory.\\[2\baselineskip]The tests
+that confirm fluxes have ``reasonable'' values are checking that the
+fluxes, if converted to magnitudes, would result in a magnitude fainter
+than -5.
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2127,11 +1966,16 @@ Butler repo available for reading.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+The test scripts contain the following:\\[2\baselineskip]\# For RC2 data
+on the USDF:\\
+config~=~'/repo/main'\\
+collection~=~'HSC/runs/RC2/w\_2023\_39/DM-40985'\\
+butler = Butler(config, collections=collection)
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2147,11 +1991,27 @@ difference images with the Butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Relevant lines from ``test\_LVV-T1947\_DiaSource.py'':\\
+\# Select an arbitrary source catalog from a difference image:\\
+instrument = `HSC'\\
+detector = 40\\
+visit = 36180\\[2\baselineskip]\# Run the test\\
+LVVT1947(instrument, visit, detector)\\[2\baselineskip]Relevant lines
+from ``test\_LVV-T1947\_DiaObject.py'':\\
+\# Select an arbitrary source catalog from a diaObject table:\\
+instrument = `HSC'\\
+band = `i'\\
+tract = 9697\\
+\# patch = 13\\
+skymap = `hsc\_rings\_v1'\\
+detector = 40\\
+visit = 36180\\[2\baselineskip]\# Run the test\\
+LVVT1947(instrument, tract, detector, visit, band, skymap)
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2168,6 +2028,159 @@ Confirmation of measurements in catalogs encoded in flux units.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+The script outputs the following, confirming that all ``instFlux''
+values in the ``goodSeeingDiff\_diaSrc'' table are in units of
+``counts'', and all calibrated fluxes from the
+~``forced\_src\_diaObject'' table and ``diaSourceTable'' are in units of
+nJy within a reasonable range of flux values:\\[2\baselineskip]Output
+from script
+``test\_LVV-T1947\_DiaSource.py'':\\[2\baselineskip]lsst\_distrib
+g4213664e8e+b08e1c1b0b w\_latest w\_2024\_04 current setup\\
+Input dataId: \{'instrument': `HSC', `visit': 36180, `detector': 40\}\\
+Checking
+goodSeeingDiff\_diaSrc\ldots{}\\[2\baselineskip]base\_SdssShape\_instFlux\ldots{}..
+count\\
+base\_SdssShape\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_3\_0\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_3\_0\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_4\_5\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_4\_5\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_6\_0\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_6\_0\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_9\_0\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_9\_0\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_12\_0\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_12\_0\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_17\_0\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_17\_0\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_25\_0\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_25\_0\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_35\_0\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_35\_0\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_50\_0\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_50\_0\_instFluxErr\ldots{}.. count\\
+base\_CircularApertureFlux\_70\_0\_instFlux\ldots{}.. count\\
+base\_CircularApertureFlux\_70\_0\_instFluxErr\ldots{}.. count\\
+base\_GaussianFlux\_instFlux\ldots{}.. count\\
+base\_GaussianFlux\_instFluxErr\ldots{}.. count\\
+base\_PeakLikelihoodFlux\_instFlux\ldots{}.. count\\
+base\_PeakLikelihoodFlux\_instFluxErr\ldots{}.. count\\
+base\_PsfFlux\_instFlux\ldots{}.. count\\
+base\_PsfFlux\_instFluxErr\ldots{}.. count\\
+ip\_diffim\_NaiveDipoleFlux\_pos\_instFlux\ldots{}.. count\\
+ip\_diffim\_NaiveDipoleFlux\_pos\_instFluxErr\ldots{}.. count\\
+ip\_diffim\_NaiveDipoleFlux\_neg\_instFlux\ldots{}.. count\\
+ip\_diffim\_NaiveDipoleFlux\_neg\_instFluxErr\ldots{}.. count\\
+ip\_diffim\_PsfDipoleFlux\_pos\_instFlux\ldots{}.. count\\
+ip\_diffim\_PsfDipoleFlux\_pos\_instFluxErr\ldots{}.. count\\
+ip\_diffim\_PsfDipoleFlux\_neg\_instFlux\ldots{}.. count\\
+ip\_diffim\_PsfDipoleFlux\_neg\_instFluxErr\ldots{}.. count\\
+ip\_diffim\_DipoleFit\_pos\_instFlux\ldots{}.. count\\
+ip\_diffim\_DipoleFit\_pos\_instFluxErr\ldots{}.. count\\
+ip\_diffim\_DipoleFit\_neg\_instFlux\ldots{}.. count\\
+ip\_diffim\_DipoleFit\_neg\_instFluxErr\ldots{}.. count\\
+ip\_diffim\_DipoleFit\_instFlux\ldots{}.. count\\
+ip\_diffim\_forced\_PsfFlux\_instFlux\ldots{}.. count\\
+ip\_diffim\_forced\_PsfFlux\_instFluxErr\ldots{}..
+count\\[2\baselineskip]All src table instFlux entries have units of
+counts: True\\[2\baselineskip]Checking
+forced\_src\_diaObject\ldots{}\\[2\baselineskip]base\_LocalBackground\_instFlux\ldots{}..
+count\\
+base\_LocalBackground\_instFluxErr\ldots{}.. count\\
+base\_PsfFlux\_instFlux\ldots{}.. count\\
+base\_PsfFlux\_instFluxErr\ldots{}.. count\\[2\baselineskip]All src
+table instFlux entries have units of counts:
+True\\[2\baselineskip]Checking flux values for visit
+36180\\[2\baselineskip]flux column \% of bad flux
+values\\[2\baselineskip]apFlux 0.0 \%\\
+psfFlux 0.0 \%\\
+scienceFlux 0.0 \%\\
+dipoleMeanFlux 0.0
+\%\\[2\baselineskip]===========================================================\\
+The second script outputs the following, confirming that all calibrated
+fluxes from the ``diaObjectTable\_tract'' are in units of nJy within a
+reasonable range of flux values:\\[2\baselineskip]Output from script
+``test\_LVV-T1947\_DiaObject.py'':\\[2\baselineskip]lsst\_distrib
+g4213664e8e+b08e1c1b0b w\_latest w\_2024\_04 current setup\\
+Input dataId: \{'instrument': `HSC', `tract': 9697, `band': `i',
+`detector': 40, `visit': 36180, `skymap':
+`hsc\_rings\_v1'\}\\[2\baselineskip]-------------------------------------------------\\[2\baselineskip]Checking
+flux values for tract 9697, diaObjectTable\_tract\\[2\baselineskip]flux
+column \% of bad flux values\\[2\baselineskip]g\_psfFluxMAD 0.0 \%\\
+g\_psfFluxMean 0.0 \%\\
+g\_scienceFluxMean 0.0 \%\\
+g\_psfFluxMin 0.0 \%\\
+g\_psfFluxMax 0.0 \%\\
+g\_psfFluxPercentile05 0.0 \%\\
+g\_psfFluxPercentile25 0.0 \%\\
+g\_psfFluxPercentile50 0.0 \%\\
+g\_psfFluxPercentile75 0.0 \%\\
+g\_psfFluxPercentile95 0.0 \%\\
+g\_psfFluxSigma 0.0 \%\\
+g\_scienceFluxSigma 0.0 \%\\[2\baselineskip]flux column \% of bad flux
+values\\[2\baselineskip]r\_psfFluxMAD 0.0 \%\\
+r\_psfFluxMean 0.0 \%\\
+r\_scienceFluxMean 0.0 \%\\
+r\_psfFluxMin 0.0 \%\\
+r\_psfFluxMax 0.0 \%\\
+r\_psfFluxPercentile05 0.0 \%\\
+r\_psfFluxPercentile25 0.0 \%\\
+r\_psfFluxPercentile50 0.0 \%\\
+r\_psfFluxPercentile75 0.0 \%\\
+r\_psfFluxPercentile95 0.0 \%\\
+r\_psfFluxSigma 0.0 \%\\
+r\_scienceFluxSigma 0.0 \%\\[2\baselineskip]flux column \% of bad flux
+values\\[2\baselineskip]i\_psfFluxMAD 0.0 \%\\
+i\_psfFluxMean 0.0 \%\\
+i\_scienceFluxMean 0.0 \%\\
+i\_psfFluxMin 0.0 \%\\
+i\_psfFluxMax 0.0 \%\\
+i\_psfFluxPercentile05 0.0 \%\\
+i\_psfFluxPercentile25 0.0 \%\\
+i\_psfFluxPercentile50 0.0 \%\\
+i\_psfFluxPercentile75 0.0 \%\\
+i\_psfFluxPercentile95 0.0 \%\\
+i\_psfFluxSigma 0.0 \%\\
+i\_scienceFluxSigma 0.0 \%\\[2\baselineskip]flux column \% of bad flux
+values\\[2\baselineskip]z\_psfFluxMAD 0.0 \%\\
+z\_psfFluxMean 0.0 \%\\
+z\_scienceFluxMean 0.0 \%\\
+z\_psfFluxMin 0.0 \%\\
+z\_psfFluxMax 0.0 \%\\
+z\_psfFluxPercentile05 0.0 \%\\
+z\_psfFluxPercentile25 0.0 \%\\
+z\_psfFluxPercentile50 0.0 \%\\
+z\_psfFluxPercentile75 0.0 \%\\
+z\_psfFluxPercentile95 0.0 \%\\
+z\_psfFluxSigma 0.0 \%\\
+z\_scienceFluxSigma 0.0 \%\\[2\baselineskip]flux column \% of bad flux
+values\\[2\baselineskip]y\_psfFluxMAD 0.0 \%\\
+y\_psfFluxMean 0.0 \%\\
+y\_scienceFluxMean 0.0 \%\\
+y\_psfFluxMin 0.0 \%\\
+y\_psfFluxMax 0.0 \%\\
+y\_psfFluxPercentile05 0.0 \%\\
+y\_psfFluxPercentile25 0.0 \%\\
+y\_psfFluxPercentile50 0.0 \%\\
+y\_psfFluxPercentile75 0.0 \%\\
+y\_psfFluxPercentile95 0.0 \%\\
+y\_psfFluxSigma 0.0 \%\\
+y\_scienceFluxSigma 0.0 \%\\[2\baselineskip]The script outputs the
+following, confirming that all calibrated fluxes from the
+``forcedSourceOnDiaObject'' table are in units of nJy within a
+reasonable range of flux values:\\[2\baselineskip]Output from script
+``test\_LVV-T1947\_forcedSourceOnDiaSource.py'':\\[2\baselineskip](lsst-scipipe-8.0.0)
+{[}jcarlin@sdfrome001 fall2023\_ATC{]}\$ python
+test\_LVV-T1947\_forcedSourceOnDiaObject.py~\\
+lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b~ ~~w\_2024\_04 setup\\
+Input dataId:~~\{'instrument': `HSC', `tract': 9697, `patch': 13,
+`skymap':
+`hsc\_rings\_v1'\}\\[2\baselineskip]-------------------------------------------------\\[2\baselineskip]Checking
+flux values for tract 9697,
+forcedSourceOnDiaObjectTable\\[2\baselineskip]flux column \% of bad flux
+values\\
+psfFlux 0.0 \%\\
+psfDiffFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\[2\baselineskip]
 
 }
 
@@ -2184,16 +2197,21 @@ processed visit images are in flux units.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\This test case can be executed by running the scripts test\_LVV-T28.py,
+test\_LVV-T28\_forcedSource.py, and test\_LVV-T28\_DC2.py, which are
+available in the test report github repository's ``scripts/''
+directory.\\[2\baselineskip]The tests that confirm fluxes have
+``reasonable'' values are checking that the fluxes, if converted to
+magnitudes, would result in a magnitude fainter than -5.
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1.1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2221,11 +2239,16 @@ Butler repo available for reading.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Tests were performed using ``test\_LVV-T28.py,'' which contains the
+following:\\[2\baselineskip]\# For RC2 data on the USDF:\\
+config~=~'/repo/main'\\
+collection~=~'HSC/runs/RC2/w\_2023\_39/DM-40985'\\
+butler = Butler(config, collections=collection)
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1.2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2241,11 +2264,21 @@ data containing coadds with the Butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+By default, the test script selects the following
+instrument/detector/visit combination. This can be changed if
+desired.\\[2\baselineskip]\# Select an arbitrary source catalog from a
+calexp (PVI):\\
+\hspace*{0.333em} ~~instrument~=~'HSC'\\
+\hspace*{0.333em} ~~detector~=~5\\
+\hspace*{0.333em} ~~visit~=~36180\\[2\baselineskip]\hspace*{0.333em}
+~~\# Run the test\\
+\hspace*{0.333em} ~ LVVT28(instrument, visit,
+detector)\\[2\baselineskip]
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1.3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2262,11 +2295,74 @@ Confirmation of measurements in catalogs encoded in flux units.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+(lsst-scipipe-8.0.0) {[}jcarlin@sdfrome001 fall2023\_ATC{]}\$ python
+test\_LVV-T28.py~\\
+lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b ~ ~ w\_latest w\_2024\_04
+current setup\\
+Input dataId: \{'instrument': `HSC', `visit': 36180, `detector':
+5\}\\[2\baselineskip]Checking afw src table:\\
+deblend\_psf\_instFlux \ldots{}.. count\\
+base\_Blendedness\_raw\_child\_instFlux \ldots{}.. count\\
+base\_Blendedness\_raw\_parent\_instFlux \ldots{}.. count\\
+base\_Blendedness\_abs\_child\_instFlux \ldots{}.. count\\
+base\_Blendedness\_abs\_parent\_instFlux \ldots{}.. count\\
+base\_SdssShape\_instFlux \ldots{}.. count\\
+base\_SdssShape\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_3\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_3\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_4\_5\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_4\_5\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_6\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_6\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_9\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_9\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_12\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_12\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_17\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_17\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_25\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_25\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_35\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_35\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_50\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_50\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_70\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_70\_0\_instFluxErr \ldots{}.. count\\
+base\_CompensatedGaussianFlux\_3\_instFlux \ldots{}.. count\\
+base\_CompensatedGaussianFlux\_3\_instFluxErr \ldots{}.. count\\
+base\_CompensatedGaussianFlux\_5\_instFlux \ldots{}.. count\\
+base\_CompensatedGaussianFlux\_5\_instFluxErr \ldots{}.. count\\
+base\_GaussianFlux\_instFlux \ldots{}.. count\\
+base\_GaussianFlux\_instFluxErr \ldots{}.. count\\
+base\_LocalBackground\_instFlux \ldots{}.. count\\
+base\_LocalBackground\_instFluxErr \ldots{}.. count\\
+base\_PsfFlux\_instFlux \ldots{}.. count\\
+base\_PsfFlux\_instFluxErr \ldots{}.. count\\
+ext\_photometryKron\_KronFlux\_instFlux \ldots{}.. count\\
+ext\_photometryKron\_KronFlux\_instFluxErr \ldots{}..
+count\\[2\baselineskip]All src table instFlux entries have units of
+counts: True\\[2\baselineskip]Checking parquet
+sourceTable:\\[2\baselineskip]Checking flux values for visit
+36180\\[2\baselineskip]flux column~ ~ ~ ~ ~~\% of bad flux
+values\\[2\baselineskip]calibFlux~ ~ ~ ~ ~ ~ ~ ~ ~ 0.0 \%\\
+ap03Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap06Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap09Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap12Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap17Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap25Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap35Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap50Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap70Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+psfFlux~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 0.0 \%\\
+gaussianFlux~ ~ ~ ~ ~ 0.0 \%\\[2\baselineskip]All ``instFlux'' entries
+have units of counts, and all fluxes are within a reasonable range of
+flux values, so this test has passed.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2.1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2.1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2294,11 +2390,16 @@ Butler repo available for reading.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Tests were performed using ``test\_LVV-T28\_DC2.py,'' which contains the
+following:\\[2\baselineskip]\# For DC2 data on the USDF:\\
+config~=~'/repo/dc2'\\
+collection~=~'2.2i/runs/test-med-1/w\_2023\_37/DM-40870'\\
+butler~= Butler(config,~collections=collection)\\[3\baselineskip]
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2.2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2.2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2314,11 +2415,20 @@ data containing coadds with the Butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+By default, the test script selects the following
+instrument/detector/visit combination. This can be changed if
+desired.\\[2\baselineskip]\# Select an arbitrary source catalog from a
+calexp (PVI):\\
+\hspace*{0.333em} ~~instrument~=~'LSSTCam-imSim'\\
+\hspace*{0.333em} ~~detector~=~'R30\_S10'\\
+\hspace*{0.333em} ~~visit~=~169765\\[2\baselineskip]\hspace*{0.333em}
+~~\# Run the test\\
+\hspace*{0.333em} ~ LVVT28(instrument, visit, detector)
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2.3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2.3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2335,248 +2445,75 @@ Confirmation of measurements in catalogs encoded in flux units.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
-
-}
-
-\paragraph{ LVV-T124 - Verify implementation of Software Architecture to Enable Community
-Re-Use }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Defined}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T124}{\textit{ LVV-T124 } }
-test case in Jira.
-
-Show that the LSST software is capable of being executed in multiple
-contexts: single user instance, batch processing, continuous
-integration.\\
-Also show that the algorithms can be reconfigured and, if desired,
-completely replaced at run time.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-The `path` that you will use depends on where you are running the
-science pipelines. Options:\\[2\baselineskip]
-
-\begin{itemize}
-\tightlist
-\item
-  local (newinstall.sh - based
-  install):{[}path\_to\_installation{]}/loadLSST.bash
-\item
-  development cluster (``lsst-dev''):
-  /software/lsstsw/stack/loadLSST.bash
-\item
-  LSP Notebook aspect (from a terminal):
-  /opt/lsst/software/stack/loadLSST.bash
-\end{itemize}
-
-From the command line, execute the commands below in the example
-code:\\[2\baselineskip]
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-source `path`\\
-setup lsst\_distrib
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Science pipeline software is available for use. If additional packages
-are needed (for example, `obs' packages such as `obs\_subaru`), then
-additional `setup` commands will be necessary.\\[2\baselineskip]To check
-versions in use, type:\\
-eups list -s
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Using curated test datasets for multiple precursor instruments, verify
-and log that the prototype DRP pipelines execute successfully in three
-contexts:\\
-1. The CI system\\
-2. On a single user system: laptop, desktop, or notebook running in the
-Notebook aspect of the LSP.\\
-3. Project workflow system.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Using a template testing notebook in the Notebook aspect of the LSP,
-verify and log the following:\\
-1. Individual pipeline steps (tasks) are importable and executable on
-their own. ~this is not comprehensive, but demonstrative.\\
-2. Individual pipeline steps may be overridden by configuration.\\
-3. Users can implement a custom pipeline step and insert i into the
-processing flow via configuration.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify the path to the data repository, which we will refer to as
-`DATA/path', then execute the following:
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-\begin{verbatim}
-from lsst.daf.butler import Butler
-repo = 'Data/path'
-collection = 'collection'
-butler = Butler(repo, collections=collection)
-\end{verbatim}
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Butler repo available for reading.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Read the resulting dataset using the Bulter, and confirm that it
-produced the desired data products.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 6 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Run subset of full DRP from previous step on an individual node. ~Was
-this organizationally easy? ~Did the performance scale appropriately?
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 7 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Re-run aperture correction on subset. ~Verify that same results as DRP
-run are achieved.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 8 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Re-run photometric redshift estimation algorithm on subset coadd
-catalogs. ~Verify that same results are achieved as from full DRP.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
+(lsst-scipipe-8.0.0) {[}jcarlin@sdfrome001 fall2023\_ATC{]}\$ python
+test\_LVV-T28\_DC2.py~\\
+lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b ~ ~ w\_latest w\_2024\_04
+current setup\\
+Input dataId:~~\{'instrument': `LSSTCam-imSim', `visit': 169765,
+`detector': `R30\_S10'\}\\
+deblend\_psf\_instFlux \ldots{}.. count\\
+base\_Blendedness\_raw\_child\_instFlux \ldots{}.. count\\
+base\_Blendedness\_raw\_parent\_instFlux \ldots{}.. count\\
+base\_Blendedness\_abs\_child\_instFlux \ldots{}.. count\\
+base\_Blendedness\_abs\_parent\_instFlux \ldots{}.. count\\
+base\_SdssShape\_instFlux \ldots{}.. count\\
+base\_SdssShape\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_3\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_3\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_4\_5\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_4\_5\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_6\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_6\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_9\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_9\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_12\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_12\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_17\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_17\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_25\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_25\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_35\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_35\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_50\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_50\_0\_instFluxErr \ldots{}.. count\\
+base\_CircularApertureFlux\_70\_0\_instFlux \ldots{}.. count\\
+base\_CircularApertureFlux\_70\_0\_instFluxErr \ldots{}.. count\\
+base\_CompensatedGaussianFlux\_3\_instFlux \ldots{}.. count\\
+base\_CompensatedGaussianFlux\_3\_instFluxErr \ldots{}.. count\\
+base\_CompensatedGaussianFlux\_5\_instFlux \ldots{}.. count\\
+base\_CompensatedGaussianFlux\_5\_instFluxErr \ldots{}.. count\\
+base\_GaussianFlux\_instFlux \ldots{}.. count\\
+base\_GaussianFlux\_instFluxErr \ldots{}.. count\\
+base\_LocalBackground\_instFlux \ldots{}.. count\\
+base\_LocalBackground\_instFluxErr \ldots{}.. count\\
+base\_PsfFlux\_instFlux \ldots{}. count\\
+base\_PsfFlux\_instFluxErr \ldots{}.. count\\
+ext\_photometryKron\_KronFlux\_instFlux \ldots{}.. count\\
+ext\_photometryKron\_KronFlux\_instFluxErr \ldots{}..
+count\\[2\baselineskip]\hspace*{0.333em}All src table instFlux entries
+have units of counts:~~True\\[2\baselineskip]Checking flux values for
+visit 169765\\[2\baselineskip]flux column~ ~ ~ ~ ~~\% of bad flux
+values\\[2\baselineskip]calibFlux~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap03Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap06Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap09Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap12Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap17Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap25Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap35Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap50Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+ap70Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+psfFlux~ ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
+gaussianFlux~ ~ ~ ~ 0.0 \%\\[2\baselineskip]All ``instFlux'' entries
+have units of counts, and all fluxes are within a reasonable range of
+flux values, so this test has passed.
 
 }
 
 \paragraph{ LVV-T142 - Verify implementation of Production Fault Tolerance }\mbox{}\\
 
 Version \textbf{1}.
-Status \textbf{Draft}.
+Status \textbf{Approved}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{\textit{ LVV-T142 } }
 test case in Jira.
 
@@ -2588,20 +2525,27 @@ ready for subsequent use, and/or reset and repeat production attempts.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\Executed at the USDF using the w\_2023\_43 version of the Science
+Pipelines.
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute AP and DRP, simulate failures, observe correct processing
+Create a HTCondor Pool at USDF
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+allocateNodes.py -c 8 -m 4-00:00:00 -q roma,milano -g 900 s3df
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2612,6 +2556,195 @@ Execute AP and DRP, simulate failures, observe correct processing
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Entered:\\
+allocateNodes.py -c 16 -n 1 -m 4-00:00:00 -q roma,milano -g 900
+s3df\\[2\baselineskip]The following shows the active glide-in job in the
+queue:\\
+squeue -u jcarlin\\
+JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)\\
+32575038 roma glide\_jc jcarlin R 12:13 1 sdfrome043\\[2\baselineskip]
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Submit a RC2-subset run using bps
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps submit --output u/username/collectionname
+\$\{DRP\_PIPE\_DIR\}/drp\_pipe/pipelines/HSC/DRP-RC2\_subset.yaml
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We use the script ``bps\_step1\_DM-ATC.yaml'', which contains the
+following:\\[2\baselineskip]pipelineYaml:
+`\$\{DRP\_PIPE\_DIR\}/pipelines/HSC/DRP-RC2\_subset.yaml\#nightlyStep1'\\[2\baselineskip]project:
+dm\_atc\\
+campaign: LVV-T142\_test\\[2\baselineskip]includeConfigs:\\
+\hspace*{0.333em}\hspace*{0.333em}-
+\$\{DRP\_PIPE\_DIR\}/bps/clustering/DRP-recalibrated.yaml\\
+\hspace*{0.333em}\hspace*{0.333em}-
+\$\{DRP\_PIPE\_DIR\}/bps/resources/HSC/DRP-RC2.yaml\\[2\baselineskip]payload:\\
+\hspace*{0.333em}\hspace*{0.333em}payloadName: u/jcarlin\\
+\hspace*{0.333em}\hspace*{0.333em}output:
+``\{payloadName\}/\{campaign\}''\\
+\hspace*{0.333em}\hspace*{0.333em}butlerConfig:
+/sdf/group/rubin/repo/main/butler.yaml\\
+\hspace*{0.333em}\hspace*{0.333em}inCollection:
+``HSC/RC2\_subset/defaults''\\[2\baselineskip]\#computeSite:\\
+site:\\
+\hspace*{0.333em}\hspace*{0.333em}s3df:\\
+\hspace*{0.333em} ~~profile:\\
+\hspace*{0.333em} ~ ~~condor:\\
+\hspace*{0.333em} ~ ~ ~~+Walltime: 7200\\[2\baselineskip]\# Condor
+backend stuff\\
+wmsServiceClass:
+lsst.ctrl.bps.htcondor.HTCondorService\\[2\baselineskip]To submit the
+script, we execute the following:\\
+bps submit bps\_step1\_DM-ATC.yaml\\[2\baselineskip]
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Cancel the job while it is in progress
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps cancel {[}job id{]}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+After the job had been executing for a few minutes, canceled it using:\\
+bps cancel --user jcarlin\\
+(Screen output:)\\
+Successfully canceled job with id
+`sdfrome001.sdf.slac.stanford.edu\#5463544.0\#1698969640'
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check that some output products are missing
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+butler query-datasets /repo/main --collections u/username/collectionname
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We know that there should be 240 calexps (6 detectors, 8 visits in each
+of 5 filters; 6*8*5=240) in this repository once processing has
+completed. Use a butler query to see how many
+exist:\\[2\baselineskip]butler query-datasets /repo/main calexp
+--collections u/jcarlin/LVV-T142\_test/20231102T233609Z \textbar{} grep
+`calexp' \textbar{} wc\\
+\hspace*{0.333em} ~ ~13 ~ ~~104~ ~~1716\\[2\baselineskip]The first entry
+says that there are only 13 lines returned by that query. Thus some
+output products must be missing.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Submit a new job to finish the tasks that were not completed
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps submit --output u/username/collectionname \$\{DRP\_PIPE\_DIR\}
+drp\_pipe/pipelines/HSC/DRP-RC2\_subset.yaml
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Resubmit the job, giving the output collection from the previous run as
+an input to this run:\\[2\baselineskip]allocateNodes.py -c 16 -n 1 -m
+4-00:00:00 -q roma,milano -g 900 s3df\\
+bps restart --id
+/sdf/home/j/jcarlin/u/SVV/fall2023\_ATC/submit/u/jcarlin/LVV-T142\_test/20231102T233609Z\\[2\baselineskip]Job
+executed, and we waited until it successfully completed.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that all expected files are now present
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+butler query-datasets /repo/main --collections u/username/collectionname
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Run the same query as before, but specifying the exact collection that
+the results were saved into:\\[2\baselineskip]butler query-datasets
+/repo/main calexp --collections
+u/jcarlin/LVV-T142\_test/20231102T233609Z \textbar{} grep `calexp'
+\textbar{} wc\\
+\hspace*{0.333em} ~~240~ ~~1920 ~~31680\\[2\baselineskip]We see that
+this execution brought the total to 240 calexps, as expected. We have
+thus demonstrated that the batch processing system (BPS) at the USDF
+successfully recovers jobs that fail before they have completed.
 
 }
 
@@ -2630,7 +2763,7 @@ milliarcseconds}.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
 Final comment:\\
 
@@ -2639,12 +2772,11 @@ Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Identify a dataset containing at least one field with multiple
-overlapping visits.
+Identify a dataset containing processed data.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2656,11 +2788,14 @@ A dataset that has been ingested into a Butler repository.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+For this test we use the regularly-reprocessed HSC RC2; in particular,
+the data reprocessed with weekly pipelines version `w\_2024\_02`, in
+Butler collection ``HSC/runs/RC2/w\_2024\_02/DM-42454'' at the USDF.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2704,35 +2839,39 @@ eups list -s
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+\$ eups list -s lsst\_distrib\\
+\hspace*{0.333em} ~g4213664e8e+b08e1c1b0b ~ ~ ~~w\_latest w\_2024\_04
+current setup\\[2\baselineskip]
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute `faro` on a repository containing processed data. Identify the
-path to the data, which we will call `DATA/path', then execute something
-similar to the following (with paths, datasets, and flags replaced or
-additionally specified as needed):
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call `DATA/path', then
+execute something similar to the following (with paths, datasets, and
+flags replaced or additionally specified as needed):
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Example Code \\
 {\footnotesize
 pipetask --long-log run -j 2 -b DATA/path/butler.yaml
---register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
--d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
-AND instrument='HSC''' --output u/username/faro\_metrics -i
-HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
-w06\_2021\_tract9813\_faro.txt
+--register-dataset-types -p
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d ``band
+in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1' AND
+instrument='HSC''' --output u/username/atools\_metrics -i
+HSC/runs/RC2/w\_2023\_36 --instrument lsst.obs.subaru.HyperSuprimeCam
+2\textgreater{}\&1 \textbar{} tee w36\_2023\_tract9813\_atools.txt
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
-The output collection (in this case, ``u/username/faro\_metrics'')
+The output collection (in this case, ``u/username/atools\_metrics'')
 containing metric measurements and any associated extras and metadata is
 available via the butler.
 
@@ -2740,11 +2879,30 @@ available via the butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+First we ran the ``coaddQualityCore'' pipeline from `analysis\_tools` on
+all three available tracts:\\[2\baselineskip]pipetask run -b /repo/main
+-i HSC/runs/RC2/w\_2024\_02/DM-42454 -p
+\$\{ANALYSIS\_TOOLS\_DIR\}/pipelines/coaddQualityCore.yaml -o
+u/jcarlin/test\_LVV-T1748 --instrument lsst.obs.subaru.HyperSuprimeCam
+--register-dataset-types -d ``tract in (9813, 9615, 9697) AND
+skymap='hsc\_rings\_v1''' 2\textgreater{}\&1 \textbar{} tee
+atools\_LVV-T1748\_test.log\\[2\baselineskip]Next we ran the
+``visitQualityCore'' pipeline on a single RC2
+visit:\\[2\baselineskip]pipetask run -b /repo/main -i
+HSC/runs/RC2/w\_2024\_02/DM-42454 -p
+\$\{ANALYSIS\_TOOLS\_DIR\}/pipelines/visitQualityCore.yaml -o
+u/jcarlin/test\_LVV-T1748\_visit --instrument
+lsst.obs.subaru.HyperSuprimeCam --register-dataset-types -d ``visit in
+(36180) AND skymap='hsc\_rings\_v1' AND instrument='HSC'''
+2\textgreater{}\&1 \textbar{} tee
+atools\_LVV-T1748\_test\_visit.log\\[2\baselineskip]Both of these
+pipelines contain tasks that will calculate metrics based on matching to
+the Gaia DR3 reference catalog.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2762,6 +2920,67 @@ demonstrating that AA1 has been calculated.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Open a python prompt, then instantiate the Butler and read the metric
+bundles that were created by the above runs of
+`analysis\_tools`:\\[2\baselineskip]from lsst.daf.butler import Butler\\
+repo = `/repo/main'\\
+collection = `u/jcarlin/test\_LVV-T1748'\\
+butler = Butler(repo, collections=collection)\\
+did\_tract = \{'instrument':'HSC', `tract':9615,
+`skymap':'hsc\_rings\_v1'\}\\
+metric\_extract =
+butler.get('objectTable\_tract\_gaia\_dr3\_20230707\_match\_metrics',
+collections=collection, dataId=did\_tract)\\[2\baselineskip]for met in
+metric\_extract{[}'astromDiffMetrics'{]}:\\
+\hspace*{0.333em} ~ print(met)\\[2\baselineskip]g\_AA1\_RA\_coadd:
+2.1063837266410697 mas\\
+g\_AA1\_sigmaMad\_RA\_coadd: 3.9587443763583363 mas\\
+g\_AA1\_Dec\_coadd: 2.1491007237806055 mas\\
+g\_AA1\_sigmaMad\_Dec\_coadd: 4.334318369967101 mas\\
+g\_AA1\_tot\_coadd: 5.557193272612054 mas\\
+g\_AA1\_sigmaMad\_tot\_coadd: 3.8598538443562407 mas\\
+r\_AA1\_RA\_coadd: 2.7165050880739723 mas\\
+r\_AA1\_sigmaMad\_RA\_coadd: 4.520586827619122 mas\\
+r\_AA1\_Dec\_coadd: 2.4681338712806418 mas\\
+r\_AA1\_sigmaMad\_Dec\_coadd: 4.641432559314666 mas\\
+r\_AA1\_tot\_coadd: 6.305816679054206 mas\\
+r\_AA1\_sigmaMad\_tot\_coadd: 4.120642210353908 mas\\
+i\_AA1\_RA\_coadd: 3.519391958661799 mas\\
+i\_AA1\_sigmaMad\_RA\_coadd: 4.326955084103768 mas\\
+i\_AA1\_Dec\_coadd: 3.3291494215381685 mas\\
+i\_AA1\_sigmaMad\_Dec\_coadd: 4.404755426441496 mas\\
+i\_AA1\_tot\_coadd: 6.952576143474123 mas\\
+i\_AA1\_sigmaMad\_tot\_coadd: 4.036796559569423 mas\\
+z\_AA1\_RA\_coadd: 2.41553204318734 mas\\
+z\_AA1\_sigmaMad\_RA\_coadd: 4.428035048189116 mas\\
+z\_AA1\_Dec\_coadd: 2.1116089754497076 mas\\
+z\_AA1\_sigmaMad\_Dec\_coadd: 4.641887604460565 mas\\
+z\_AA1\_tot\_coadd: 6.039798859474133 mas\\
+z\_AA1\_sigmaMad\_tot\_coadd: 4.182977418904133 mas\\
+y\_AA1\_RA\_coadd: 2.408819972288256 mas\\
+y\_AA1\_sigmaMad\_RA\_coadd: 4.440931123927884 mas\\
+y\_AA1\_Dec\_coadd: 2.1116089754497076 mas\\
+y\_AA1\_sigmaMad\_Dec\_coadd: 4.626056674759659 mas\\
+y\_AA1\_tot\_coadd: 6.0289912626929 mas\\
+y\_AA1\_sigmaMad\_tot\_coadd: 4.1957238417228
+mas\\[2\baselineskip]did\_visit = \{'instrument':'HSC', `visit':36180,
+`skymap':'hsc\_rings\_v1'\}\\
+collection\_vis = `u/jcarlin/test\_LVV-T1748\_visit'\\
+butler\_vis = Butler(repo, collections=collection\_vis)\\
+metric\_extract\_vis =
+butler.get('sourceTable\_visit\_gaia\_dr3\_20230707\_match\_metrics',
+collections=collection\_vis, dataId=did\_visit)\\
+for met in metric\_extract\_vis{[}'astromDiffMetrics'{]}:\\
+\hspace*{0.333em} ~ print(met)\\[2\baselineskip]AA1\_RA:
+0.2177698661398608 mas\\
+AA1\_sigmaMad\_RA: 2.6860945686629476 mas\\
+AA1\_Dec: 0.1395363322886922 mas\\
+AA1\_sigmaMad\_Dec: 2.801517008917446 mas\\
+AA1\_tot: 3.243461716402636 mas\\
+AA1\_sigmaMad\_tot: 1.9738141749210063 mas\\[2\baselineskip]We see that
+the calculated values of AA1 are well below the required 50 mas
+threshold in both the coadds and the single-visit metrics. We thus deem
+this test to have passed.
 
 }
 
@@ -2782,16 +3001,17 @@ PF1 metric.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\This test used a modified version of the analysis\_tools pipeline
+``matchedVisitQualityCore.yaml.''
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2808,11 +3028,13 @@ A dataset that has been ingested into a Butler repository.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+For this test we use the most recent reprocessing of the Subaru+HSC RC2
+dataset. The data were processed with the w\_2023\_35 pipelines.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2856,35 +3078,39 @@ eups list -s
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Current weekly stack initialized:\\
+\textbf{lsst\_distrib} g4213664e8e+7835acb1bb w\_latest current
+w\_2023\_40 setup
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute `faro` on a repository containing processed data. Identify the
-path to the data, which we will call `DATA/path', then execute something
-similar to the following (with paths, datasets, and flags replaced or
-additionally specified as needed):
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call `DATA/path', then
+execute something similar to the following (with paths, datasets, and
+flags replaced or additionally specified as needed):
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Example Code \\
 {\footnotesize
 pipetask --long-log run -j 2 -b DATA/path/butler.yaml
---register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
--d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
-AND instrument='HSC''' --output u/username/faro\_metrics -i
-HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
-w06\_2021\_tract9813\_faro.txt
+--register-dataset-types -p
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d ``band
+in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1' AND
+instrument='HSC''' --output u/username/atools\_metrics -i
+HSC/runs/RC2/w\_2023\_36 --instrument lsst.obs.subaru.HyperSuprimeCam
+2\textgreater{}\&1 \textbar{} tee w36\_2023\_tract9813\_atools.txt
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
-The output collection (in this case, ``u/username/faro\_metrics'')
+The output collection (in this case, ``u/username/atools\_metrics'')
 containing metric measurements and any associated extras and metadata is
 available via the butler.
 
@@ -2892,11 +3118,21 @@ available via the butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Changed the value of PA2 in matchedVisitQualityCore\_changePA2.yaml to
+15.0:\\
+atools.stellarPhotometricRepeatability.PA2Value:
+15.0\\[2\baselineskip]Then, executed the pipeline as follows:\\
+pipetask --long-log run -j 2 -b /repo/main --register-dataset-types -p
+matchedVisitQualityCore\_changePA2.yaml -d ``band in ('g', `r', `i') AND
+tract=9813 AND skymap='hsc\_rings\_v1' AND instrument='HSC''' --output
+u/jcarlin/pa2\_15 -i HSC/runs/RC2/w\_2023\_35/DM-40588\\
+\hspace*{0.333em}--instrument lsst.obs.subaru.HyperSuprimeCam
+2\textgreater{}\&1 \textbar{} tee w35\_2023\_tract9813\_pa2\_15.txt
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2908,12 +3144,147 @@ the computed values of PF1 for filters g,r,i.
   Expected Result \\
 {\footnotesize
 A JSON file (and/or a report generated from that JSON file)
-demonstrating that PA2gri has been calculated (and that it used PF1).
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Examine the results in a python
+terminal:\\[2\baselineskip]\textgreater{}\textgreater{}\textgreater{}
+from lsst.daf.butler import Butler\\
+\textgreater{}\textgreater{}\textgreater{} repo='/repo/main'\\
+\textgreater{}\textgreater{}\textgreater{}
+collection='u/jcarlin/pa2\_15'\\
+\textgreater{}\textgreater{}\textgreater{} butler = Butler(repo,
+collections=collection)\\
+\textgreater{}\textgreater{}\textgreater{} dataId = \{'tract':9813,
+`instrument':'HSC', `skymap':'hsc\_rings\_v1'\}\\
+\textgreater{}\textgreater{}\textgreater{} metrics =
+butler.get('matchedVisitCore\_metrics', dataId=dataId)\\
+\textgreater{}\textgreater{}\textgreater{} for m in
+metrics{[}'stellarPhotometricRepeatability'{]}:\\
+\ldots{} print(m)\\
+\ldots{}\\
+g\_stellarPhotRepeatStdev: 6.979476571776661 mmag\\
+g\_stellarPhotRepeatOutlierFraction: 3.890690134321445 \%\\
+g\_ct: 2159.0 ct\\
+r\_stellarPhotRepeatStdev: 8.902557135179485 mmag\\
+r\_stellarPhotRepeatOutlierFraction: 4.64067886502254 \%\\
+r\_ct: 3771.0 ct\\
+i\_stellarPhotRepeatStdev: 7.9884004909489015 mmag\\
+i\_stellarPhotRepeatOutlierFraction: 2.779480891068874 \%\\
+i\_ct: 4893.0
+ct\\[2\baselineskip]\textgreater{}\textgreater{}\textgreater{}
+metrics\_config = butler.get('analyzeMatchedVisitCore\_config',
+dataId=dataId)\\
+\textgreater{}\textgreater{}\textgreater{} config\_dict =
+metrics\_config.toDict()\\
+\textgreater{}\textgreater{}\textgreater{}
+config\_dict{[}'atools'{]}{[}'stellarPhotometricRepeatability'{]}{[}'process'{]}{[}'calculateActions'{]}{[}'photRepeatOutlier'{]}\\
+\{'op': `ge', `threshold': 15.0, `vectorKey': `perGroupStdevFiltered',
+`percent': True, `relative\_to\_median': True\}\\[2\baselineskip]The
+following figure is output by the pipeline. The threshold (vertical
+black line) is set at 15 mmag above the measured PA1 value, as
+expected.\\
+\includegraphics[width=4.66667in]{jira_imgs/4828.png}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the value of the PA2 threshold in the pipeline yaml for
+analysis\_tools, then rerun analysis\_tools
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Changed the following line in matchedVisitQualityCore\_changePA2.yaml:\\
+atools.stellarPhotometricRepeatability.PA2Value:
+25.0\\[2\baselineskip]then executed:\\
+pipetask --long-log run -j 2 -b /repo/main --register-dataset-types -p
+matchedVisitQualityCore\_changePA2.yaml -d ``band in ('g', `r', `i') AND
+tract=9813 AND skymap='hsc\_rings\_v1' AND instrument='HSC''' --output
+u/jcarlin/pa2\_25 -i HSC/runs/RC2/w\_2023\_35/DM-40588 --instrument
+lsst.obs.subaru.HyperSuprimeCam 2\textgreater{}\&1 \textbar{} tee
+w35\_2023\_tract9813\_pa2\_25.txt
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the new PA2 threshold has been applied when computing PF1.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Open a python terminal to check the
+results:\\[2\baselineskip]\textgreater{}\textgreater{}\textgreater{}
+from lsst.daf.butler import Butler\\
+\textgreater{}\textgreater{}\textgreater{} repo='/repo/main'\\
+\textgreater{}\textgreater{}\textgreater{}
+collection='u/jcarlin/pa2\_25'\\
+\textgreater{}\textgreater{}\textgreater{} butler = Butler(repo,
+collections=collection)\\
+\textgreater{}\textgreater{}\textgreater{} dataId = \{'tract':9813,
+`instrument':'HSC', `skymap':'hsc\_rings\_v1'\}\\
+\textgreater{}\textgreater{}\textgreater{} metrics =
+butler.get('matchedVisitCore\_metrics', dataId=dataId)\\
+\textgreater{}\textgreater{}\textgreater{} for m in
+metrics{[}'stellarPhotometricRepeatability'{]}:\\
+\ldots{} ~ ~~print(m)\\
+\ldots{}~\\
+g\_stellarPhotRepeatStdev: 6.979476571776661 mmag\\
+g\_stellarPhotRepeatOutlierFraction: 3.1032885595182953 \%\\
+g\_ct: 2159.0 ct\\
+r\_stellarPhotRepeatStdev: 8.902557135179485 mmag\\
+r\_stellarPhotRepeatOutlierFraction: 3.07610713338637 \%\\
+r\_ct: 3771.0 ct\\
+i\_stellarPhotRepeatStdev: 7.9884004909489015 mmag\\
+i\_stellarPhotRepeatOutlierFraction: 1.859799713876967 \%\\
+i\_ct: 4893.0 ct\\
+z\_stellarPhotRepeatStdev: nan mmag\\
+z\_stellarPhotRepeatOutlierFraction: nan \%\\
+z\_ct: 0.0 ct\\
+y\_stellarPhotRepeatStdev: nan mmag\\
+y\_stellarPhotRepeatOutlierFraction: nan \%\\
+y\_ct: 0.0 ct\\
+\textgreater{}\textgreater{}\textgreater{} metrics\_config =
+butler.get('analyzeMatchedVisitCore\_config', dataId=dataId)\\
+\textgreater{}\textgreater{}\textgreater{} config\_dict =
+metrics\_config.toDict()\\
+\textgreater{}\textgreater{}\textgreater{}
+config\_dict{[}'atools'{]}{[}'stellarPhotometricRepeatability'{]}{[}'process'{]}{[}'calculateActions'{]}{[}'photRepeatOutlier'{]}\\
+\{'op': `ge', `threshold': 25.0, `vectorKey': `perGroupStdevFiltered',
+`percent': True, `relative\_to\_median': True\}\\[2\baselineskip]We can
+see from both the butler artifacts seen above, and the figure below,
+that the threshold PA2 has been set to 25.0 mmag from the measured PA1
+value, as requested.\\
+\includegraphics[width=4.26042in]{jira_imgs/4829.png}We have thus
+demonstrated that the repeatability outlier limit PA2 can be applied for
+the gri bands.
 
 }
 
@@ -2928,22 +3299,24 @@ test case in Jira.
 
 Verify that the DM system has provided the code to apply the
 repeatability outlier limit for isolated bright non-saturated point
-sources in the u, z, and y filters(PA2uzy) to to computed values of the
-PF1 metric.
+sources in the u, z, and y filters(PA2uzy) to computed values of the PF1
+metric.
 
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\Note that because we do not have access to u-band data, this test was
+performed for only y- and z-band. The steps would be unchanged for
+u-band data.
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2960,11 +3333,13 @@ A dataset that has been ingested into a Butler repository.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+For this test we use the most recent reprocessing of the Subaru+HSC RC2
+dataset. The data were processed with the w\_2023\_35 pipelines.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3008,35 +3383,39 @@ eups list -s
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Current weekly stack initialized:\\
+\textbf{lsst\_distrib} g4213664e8e+7835acb1bb w\_latest current
+w\_2023\_40 setup
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Execute `faro` on a repository containing processed data. Identify the
-path to the data, which we will call `DATA/path', then execute something
-similar to the following (with paths, datasets, and flags replaced or
-additionally specified as needed):
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call `DATA/path', then
+execute something similar to the following (with paths, datasets, and
+flags replaced or additionally specified as needed):
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Example Code \\
 {\footnotesize
 pipetask --long-log run -j 2 -b DATA/path/butler.yaml
---register-dataset-types -p \$FARO\_DIR/pipelines/metrics\_pipeline.yaml
--d ``band in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1'
-AND instrument='HSC''' --output u/username/faro\_metrics -i
-HSC/runs/RC2/w\_2021\_06 2\textgreater{}\&1 \textbar{} tee
-w06\_2021\_tract9813\_faro.txt
+--register-dataset-types -p
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d ``band
+in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1' AND
+instrument='HSC''' --output u/username/atools\_metrics -i
+HSC/runs/RC2/w\_2023\_36 --instrument lsst.obs.subaru.HyperSuprimeCam
+2\textgreater{}\&1 \textbar{} tee w36\_2023\_tract9813\_atools.txt
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
-The output collection (in this case, ``u/username/faro\_metrics'')
+The output collection (in this case, ``u/username/atools\_metrics'')
 containing metric measurements and any associated extras and metadata is
 available via the butler.
 
@@ -3044,11 +3423,21 @@ available via the butler.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Changed the value of PA2 in matchedVisitQualityCore\_changePA2.yaml to
+15.0:\\
+atools.stellarPhotometricRepeatability.PA2Value:
+15.0\\[2\baselineskip]Then, executed the pipeline as follows:\\
+pipetask --long-log run -j 2 -b /repo/main --register-dataset-types -p
+matchedVisitQualityCore\_changePA2.yaml -d ``band in ('z', `y') AND
+tract=9813 AND skymap='hsc\_rings\_v1' AND instrument='HSC''' --output
+u/jcarlin/pa2\_15\_zy -i HSC/runs/RC2/w\_2023\_35/DM-40588 --instrument
+lsst.obs.subaru.HyperSuprimeCam 2\textgreater{}\&1 \textbar{} tee
+w35\_2023\_tract9813\_zy\_pa2\_15.txt\\[2\baselineskip]
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3060,12 +3449,133 @@ the computed values of PF1 for filters u,z,y.
   Expected Result \\
 {\footnotesize
 A JSON file (and/or a report generated from that JSON file)
-demonstrating that PA2uzy has been calculated (and that it used PF1).
+demonstrating that PF1 has been calculated (and that it used the
+requested PA2uzy threshold).
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Examine the results in a python
+terminal:\\[2\baselineskip]\textgreater{}\textgreater{}\textgreater{}
+from lsst.daf.butler import Butler\\
+\textgreater{}\textgreater{}\textgreater{} repo='/repo/main'\\
+\textgreater{}\textgreater{}\textgreater{}
+collection='u/jcarlin/pa2\_15\_zy'\\
+\textgreater{}\textgreater{}\textgreater{} butler = Butler(repo,
+collections=collection)\\
+\textgreater{}\textgreater{}\textgreater{} dataId = \{'tract':9813,
+`instrument':'HSC', `skymap':'hsc\_rings\_v1'\}\\
+\textgreater{}\textgreater{}\textgreater{} metrics =
+butler.get('matchedVisitCore\_metrics', dataId=dataId)\\
+\textgreater{}\textgreater{}\textgreater{} for m in
+metrics{[}'stellarPhotometricRepeatability'{]}:\\
+\ldots{} print(m)\\
+\ldots{}\\
+z\_stellarPhotRepeatStdev: 6.924991284071611 mmag\\
+z\_stellarPhotRepeatOutlierFraction: 1.9053231192300137 \%\\
+z\_ct: 5091.0 ct\\
+y\_stellarPhotRepeatStdev: 7.237368762721793 mmag\\
+y\_stellarPhotRepeatOutlierFraction: 0.964371818912403 \%\\
+y\_ct: 3733.0 ct\\
+\textgreater{}\textgreater{}\textgreater{} metrics\_config =
+butler.get('analyzeMatchedVisitCore\_config', dataId=dataId)\\
+\textgreater{}\textgreater{}\textgreater{} config\_dict =
+metrics\_config.toDict()\\
+\textgreater{}\textgreater{}\textgreater{}
+config\_dict{[}'atools'{]}{[}'stellarPhotometricRepeatability'{]}{[}'process'{]}{[}'calculateActions'{]}{[}'photRepeatOutlier'{]}\\
+\{'op': `ge', `threshold': 15.0, `vectorKey': `perGroupStdevFiltered',
+`percent': True, `relative\_to\_median': True\}\\[2\baselineskip]The
+following figure is output by the pipeline. The threshold (vertical
+black line) is set at 15 mmag above the measured PA1 value, as
+expected.\\
+\includegraphics[width=4.33333in]{jira_imgs/4830.png}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the value of the PA2 threshold in the pipeline yaml for
+analysis\_tools, then rerun analysis\_tools
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Changed the following line in matchedVisitQualityCore\_changePA2.yaml:\\
+atools.stellarPhotometricRepeatability.PA2Value:
+25.0\\[2\baselineskip]then executed:\\
+pipetask --long-log run -j 2 -b /repo/main --register-dataset-types -p
+matchedVisitQualityCore\_changePA2.yaml -d ``band in ('z', `y') AND
+tract=9813 AND skymap='hsc\_rings\_v1' AND instrument='HSC''' --output
+u/jcarlin/pa2\_25\_zy -i HSC/runs/RC2/w\_2023\_35/DM-40588 --instrument
+lsst.obs.subaru.HyperSuprimeCam 2\textgreater{}\&1 \textbar{} tee
+w35\_2023\_tract9813\_zy\_pa2\_25.txt\\[2\baselineskip]
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the new PA2 threshold has been applied when computing PF1.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+\textgreater{}\textgreater{}\textgreater{} from lsst.daf.butler import
+Butler\\
+\textgreater{}\textgreater{}\textgreater{} repo='/repo/main'\\
+\textgreater{}\textgreater{}\textgreater{}
+collection='u/jcarlin/pa2\_15\_zy'\\
+\textgreater{}\textgreater{}\textgreater{} butler = Butler(repo,
+collections=collection)\\
+\textgreater{}\textgreater{}\textgreater{} dataId = \{'tract':9813,
+`instrument':'HSC', `skymap':'hsc\_rings\_v1'\}\\
+\textgreater{}\textgreater{}\textgreater{} metrics =
+butler.get('matchedVisitCore\_metrics', dataId=dataId)\\
+\textgreater{}\textgreater{}\textgreater{} for m in
+metrics{[}'stellarPhotometricRepeatability'{]}:\\
+\ldots{} print(m)\\
+\ldots{}\\
+z\_stellarPhotRepeatStdev: 6.924991284071611 mmag\\
+z\_stellarPhotRepeatOutlierFraction: 1.9053231192300137 \%\\
+z\_ct: 5091.0 ct\\
+y\_stellarPhotRepeatStdev: 7.237368762721793 mmag\\
+y\_stellarPhotRepeatOutlierFraction: 0.964371818912403 \%\\
+y\_ct: 3733.0 ct\\
+\textgreater{}\textgreater{}\textgreater{} metrics\_config =
+butler.get('analyzeMatchedVisitCore\_config', dataId=dataId)\\
+\textgreater{}\textgreater{}\textgreater{} config\_dict =
+metrics\_config.toDict()\\
+\textgreater{}\textgreater{}\textgreater{}
+config\_dict{[}'atools'{]}{[}'stellarPhotometricRepeatability'{]}{[}'process'{]}{[}'calculateActions'{]}{[}'photRepeatOutlier'{]}\\
+\{'op': `ge', `threshold': 25.0, `vectorKey': `perGroupStdevFiltered',
+`percent': True, `relative\_to\_median': True\}\\[2\baselineskip]We can
+see from both the butler artifacts seen above, and the figure below,
+that the threshold PA2 has been set to 25.0 mmag from the measured PA1
+value, as requested.\\
+\includegraphics[width=4.48958in]{jira_imgs/4831.png}\\
+We have thus demonstrated that the repeatability outlier limit PA2 can
+be applied for the z and y bands.
 
 }
 
@@ -3182,20 +3692,23 @@ the bounds of the image.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
+saved in the repository associated with this campaign's test report as
+``notebooks/test\_LVV-T40\_T1240.ipynb''.
 
 
 Detailed steps results:
 
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
-Identify an appropriate repo containing processed {RC2}⁠ data for this
+Identify an appropriate repo containing processed HSC data for this
 test.
 
 }
@@ -3208,11 +3721,13 @@ A dataset with Processed Visit Images available.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+For this test we use the most recent reprocessing of the Subaru+HSC RC2
+dataset. The data were processed with the w\_2023\_32 pipelines.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3240,11 +3755,15 @@ Butler repo available for reading.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Butler access is as follows:\\
+repo = `/repo/main'\\
+rc2\_collection = `HSC/runs/RC2/w\_2023\_32/DM-40356'\\
+butler = Butler(repo, collections=rc2\_collection)
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3262,11 +3781,13 @@ that catalog.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+This was done 500 times, extracting the source list and WCS for 500
+randomly-selected CCD/visit combinations from the repository.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3285,11 +3806,25 @@ used in determining the WCS solution.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+It was confirmed that all CCDs selected had more than
+astrometricMinStandards=5 standards used in their WCS
+solutions.\\[2\baselineskip]This was done using the following code to
+extract the number of astrometric standards for each
+image:\\[2\baselineskip]astrom\_selection =
+np.where(src{[}'calib\_astrometry\_used'{]} == True)\\
+num\_calib\_astrom.append(np.size(astrom\_selection))\\[2\baselineskip]In
+the end, we calculate the fraction of fields that met this requirement,
+using:\\
+wcsFlagsPercent = (np.size(np.where(num\_calib\_astrom \textgreater{}
+5))/np.size(num\_calib\_astrom))*100.0*u.percent\\[2\baselineskip]The
+result (from the notebook) is:\\
+Percentage of fields with \textgreater{} astrometricMinStandards=5:
+100.0 \% -- True
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3306,16 +3841,24 @@ A list of RA, Dec coordinates for all sources in the catalog.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Executed the following (for each CCD/visit) to create a list of RA, Dec
+coords from XY:\\[2\baselineskip]xxx = src.getX()\\
+yyy = src.getY()\\
+radec = {[}wcs.pixelToSky(xxx{[}i{]}, yyy{[}i{]}) for i in
+range(len(xxx)){]}\\
+radec\_arr = np.array({[}(coo.getRa().asDegrees(),
+coo.getDec().asDegrees()) for coo in radec{]})\\[2\baselineskip]This
+yields an array with RA, Dec coordinates.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.6 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 6 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
 We will assume that Gaia provides a source of ``truth.'' Match the
-source list to Gaia DR2, and calculate the positional offset between the
+source list to Gaia DR3, and calculate the positional offset between the
 test data and the Gaia catalog.
 
 }
@@ -3323,17 +3866,37 @@ test data and the Gaia catalog.
   Expected Result \\
 {\footnotesize
 A matched catalog of sources in common between the test source list and
-Gaia DR2.
+Gaia DR3.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Used astroquery to extract Gaia sources, then Astropy utilities to match
+the catalogs:\\[2\baselineskip]gaia\_mch =
+Gaia.query\_object\_async(coordinate=cen, width=width, height=height)\\
+sc\_src = SkyCoord(radec\_arr{[}:,0{]}*u.deg,
+radec\_arr{[}:,1{]}*u.deg)\\
+sc\_gaia = SkyCoord(gaia\_mch{[}'ra'{]}, gaia\_mch{[}'dec'{]})\\
+src\_match = sc\_src.match\_to\_catalog\_sky(sc\_gaia)\\
+sep\_match = src\_match{[}1{]}\\[2\baselineskip]Filtered the matched
+catalog to keep only matches with \textless{}0.5'' separation and with
+magnitude difference \textless{} 1.0 (relative to the median magnitude
+difference of all sources, to account for different
+filters):\\[2\baselineskip]okmch = (sep\_match.arcsec \textless{} 0.5)\\
+matchsep = sep\_match{[}okmch{]}\\
+\# Require the matches to have similar magnitudes:\\
+gaia\_gmag = gaia\_mch{[}'phot\_g\_mean\_mag'{]}\\
+magdiff =
+src\_mag{[}okmch{]}{[}:,0{]}-gaia\_gmag{[}src\_match{[}0{]}{[}okmch{]}{]}\\
+okmagdiff = (np.abs(magdiff - np.median(magdiff)) \textless{} 1.0)\\
+okmatchsep = matchsep{[}okmagdiff{]}\\[2\baselineskip]This yields the
+final matched list.
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.7 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 7 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3353,11 +3916,29 @@ transformation is accurate.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
+Figures shown in the notebook. Rather than histograms, we used
+comparisons of the various extracted parameters.\\[2\baselineskip]In
+addition to figures, we calculated the percentage of images that
+satisfied the requirement on astrometricAccuracy. This was less than
+100\% in all trials, likely due to some deep (or problematic) images
+having few Gaia matches. The results printed in the notebook are as
+follows:\\[2\baselineskip]
+
+\begin{verbatim}
+Percentage of fields meeting the threshold:  95.99198396793587 %  --  False
+\end{verbatim}
+
+Some brief exploration into reasons for a few images having large
+astrometric residuals is included in the notebook
+(`test\_LVV-T40\_T1240.ipynb`). These explorations suggest that the
+small fraction of ``failing'' images are not meeting the requirement due
+to inherent limitations in the data, and not a problem with the DM
+algorithms. Thus, we grant this test a ``Pass.''
 
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 1.8 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+Step 8 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3374,974 +3955,15 @@ accuracy criterion is met at all positions.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2.1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify an appropriate repo containing processed {DC2}⁠ data for this
-test.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A dataset with Processed Visit Images available.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2.2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify the path to the data repository, which we will refer to as
-`DATA/path', then execute the following:
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-\begin{verbatim}
-from lsst.daf.butler import Butler
-repo = 'Data/path'
-collection = 'collection'
-butler = Butler(repo, collections=collection)
-\end{verbatim}
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Butler repo available for reading.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2.3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Select a single visit from the dataset, and extract its WCS object and
-the source list.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A table containing detected sources, and a WCS object associated with
-that catalog.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2.4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that each CCD within the visit image contains at
-least~\textbf{astrometricMinStandards~}astrometric standards that were
-used in deriving the astrometric solution.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
-used in determining the WCS solution.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2.5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Starting from the XY pixel coordinates of the sources, apply the WCS to
-obtain RA, Dec coordinates.\\[2\baselineskip]
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A list of RA, Dec coordinates for all sources in the catalog.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2.6 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-We will assume that Gaia provides a source of ``truth.'' Match the
-source list to Gaia DR2, and calculate the positional offset between the
-test data and the Gaia catalog.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A matched catalog of sources in common between the test source list and
-Gaia DR2.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2.7 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Apply appropriate cuts to extract the optimal dataset for comparison,
-then calculate statistics (median, 1-sigma range, etc.; also plot a
-histogram) of the offsets in milliarcseconds. Confirm that the offset is
-less than \textbf{astrometricAccuracy}.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Histogram and relevant statistics needed to confirm that the WCS
-transformation is accurate.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2.8 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Repeat Step 5, but for subregions of the image, to confirm that the
-accuracy criterion is met at all positions.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-\textbf{astrometricAccuracy~}requirement is met over the entire image.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T129 - Verify implementation of Provide Calibrated Photometry }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Approved}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T129}{\textit{ LVV-T129 } }
-test case in Jira.
-
-Verify that the DMS provides photometry calibrated in AB mags and fluxes
-(in nJy) for all measured objects and sources. Must be tested for both
-DRP and AP products.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify the path to the data repository, which we will refer to as
-`DATA/path', then execute the following:
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
-{\footnotesize
-\begin{verbatim}
-from lsst.daf.butler import Butler
-repo = 'Data/path'
-collection = 'collection'
-butler = Butler(repo, collections=collection)
-\end{verbatim}
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Butler repo available for reading.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Ingest the data products from an appropriate DRP-processed dataset.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that AB-calibrated magnitudes and fluxes are available for all
-measured Sources and Objects. {[}An enhanced verification could include
-matching the sources to an external source catalog and comparing the
-magnitudes to show that they are well-calibrated.{]}
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Calibrated fluxes and magnitudes are available for all sources, as well
-as tools to convert measured fluxes to magnitudes (and vice-versa).
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Ingest the data products from an appropriate AP processing dataset.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that AB-calibrated magnitudes and fluxes are available for all
-measured Sources, DIASources, and Objects. {[}An enhanced verification
-could include matching the sources to an external source catalog and
-comparing the magnitudes to show that they are well-calibrated.{]}
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Calibrated fluxes and magnitudes are available for all Sources,
-DIASources, and Objects, as well as tools to convert measured fluxes to
-magnitudes (and vice-versa).
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T115 - Verify implementation of Calibration Production Processing }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Approved}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T115}{\textit{ LVV-T115 } }
-test case in Jira.
-
-Execute CPP on a variety of representative cadences, and verify that the
-calibration pipeline correctly produces necessary calibration products.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify a suitable set of calibration frames, including biases, dark
-frames, and flat-field frames.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Execute the Calibration Products Production payload. The payload uses
-raw calibration images and information from the Transformed EFD to
-generate a subset of Master Calibration Images and Calibration Database
-entries in the Data Backbone.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the expected Master Calibration images and Calibration
-Database entries are present and well-formed.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the expected data products are created, and that they have
-the expected properties.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Repos containing valid calibration products that are well-formed and
-ready to be applied to processed datasets.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T1862 - Verify determining effectiveness of dark current frame }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Draft}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1862}{\textit{ LVV-T1862 } }
-test case in Jira.
-
-Verify that the DMS can determine the effectiveness of a dark correction
-and determine how often it should be updated.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify the path to a dataset containing dark frames (i.e., exposures
-taken with the shutter closed).
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Execute the Calibration Products Production payload. The payload uses
-raw calibration images and information from the Transformed EFD to
-generate a subset of Master Calibration Images and Calibration Database
-entries in the Data Backbone.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the expected Master Calibration images and Calibration
-Database entries are present and well-formed.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Determining whether the dark correction is being done properly will
-require on-sky science data. The dark correction can be applied to these
-frames and the results inspected to ensure that the correction was
-correctly measured and applied.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Applying the dark correction to a dataset produces noticeable
-differences between the original frame(s) and the corrected outputs.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T89 - Verify implementation of Calibration Image Provenance }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Defined}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T89}{\textit{ LVV-T89 } }
-test case in Jira.
-
-Verify that the DMS records the required provenance information for the
-Calibration Data Products.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Ingest an appropriate precursor calibration dataset into a Butler repo.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Execute the Calibration Products Production payload. The payload uses
-raw calibration images and information from the Transformed EFD to
-generate a subset of Master Calibration Images and Calibration Database
-entries in the Data Backbone.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the expected Master Calibration images and Calibration
-Database entries are present and well-formed.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Load the relevant database/Butler data product, and observe that all
-provenance information has been retained.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A dataset consisting of calibration images, with provenance information
-recorded and properly associated with the calibration images.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T88 - Verify implementation of Calibration Data Products }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Defined}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T88}{\textit{ LVV-T88 } }
-test case in Jira.
-
-Verify that the DMS can produce and archive the required Calibration
-Data Products: cross talk correction, bias, dark, monochromatic dome
-flats, broad-band flats, fringe correction, and illumination
-corrections.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify a suitable set of calibration frames, including biases, dark
-frames, and flat-field frames.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Execute the Calibration Products Production payload. The payload uses
-raw calibration images and information from the Transformed EFD to
-generate a subset of Master Calibration Images and Calibration Database
-entries in the Data Backbone.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the expected Master Calibration images and Calibration
-Database entries are present and well-formed.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the expected data products are created, and that they have
-the expected properties.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A full set of calibration data products has been created, and they are
-well-formed.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Test that the calibration products are archived, and can readily be
-applied to science data to produce the desired corrections.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Confirmation that application of the calibration products to processed
-data has the desired effects.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T85 - Verify implementation of Crosstalk Correction Matrix }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Defined}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T85}{\textit{ LVV-T85 } }
-test case in Jira.
-
-Verify that the DMS can generate a cross-talk correction matrix from
-appropriate calibration data.\\
-Verify that the DMS can measure the effectiveness of the cross-talk
-correction matrix.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Identify an appropriate calibration dataset that can be used to derive
-the crosstalk correction matrix.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Execute the Calibration Products Production payload. The payload uses
-raw calibration images and information from the Transformed EFD to
-generate a subset of Master Calibration Images and Calibration Database
-entries in the Data Backbone.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 3 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the expected Master Calibration images and Calibration
-Database entries are present and well-formed.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Confirm that the crosstalk correction matrix is produced and persisted.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A correction matrix quantifying what fraction of the signal detected in
-any given amplifier on each sensor in the focal plane appears in any
-other amplifier.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Apply the crosstalk correction to simulated images, and confirm that the
-correction is performing as expected.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A noticeable difference between images before and after applying the
-correction.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-
-\paragraph{ LVV-T83 - Verify implementation of Bad Pixel Map }\mbox{}\\
-
-Version \textbf{1}.
-Status \textbf{Defined}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T83}{\textit{ LVV-T83 } }
-test case in Jira.
-
-Verify that the DMS can produce a map of detector pixels that suffer
-from pathologies, and that these pathologies are encoded in at least
-32-bit values.
-
-\textbf{ Preconditions}:\\
-
-
-Execution status: {\bf Not Executed }
-
-Final comment:\\
-
-
-Detailed steps results:
-
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 1 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Interrogate the calibRegistry for the metadata associated with a bad
-pixel map, where the validity range contains the date of interest.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-A bad pixel map for the requested date has been returned.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-
-}
-\begin{tabular}{p{2cm}p{14cm}}
-\toprule
-Step 2 & Step Execution Status: \textbf{ Not Executed } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Check that the bad pixel pathologies are encoded as at least 32-bit
-values, and that the various pathologies are represented by different
-encoding.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-Bad pixel values can be decoded to determine their pathologies using
-their 32-bit values.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
+Upon examination, we find that many images have only \textless{}50 Gaia
+matches over the entire frame. This is too few stars to get
+statistically meaningful results from subregions, so we did not perform
+this portion of the test.\\[2\baselineskip]We denote this test step as
+``Pass,'' as it is likely the requirement text will need to be removed
+or changed to account for the paucity of Gaia sources in many fields,
+and it is thus likely that this step will not be executed in the future.
+Nonetheless, this particular step does not have any bearing on the
+overall requirement being tested.
 
 }
 
