@@ -407,6 +407,24 @@ Final comment:\\
 
 Detailed steps :
 
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Inspect each service component to check if it has a deployment
+configuration defined
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+All systems have a defined deployment configuration as part of the DM
+deployment strategy\\[2\baselineskip]
+
+}
+
 \paragraph{ LVV-T1240 - Verify implementation of minimum astrometric standards per CCD }\mbox{}\\
 
 Version \textbf{1}.
@@ -420,10 +438,77 @@ standards.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
+saved in the repository associated with this campaign's test report as
+``notebooks/test\_LVV-T40\_T1240.ipynb''.
 
 
 Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify an appropriate processed dataset for this test.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset with Processed Visit Images.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Select a single visit from the dataset, and extract its calibration
+data. For a subset of CCDs, check how many astrometric standards
+contributed to the solution. Confirm that this number is at
+least~\textbf{astrometricMinStandards = 5.}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
+used in determining the WCS solution.
+
+}
 
 \paragraph{ LVV-T132 - Verify implementation of Pre-cursor and Real Data }\mbox{}\\
 
@@ -457,12 +542,30 @@ obtained.
 Fully covered by preconditions for
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T16}{LVV-T16}.
 
-Final comment:\\
+Final comment:\\Test executed with science pipelines version w\_2023\_34 in the RSP
+Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
+saved in the repository associated with this campaign's test report as
+``notebooks/test\_LVV-T62.ipynb''.
 
 
 Detailed steps :
 
-\paragraph{ LVV-T41 - Verify implementation of Generate PSF for Visit Images }\mbox{}\\
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a repo containing RC2 data with coadded images in multiple
+filters.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Multi-band data that has been processed through the coaddition stage.
+
+}
 
 Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T41}{\textit{ LVV-T41 } }
@@ -480,24 +583,7 @@ Final comment:\\
 
 Detailed steps :
 
-\paragraph{ LVV-T97 - Verify implementation of Uniqueness of IDs Across Data Releases }\mbox{}\\
-
-Version \textbf{1}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{\textit{ LVV-T97 } }
-test case in Jira.
-
-Verify that the IDs of Objects, Sources, DIAObjects, and DIASources from
-different Data Releases are unique.
-
-\textbf{ Preconditions}:\\
-
-
-Final comment:\\
-
-
-Detailed steps :
-
-\paragraph{ LVV-T1946 - Verify implementation of measurements in catalogs from coadds }\mbox{}\\
+\paragraph{ LVV-T41 - Verify implementation of Generate PSF for Visit Images }\mbox{}\\
 
 Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{\textit{ LVV-T1946 } }
@@ -509,12 +595,29 @@ coadd images are in flux units.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
+saved in the repository associated with this campaign's test report as
+``notebooks/test\_LVV-T41.ipynb''.
 
 
 Detailed steps :
 
-\paragraph{ LVV-T1947 - Verify implementation of measurements in catalogs from difference images }\mbox{}\\
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a repo containing data with processed visit images in multiple
+filters.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
 
 Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{\textit{ LVV-T1947 } }
@@ -543,7 +646,51 @@ processed visit images are in flux units.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\Executed at the USDF using the w\_2023\_43 version of the Science
+Pipelines.\\[2\baselineskip]In addition to demonstrating that changing
+the ``RELEASE\_ID'' results in unique IDs, we further examine the code
+itself to demonstrate that the uniqueness of IDs is ensured by the way
+the code is implemented.\\[2\baselineskip]The implementation of how the
+64 bits of the Source/Object IDs are apportioned is in the
+\texttt{\_IdGeneratorBits}\href{https://github.com/lsst/meas_base/blob/1bfaca56951770c88f4308da41de16d72ce40db9/python/lsst/meas/base/_id_generator.py\#L507-L537}{~class},
+and especially its \texttt{\_\_post\_init\_\_}:\\
+
+\begin{itemize}
+\tightlist
+\item
+  it gets the maximum number of bits needed to pack the data ID (based
+  on \texttt{\{visit,\ detector\}} for Source, and
+  \texttt{\{tract,\ patch\}} for Object) and turns that into the number
+  of distinct data IDs it could hold \texttt{(n\_data\_ids)};
+\item
+  it multiplies that with the \texttt{n\_releases} option to identify
+  how many ``upper'' bits need to be reserved for
+  \texttt{n\_data\_ids*n\_releases} ``catalog\_ids'', and sets
+  \texttt{n\_counters} to be the number of values remaining in the
+  Source or Object 64-bit ID to count sources or objects within one
+  image.
+\end{itemize}
+
+Because some interfaces historically wanted to count bits rather than
+just multiply integers, there is a mix of direct multiplication and log2
+addition. But you can see the result most clearly in
+\texttt{FullIdGenerator.arange} and
+\texttt{FullIdGenerator.catalog\_id}; a full Source or Object ID is:\\
+
+\begin{verbatim}
+id = counter + n_counters * catalog_id
+\end{verbatim}
+
+or\\
+
+\begin{verbatim}
+id = counter + n_counters * (packed_data_id + n_data_ids * release_id)
+\end{verbatim}
+
+and hence the releases will get distinct IDs as long as counter values
+are less than \texttt{n\_counters} and the packed data IDs are less than
+\texttt{n\_data\_ids}. (And there are several checks throughout the file
+for those criteria).
 
 
 Detailed steps :
@@ -559,13 +706,543 @@ that system is able to recover. ~Where recovery can mean the ability to
 provide production artifacts for examination, return production elements
 ready for subsequent use, and/or reset and repeat production attempts.
 
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Process data with the Data Release Production payload, starting from raw
+science images and generating science data products, placing them in the
+Data Backbone.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+After running the DRP payload multiple times, load the resulting data
+products (both data release and prompt products) using the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Multiple datasets resulting from processing of the same input data.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Inspect the IDs in the multiple data products and confirm that all IDs
+are unique.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+No IDs are repeated between multiple processings of the identical input
+dataset.
+
+}
+
+\paragraph{ LVV-T1946 - Verify implementation of measurements in catalogs from coadds }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{\textit{ LVV-T1946 } }
+test case in Jira.
+
+Verify that source measurements in catalogs containing measurements from
+coadd images are in flux units.
+
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\This test case can be executed by running the script test\_LVV-T1946.py,
+which is available in the test report github repository's ``scripts/''
+directory.\\[2\baselineskip]The tests that confirm fluxes have
+``reasonable'' values are checking that the fluxes, if converted to
+magnitudes, would result in a magnitude fainter than -5.
 
 
 Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate processed precursor dataset containing
+coadds with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the coadd catalog provides measurements in flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+
+\paragraph{ LVV-T1947 - Verify implementation of measurements in catalogs from difference images }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{\textit{ LVV-T1947 } }
+test case in Jira.
+
+Verify that source measurements in catalogs containing measurements from
+difference images are in flux units.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\This test case can be executed by running the scripts
+test\_LVV-T1947\_DiaSource.py,
+~test\_LVV-T1947\_forcedSourceOnDiaObject.py, and
+test\_LVV-T1947\_DiaObject.py, which are available in the test report
+github repository's ``scripts/'' directory.\\[2\baselineskip]The tests
+that confirm fluxes have ``reasonable'' values are checking that the
+fluxes, if converted to magnitudes, would result in a magnitude fainter
+than -5.
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate processed precursor dataset containing
+difference images with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the difference image source catalog provides measurements in
+flux units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+
+\paragraph{ LVV-T28 - Verify implementation of measurements in catalogs from PVIs }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T28}{\textit{ LVV-T28 } }
+test case in Jira.
+
+Verify that source measurements in catalogs containing measurements from
+processed visit images are in flux units.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\This test case can be executed by running the scripts test\_LVV-T28.py,
+test\_LVV-T28\_forcedSource.py, and test\_LVV-T28\_DC2.py, which are
+available in the test report github repository's ``scripts/''
+directory.\\[2\baselineskip]The tests that confirm fluxes have
+``reasonable'' values are checking that the fluxes, if converted to
+magnitudes, would result in a magnitude fainter than -5.
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate repo with processed {RC2}⁠ ~precursor
+data containing coadds with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the single-visit catalog provides measurements in flux
+units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify and read an appropriate repo with processed {DC2}⁠ ~precursor
+data containing coadds with the Butler.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 6  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify that the single-visit catalog provides measurements in flux
+units.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Confirmation of measurements in catalogs encoded in flux units.
+
+}
+
+\paragraph{ LVV-T142 - Verify implementation of Production Fault Tolerance }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{\textit{ LVV-T142 } }
+test case in Jira.
+
+Demonstrate production systems report faults in pipeline executions and
+that system is able to recover. ~Where recovery can mean the ability to
+provide production artifacts for examination, return production elements
+ready for subsequent use, and/or reset and repeat production attempts.
+
+\textbf{ Preconditions}:\\
+
+
+Final comment:\\Executed at the USDF using the w\_2023\_43 version of the Science
+Pipelines.
+
+
+Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Create a HTCondor Pool at USDF
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+allocateNodes.py -c 8 -m 4-00:00:00 -q roma,milano -g 900 s3df
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Submit a RC2-subset run using bps
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps submit --output u/username/collectionname
+\$\{DRP\_PIPE\_DIR\}/drp\_pipe/pipelines/HSC/DRP-RC2\_subset.yaml
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Cancel the job while it is in progress
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps cancel {[}job id{]}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check that some output products are missing
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+butler query-datasets /repo/main --collections u/username/collectionname
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Submit a new job to finish the tasks that were not completed
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+bps submit --output u/username/collectionname \$\{DRP\_PIPE\_DIR\}
+drp\_pipe/pipelines/HSC/DRP-RC2\_subset.yaml
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 6  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that all expected files are now present
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+butler query-datasets /repo/main --collections u/username/collectionname
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
 
 \paragraph{ LVV-T1748 - Verify calculation of median error in absolute position for RA, Dec axes }\mbox{}\\
 
@@ -586,6 +1263,117 @@ Final comment:\\
 
 Detailed steps :
 
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset containing processed data.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset that has been ingested into a Butler repository.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call `DATA/path', then
+execute something similar to the following (with paths, datasets, and
+flags replaced or additionally specified as needed):
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+pipetask --long-log run -j 2 -b DATA/path/butler.yaml
+--register-dataset-types -p
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d ``band
+in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1' AND
+instrument='HSC''' --output u/username/atools\_metrics -i
+HSC/runs/RC2/w\_2023\_36 --instrument lsst.obs.subaru.HyperSuprimeCam
+2\textgreater{}\&1 \textbar{} tee w36\_2023\_tract9813\_atools.txt
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The output collection (in this case, ``u/username/atools\_metrics'')
+containing metric measurements and any associated extras and metadata is
+available via the butler.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the metric AA1 has been calculated, and that its values are
+reasonable.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that AA1 has been calculated.
+
+}
+
 \paragraph{ LVV-T1759 - Verify that the repeatability outlier limit for isolated bright
 non-saturated point sources in the g, r, and i filters (PA2gri) can be
 applied. }\mbox{}\\
@@ -602,10 +1390,158 @@ PF1 metric.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\This test used a modified version of the analysis\_tools pipeline
+``matchedVisitQualityCore.yaml.''
 
 
 Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset containing at least one field in each of the g, r,
+and i filters with multiple overlapping visits.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset that has been ingested into a Butler repository.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call `DATA/path', then
+execute something similar to the following (with paths, datasets, and
+flags replaced or additionally specified as needed):
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+pipetask --long-log run -j 2 -b DATA/path/butler.yaml
+--register-dataset-types -p
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d ``band
+in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1' AND
+instrument='HSC''' --output u/username/atools\_metrics -i
+HSC/runs/RC2/w\_2023\_36 --instrument lsst.obs.subaru.HyperSuprimeCam
+2\textgreater{}\&1 \textbar{} tee w36\_2023\_tract9813\_atools.txt
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The output collection (in this case, ``u/username/atools\_metrics'')
+containing metric measurements and any associated extras and metadata is
+available via the butler.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the PA2gri threshold has been applied to the assessment of
+the computed values of PF1 for filters g,r,i.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the value of the PA2 threshold in the pipeline yaml for
+analysis\_tools, then rerun analysis\_tools
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 6  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the new PA2 threshold has been applied when computing PF1.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
+
+}
 
 \paragraph{ LVV-T1758 - Verify that the repeatability outlier limit for isolated bright
 non-saturated point sources in the u, z, and y filters (PA2uzy) can be
@@ -623,10 +1559,159 @@ metric.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\Note that because we do not have access to u-band data, this test was
+performed for only y- and z-band. The steps would be unchanged for
+u-band data.
 
 
 Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify a dataset containing at least one field in each of the u, z,
+and y filters with multiple overlapping visits.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset that has been ingested into a Butler repository.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+source `path`\\
+setup lsst\_distrib
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute `analysis\_tools` on a repository containing processed data.
+Identify the path to the data, which we will call `DATA/path', then
+execute something similar to the following (with paths, datasets, and
+flags replaced or additionally specified as needed):
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+pipetask --long-log run -j 2 -b DATA/path/butler.yaml
+--register-dataset-types -p
+\$ANALYSIS\_TOOLS\_DIR/pipelines/matchedVisitQualityCore.yaml -d ``band
+in ('g', `r', `i') AND tract=9813 AND skymap='hsc\_rings\_v1' AND
+instrument='HSC''' --output u/username/atools\_metrics -i
+HSC/runs/RC2/w\_2023\_36 --instrument lsst.obs.subaru.HyperSuprimeCam
+2\textgreater{}\&1 \textbar{} tee w36\_2023\_tract9813\_atools.txt
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The output collection (in this case, ``u/username/atools\_metrics'')
+containing metric measurements and any associated extras and metadata is
+available via the butler.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the PA2uzy threshold has been applied to the assessment of
+the computed values of PF1 for filters u,z,y.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested PA2uzy threshold).
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the value of the PA2 threshold in the pipeline yaml for
+analysis\_tools, then rerun analysis\_tools
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 6  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the new PA2 threshold has been applied when computing PF1.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A JSON file (and/or a report generated from that JSON file)
+demonstrating that PF1 has been calculated (and that it used the
+requested threshold value of PA2gri).
+
+}
 
 \paragraph{ LVV-T149 - Verify implementation of Catalog Queries }\mbox{}\\
 
@@ -645,10 +1730,54 @@ and
 and
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1087}{LVV-T1087}.
 
-Final comment:\\
+Final comment:\\Executed using the IDF Notebook, Portal, and API aspects. For the
+notebook execution, we used science pipelines version w\_2023\_34.
 
 
 Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute a simple query (for example, the one below) and confirm that it
+returns the expected result.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+SELECT * FROM dp02\_dc2\_catalogs.Object as obj WHERE
+CONTAINS(POINT('ICRS', obj.coord\_ra, obj.coord\_dec), CIRCLE('ICRS',
+62.0, -37.0, 0.10)) = 1
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A catalog of objects satisfying the specified constraints. The catalog
+should contain 26,115 results.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the query from all available access routes (e.g., an external VO
+client, the Science Platform query tool, and from within the Notebook
+Aspect), confirming in each case that the results are as expected.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
 
 \paragraph{ LVV-T40 - Verify implementation of Generate WCS for Visit Images }\mbox{}\\
 
@@ -663,10 +1792,168 @@ the bounds of the image.
 \textbf{ Preconditions}:\\
 
 
-Final comment:\\
+Final comment:\\Test executed with science pipelines version w\_2023\_37 in the RSP
+Notebook aspect at the USDF.\\[2\baselineskip]The executed notebook was
+saved in the repository associated with this campaign's test report as
+``notebooks/test\_LVV-T40\_T1240.ipynb''.
 
 
 Detailed steps :
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify an appropriate repo containing processed HSC data for this
+test.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A dataset with Processed Visit Images available.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Select a single visit from the dataset, and extract its WCS object and
+the source list.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A table containing detected sources, and a WCS object associated with
+that catalog.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 4  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that each CCD within the visit image contains at
+least~\textbf{astrometricMinStandards~}astrometric standards that were
+used in deriving the astrometric solution.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
+used in determining the WCS solution.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 5  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Starting from the XY pixel coordinates of the sources, apply the WCS to
+obtain RA, Dec coordinates.\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A list of RA, Dec coordinates for all sources in the catalog.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 6  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+We will assume that Gaia provides a source of ``truth.'' Match the
+source list to Gaia DR3, and calculate the positional offset between the
+test data and the Gaia catalog.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+A matched catalog of sources in common between the test source list and
+Gaia DR3.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 7  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Apply appropriate cuts to extract the optimal dataset for comparison,
+then calculate statistics (median, 1-sigma range, etc.; also plot a
+histogram) of the offsets in milliarcseconds. Confirm that the offset is
+less than \textbf{astrometricAccuracy}.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Histogram and relevant statistics needed to confirm that the WCS
+transformation is accurate.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 8  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat Step 5, but for subregions of the image, to confirm that the
+accuracy criterion is met at all positions.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+\textbf{astrometricAccuracy~}requirement is met over the entire image.
+
+}
 
 
 

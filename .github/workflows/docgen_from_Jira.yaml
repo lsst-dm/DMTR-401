@@ -23,13 +23,13 @@ jobs:
       - name: condaenv
         run: |
           conda init bash
-          conda create --name docsteady-env docsteady -c lsst-dm -c conda-forge
+          conda create --name docsteady-env 'docsteady<2.5' -c lsst-dm -c conda-forge
         shell: bash
 
       - name: docugen
         env:
-          JIRA_USER: ${{ secrets.JIRA_USER }} 
-          JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }} 
+          JIRA_USER: ${{ secrets.JIRA_USER }}
+          JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
         run: |
           source ${CONDA}/bin/activate docsteady-env
           docsteady  --namespace DM generate-tpr LVV-P106  DMTR-401.tex
