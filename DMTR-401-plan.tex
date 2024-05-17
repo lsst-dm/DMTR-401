@@ -1,6 +1,6 @@
 % generated from JIRA project LVV
-% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.12/site-packages/docsteady/templates/tpnoresult.latex.jinja2.
-% using docsteady version 0.0.0
+% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.7/site-packages/docsteady/templates/tpnoresult.latex.jinja2.
+% using docsteady version 2.4.1
 % Please do not edit -- update information in Jira instead
 \documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
 \usepackage{geometry}
@@ -31,7 +31,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan }
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2024-05-16 }
+\date{ 2024-05-17 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -71,18 +71,16 @@ Management System Requirements (DMSR;
 \href{https://lse-61.lsst.io/}{LSE-61} ), ensuring that we are
 progressing toward readiness for the installation and operation of
 LSSTCam. Additional DMSR requirements will be verified in later
-Acceptance Test Campaigns.\\
-\strut \\
-\textbf{Applicable Documents:}\\
+Acceptance Test Campaigns.\\[2\baselineskip]\textbf{Applicable
+Documents:}\\
 \citeds{LSE-61}: Data Management System (DMS) Requirements\\
 \citeds{LDM-503} Data Management Test Plan\\
-\citeds{LDM-639}: Data Management Acceptance Test Specification\\
-\strut \\
-Tests in this campaign will use data products and artifacts from Data
-Preview 0.2, which consists of DESC Data Challenge 2 (DC2) simulated
-data reprocessed using the LSST Science Pipelines. Additional on-sky
-data from auxTel imaging campaigns, and camera test-stand data, will be
-used when appropriate.
+\citeds{LDM-639}: Data Management Acceptance Test
+Specification\\[2\baselineskip]Tests in this campaign will use data
+products and artifacts from Data Preview 0.2, which consists of DESC
+Data Challenge 2 (DC2) simulated data reprocessed using the LSST Science
+Pipelines. Additional on-sky data from auxTel imaging campaigns, and
+camera test-stand data, will be used when appropriate.
 
 
 \subsection{Document Overview}
@@ -528,6 +526,40 @@ Final comment:\\
 
 Detailed steps :
 
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Confirm that the CI jobs used to test DRP processing successfully run.
+These jobs use precursor datasets from cameras other than LSST.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+For the precursor dataset, instantiate the Butler, load the data
+products, and confirm that they exist as expected.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Processed images, catalogs, calibration information, and other related
+data products are present and accessible via the Butler.
+
+}
+
 \paragraph{ LVV-T62 - Verify implementation of Provide PSF for Coadded Images }\mbox{}\\
 
 Version \textbf{2}.
@@ -567,6 +599,57 @@ Multi-band data that has been processed through the coaddition stage.
 
 }
 
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Load the exposures, then select Objects classified as point sources on
+at least 10 different coadd images (including all bands). Evaluate the
+PSF model at the positions of these Objects, and verify that subtracting
+a scaled version of the PSF model from the processed visit image yields
+residuals consistent with pure noise.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Images with the PSF model subtracted, leaving only residuals that are
+consistent with being noise.
+
+}
+
+\paragraph{ LVV-T41 - Verify implementation of Generate PSF for Visit Images }\mbox{}\\
+
 Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T41}{\textit{ LVV-T41 } }
 test case in Jira.
@@ -574,23 +657,6 @@ test case in Jira.
 Verify that Processed Visit Images produced by the DRP and AP pipelines
 are associated with a model from which one can obtain an image of the
 PSF given a point on the image.
-
-\textbf{ Preconditions}:\\
-
-
-Final comment:\\
-
-
-Detailed steps :
-
-\paragraph{ LVV-T41 - Verify implementation of Generate PSF for Visit Images }\mbox{}\\
-
-Version \textbf{1}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1946}{\textit{ LVV-T1946 } }
-test case in Jira.
-
-Verify that source measurements in catalogs containing measurements from
-coadd images are in flux units.
 
 \textbf{ Preconditions}:\\
 
@@ -619,29 +685,63 @@ filters.
 
 }
 
+\begin{tabular}{p{2cm}}
+\toprule
+Step 2  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+\begin{verbatim}
+from lsst.daf.butler import Butler
+repo = 'Data/path'
+collection = 'collection'
+butler = Butler(repo, collections=collection)
+\end{verbatim}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Butler repo available for reading.
+
+}
+
+\begin{tabular}{p{2cm}}
+\toprule
+Step 3  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Select Objects classified as point sources on at least 10 different
+processed visit images (including all bands). ~Evaluate the PSF model at
+the positions of these Objects, and verify that subtracting a scaled
+version of the PSF model from the processed visit image yields residuals
+consistent with pure noise.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Images with the PSF model subtracted, leaving only residuals that are
+consistent with being noise.
+
+}
+
+\paragraph{ LVV-T97 - Verify implementation of Uniqueness of IDs Across Data Releases }\mbox{}\\
+
 Version \textbf{1}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1947}{\textit{ LVV-T1947 } }
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T97}{\textit{ LVV-T97 } }
 test case in Jira.
 
-Verify that source measurements in catalogs containing measurements from
-difference images are in flux units.
-
-\textbf{ Preconditions}:\\
-
-
-Final comment:\\
-
-
-Detailed steps :
-
-\paragraph{ LVV-T28 - Verify implementation of measurements in catalogs from PVIs }\mbox{}\\
-
-Version \textbf{1}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T28}{\textit{ LVV-T28 } }
-test case in Jira.
-
-Verify that source measurements in catalogs containing measurements from
-processed visit images are in flux units.
+Verify that the IDs of Objects, Sources, DIAObjects, and DIASources from
+different Data Releases are unique.
 
 \textbf{ Preconditions}:\\
 
@@ -695,16 +795,21 @@ for those criteria).
 
 Detailed steps :
 
-\paragraph{ LVV-T142 - Verify implementation of Production Fault Tolerance }\mbox{}\\
+\begin{tabular}{p{2cm}}
+\toprule
+Step 1  \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Identify an appropriate precursor dataset to be processed through Data
+Release Production.
 
-Version \textbf{1}.
-Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T142}{\textit{ LVV-T142 } }
-test case in Jira.
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
 
-Demonstrate production systems report faults in pipeline executions and
-that system is able to recover. ~Where recovery can mean the ability to
-provide production artifacts for examination, return production elements
-ready for subsequent use, and/or reset and repeat production attempts.
+}
 
 \begin{tabular}{p{2cm}}
 \toprule

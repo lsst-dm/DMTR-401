@@ -1,8 +1,8 @@
 % generated from JIRA project LVV
-% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.12/site-packages/docsteady/templates/tpr.latex.jinja2.
-% using docsteady version 0.0.0
+% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.7/site-packages/docsteady/templates/tpr.latex.jinja2.
+% using docsteady version 2.4.1
 % Please do not edit -- update information in Jira instead
-\documentclass[DM,STR,toc]{lsstdoc}
+\documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
 \usepackage{geometry}
 \usepackage{longtable,booktabs}
 \usepackage{enumitem}
@@ -14,15 +14,13 @@
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-\input{meta.tex}
+\input meta.tex
 
 \newcommand{\attachmentsUrl}{https://github.com/\gitorg/\lsstDocType-\lsstDocNum/blob/\gitref/attachments}
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \setcounter{tocdepth}{4}
-
-\providecommand{\ul}[1]{\textbf{#1}}
 
 \begin{document}
 
@@ -34,7 +32,7 @@
 
 \title{LVV-P106: Data Management Acceptance Test Campaign, Fall 2023 Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2024-05-16 }
+\date{ 2024-05-17 }
 \author{ Jeffrey Carlin }
 
 \input{history_and_info.tex}
@@ -74,18 +72,16 @@ Management System Requirements (DMSR;
 \href{https://lse-61.lsst.io/}{LSE-61} ), ensuring that we are
 progressing toward readiness for the installation and operation of
 LSSTCam. Additional DMSR requirements will be verified in later
-Acceptance Test Campaigns.\\
-\strut \\
-\textbf{Applicable Documents:}\\
+Acceptance Test Campaigns.\\[2\baselineskip]\textbf{Applicable
+Documents:}\\
 \citeds{LSE-61}: Data Management System (DMS) Requirements\\
 \citeds{LDM-503} Data Management Test Plan\\
-\citeds{LDM-639}: Data Management Acceptance Test Specification\\
-\strut \\
-Tests in this campaign will use data products and artifacts from Data
-Preview 0.2, which consists of DESC Data Challenge 2 (DC2) simulated
-data reprocessed using the LSST Science Pipelines. Additional on-sky
-data from auxTel imaging campaigns, and camera test-stand data, will be
-used when appropriate.
+\citeds{LDM-639}: Data Management Acceptance Test
+Specification\\[2\baselineskip]Tests in this campaign will use data
+products and artifacts from Data Preview 0.2, which consists of DESC
+Data Challenge 2 (DC2) simulated data reprocessed using the LSST Science
+Pipelines. Additional on-sky data from auxTel imaging campaigns, and
+camera test-stand data, will be used when appropriate.
 
 
 \subsection{Document Overview}
@@ -581,10 +577,9 @@ Execution status: {\bf Pass }
 Final comment:\\
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T146 LVV-E3318-3713:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -666,10 +661,9 @@ saved in the repository associated with this campaign's test report as
 ``notebooks/test\_LVV-T40\_T1240.ipynb''.
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T1240 LVV-E3193-3588:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -767,50 +761,6 @@ Percentage of fields with \textgreater{} astrometricMinStandards=5:
 100.0 \% -- True
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step LVV-E3193-3 & Step Execution Status: \textbf{ Pass } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Select a single visit from the dataset, and extract its calibration
-data. For a subset of CCDs, check how many astrometric standards
-contributed to the solution. Confirm that this number is at
-least~\textbf{astrometricMinStandards = 5.}
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
-{\footnotesize
-At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
-used in determining the WCS solution.
-
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-This was done 500 times, extracting the source list and WCS for 500
-randomly-selected CCD/visit combinations from the repository.\\
-\strut \\
-It was confirmed that all CCDs selected had more than
-astrometricMinStandards=5 standards used in their WCS solutions. This
-was done using the following code to extract the number of astrometric
-standards for each image:\\
-\strut \\
-astrom\_selection = np.where(src{[}'calib\_astrometry\_used'{]} ==
-True)\\
-num\_calib\_astrom.append(np.size(astrom\_selection))\\
-\strut \\
-In the end, we calculate the fraction of fields that met this
-requirement, using:\\
-wcsFlagsPercent = (np.size(np.where(num\_calib\_astrom \textgreater{}
-5))/np.size(num\_calib\_astrom))*100.0*u.percent\\
-\strut \\
-The result (from the notebook) is:\\
-Percentage of fields with \textgreater{} astrometricMinStandards=5:
-100.0 \% -\/- True
-
-}
 
 \paragraph{ LVV-T132 - Verify implementation of Pre-cursor and Real Data }\mbox{}\\
 
@@ -831,10 +781,9 @@ Execution status: {\bf Pass }
 Final comment:\\
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T132 LVV-E3057-3452:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -860,7 +809,7 @@ ticket number DM-40985.\\[2\baselineskip]The butler collection within
 /repo/main at the USDF is ``HSC/runs/RC2/w\_2023\_39/DM-40985''.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -918,10 +867,9 @@ saved in the repository associated with this campaign's test report as
 ``notebooks/test\_LVV-T62.ipynb''.
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T62 LVV-E3058-3453:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -944,14 +892,14 @@ For this test we use the most recent reprocessing of the Subaru+HSC RC2
 dataset. The data were processed with the w\_2023\_32 pipelines.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
 Identify the path to the data repository, which we will refer to as
-\textquotesingle DATA/path\textquotesingle, then execute the following:
+`DATA/path', then execute the following:
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -980,7 +928,7 @@ rc2\_collection = `HSC/runs/RC2/w\_2023\_32/DM-40356'\\
 butler = Butler(repo, collections=rc2\_collection)
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -1053,10 +1001,9 @@ saved in the repository associated with this campaign's test report as
 ``notebooks/test\_LVV-T41.ipynb''.
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T41 LVV-E3056-3451:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -1078,14 +1025,14 @@ For this test we use the most recent reprocessing of the Subaru+HSC RC2
 dataset. The data were processed with the w\_2023\_32 pipelines.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
 Identify the path to the data repository, which we will refer to as
-\textquotesingle DATA/path\textquotesingle, then execute the following:
+`DATA/path', then execute the following:
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1114,7 +1061,7 @@ rc2\_collection = `HSC/runs/RC2/w\_2023\_32/DM-40356'\\
 butler = Butler(repo, collections=rc2\_collection)
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -1227,10 +1174,9 @@ are less than \texttt{n\_counters} and the packed data IDs are less than
 for those criteria).
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T97 LVV-E3002-3397:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -1252,7 +1198,7 @@ This test used the `rc2\_subset` data, which is a small set of
 Subaru+HSC data.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -1310,7 +1256,7 @@ Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
  Description \\
 {\footnotesize
 Identify the path to the data repository, which we will refer to as
-\textquotesingle DATA/path\textquotesingle, then execute the following:
+`DATA/path', then execute the following:
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1373,7 +1319,7 @@ demonstration sufficient to show that it would also for for DIA
 processing.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -1427,10 +1373,9 @@ directory.\\[2\baselineskip]The tests that confirm fluxes have
 magnitudes, would result in a magnitude fainter than -5.
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T1946 LVV-E2982-3377:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -1467,7 +1412,7 @@ collection~=~'HSC/runs/RC2/w\_2023\_39/DM-40985'\\
 butler = Butler(config, collections=collection)
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -1517,7 +1462,6 @@ Confirmation of measurements in catalogs encoded in flux units.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
-
 The script outputs the following, confirming that all ``instFlux''
 values in the ``deepCoadd\_forced\_source'' table are in units of
 ``counts'', and all calibrated fluxes from the ``objectTable'' are in
@@ -1990,10 +1934,9 @@ fluxes, if converted to magnitudes, would result in a magnitude fainter
 than -5.
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T28 LVV-E2984-3379:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -2030,7 +1973,7 @@ collection~=~'HSC/runs/RC2/w\_2023\_39/DM-40985'\\
 butler = Butler(config, collections=collection)
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -2066,7 +2009,7 @@ visit = 36180\\[2\baselineskip]\# Run the test\\
 LVVT1947(instrument, tract, detector, visit, band, skymap)
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -2240,14 +2183,6 @@ psfFlux 0.0 \%\\
 psfDiffFlux~ ~ ~ ~ ~ ~ ~~0.0 \%\\[2\baselineskip]
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step LVV-E2984-1.3 & Step Execution Status: \textbf{ Pass } \\ \hline
-\end{tabular}
- Description \\
-{\footnotesize
-Verify that the single-visit catalog provides measurements in flux
-units.
 
 \paragraph{ LVV-T28 - Verify implementation of measurements in catalogs from PVIs }\mbox{}\\
 
@@ -2274,86 +2209,7 @@ magnitudes, would result in a magnitude fainter than -5.
 
 Detailed steps results:
 
-}
-\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Actual Result \\
-{\footnotesize
-(lsst-scipipe-8.0.0) {[}jcarlin@sdfrome001 fall2023\_ATC{]}\$ python
-test\_LVV-T28.py~\\
-lsst\_distrib~ ~ ~ ~ ~~g4213664e8e+b08e1c1b0b ~ ~ w\_latest w\_2024\_04
-current setup\\
-Input dataId: \{\textquotesingle instrument\textquotesingle:
-\textquotesingle HSC\textquotesingle,
-\textquotesingle visit\textquotesingle: 36180,
-\textquotesingle detector\textquotesingle: 5\}\\
-\strut \\
-Checking afw src table:\\
-deblend\_psf\_instFlux ..... count\\
-base\_Blendedness\_raw\_child\_instFlux ..... count\\
-base\_Blendedness\_raw\_parent\_instFlux ..... count\\
-base\_Blendedness\_abs\_child\_instFlux ..... count\\
-base\_Blendedness\_abs\_parent\_instFlux ..... count\\
-base\_SdssShape\_instFlux ..... count\\
-base\_SdssShape\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_3\_0\_instFlux ..... count\\
-base\_CircularApertureFlux\_3\_0\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_4\_5\_instFlux ..... count\\
-base\_CircularApertureFlux\_4\_5\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_6\_0\_instFlux ..... count\\
-base\_CircularApertureFlux\_6\_0\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_9\_0\_instFlux ..... count\\
-base\_CircularApertureFlux\_9\_0\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_12\_0\_instFlux ..... count\\
-base\_CircularApertureFlux\_12\_0\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_17\_0\_instFlux ..... count\\
-base\_CircularApertureFlux\_17\_0\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_25\_0\_instFlux ..... count\\
-base\_CircularApertureFlux\_25\_0\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_35\_0\_instFlux ..... count\\
-base\_CircularApertureFlux\_35\_0\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_50\_0\_instFlux ..... count\\
-base\_CircularApertureFlux\_50\_0\_instFluxErr ..... count\\
-base\_CircularApertureFlux\_70\_0\_instFlux ..... count\\
-base\_CircularApertureFlux\_70\_0\_instFluxErr ..... count\\
-base\_CompensatedGaussianFlux\_3\_instFlux ..... count\\
-base\_CompensatedGaussianFlux\_3\_instFluxErr ..... count\\
-base\_CompensatedGaussianFlux\_5\_instFlux ..... count\\
-base\_CompensatedGaussianFlux\_5\_instFluxErr ..... count\\
-base\_GaussianFlux\_instFlux ..... count\\
-base\_GaussianFlux\_instFluxErr ..... count\\
-base\_LocalBackground\_instFlux ..... count\\
-base\_LocalBackground\_instFluxErr ..... count\\
-base\_PsfFlux\_instFlux ..... count\\
-base\_PsfFlux\_instFluxErr ..... count\\
-ext\_photometryKron\_KronFlux\_instFlux ..... count\\
-ext\_photometryKron\_KronFlux\_instFluxErr ..... count\\
-\strut \\
-All src table instFlux entries have units of counts: True\\
-\strut \\
-Checking parquet sourceTable:\\
-\strut \\
-Checking flux values for visit 36180\\
-\strut \\
-flux column~ ~ ~ ~ ~~\% of bad flux values\\
-\strut \\
-calibFlux~ ~ ~ ~ ~ ~ ~ ~ ~ 0.0 \%\\
-ap03Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
-ap06Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
-ap09Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
-ap12Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
-ap17Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
-ap25Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
-ap35Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
-ap50Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
-ap70Flux ~ ~ ~ ~ ~ ~ ~ ~~0.0 \%\\
-psfFlux~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 0.0 \%\\
-gaussianFlux~ ~ ~ ~ ~ 0.0 \%\\
-\strut \\
-All "instFlux" entries have units of counts, and all fluxes are within a
-reasonable range of flux values, so this test has passed.
-
-}
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1.1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -2420,7 +2276,7 @@ calexp (PVI):\\
 detector)\\[2\baselineskip]
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1.3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -2534,7 +2390,6 @@ Butler repo available for reading.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Actual Result \\
 {\footnotesize
-
 Tests were performed using ``test\_LVV-T28\_DC2.py,'' which contains the
 following:\\[2\baselineskip]\# For DC2 data on the USDF:\\
 config~=~'/repo/dc2'\\
@@ -2571,7 +2426,7 @@ calexp (PVI):\\
 \hspace*{0.333em} ~ LVVT28(instrument, visit, detector)
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2.3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -2826,7 +2681,7 @@ says that there are only 13 lines returned by that query. Thus some
 output products must be missing.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -2913,10 +2768,9 @@ Execution status: {\bf Pass }
 Final comment:\\
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T1748 LVV-E2973-3368:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -2939,7 +2793,7 @@ the data reprocessed with weekly pipelines version `w\_2024\_02`, in
 Butler collection ``HSC/runs/RC2/w\_2024\_02/DM-42454'' at the USDF.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -3178,7 +3032,7 @@ For this test we use the most recent reprocessing of the Subaru+HSC RC2
 dataset. The data were processed with the w\_2023\_35 pipelines.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -3458,10 +3312,9 @@ performed for only y- and z-band. The steps would be unchanged for
 u-band data.
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T1758 LVV-E2971-3366:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -3484,7 +3337,7 @@ For this test we use the most recent reprocessing of the Subaru+HSC RC2
 dataset. The data were processed with the w\_2023\_35 pipelines.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -3535,10 +3388,9 @@ Current weekly stack initialized:\\
 w\_2023\_40 setup
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
-
 \end{tabular}
  Description \\
 {\footnotesize
@@ -3561,7 +3413,7 @@ HSC/runs/RC2/w\_2023\_36 --instrument lsst.obs.subaru.HyperSuprimeCam
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Example Code \\
+  Expected Result \\
 {\footnotesize
 The output collection (in this case, ``u/username/atools\_metrics'')
 containing metric measurements and any associated extras and metadata is
@@ -3569,7 +3421,7 @@ available via the butler.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
-  Expected Result \\
+  Actual Result \\
 {\footnotesize
 Changed the value of PA2 in matchedVisitQualityCore\_changePA2.yaml to
 15.0:\\
@@ -3786,7 +3638,7 @@ to this document's Github repository. The query executed successfully in
 the notebook, and returned 26,115 results, as expected.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -3848,10 +3700,9 @@ saved in the repository associated with this campaign's test report as
 ``notebooks/test\_LVV-T40\_T1240.ipynb''.
 
 
+Detailed steps results:
 
-Detailed steps results LVV-C260-LVV-T40 LVV-E2962-3357:\\
-{\bf Note:} Steps "Not Executed" and with No Result are not shown in this report.\\
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -3874,7 +3725,7 @@ For this test we use the most recent reprocessing of the Subaru+HSC RC2
 dataset. The data were processed with the w\_2023\_32 pipelines.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -3910,7 +3761,7 @@ rc2\_collection = `HSC/runs/RC2/w\_2023\_32/DM-40356'\\
 butler = Butler(repo, collections=rc2\_collection)
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -3934,7 +3785,7 @@ This was done 500 times, extracting the source list and WCS for 500
 randomly-selected CCD/visit combinations from the repository.
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
@@ -4085,7 +3936,7 @@ to inherent limitations in the data, and not a problem with the DM
 algorithms. Thus, we grant this test a ``Pass.''
 
 }
-\begin{tabular}{p{4cm}p{12cm}}
+\begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 8 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
